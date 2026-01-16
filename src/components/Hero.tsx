@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import logo from "@/assets/logo.png";
 import portrait from "@/assets/gaetano-portrait.jpg";
 import badge from "@/assets/ghl-badge.png";
 
@@ -21,20 +20,6 @@ const Hero = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="flex flex-col items-start text-left order-2 lg:order-1"
           >
-            {/* Logo - Larger & Prominent */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6 }}
-              className="mb-8"
-            >
-              <img 
-                src={logo} 
-                alt="GF Logo" 
-                className="w-28 h-28 md:w-36 md:h-36 lg:w-40 lg:h-40"
-              />
-            </motion.div>
-            
             {/* Certified Expert Badge Text */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -47,26 +32,25 @@ const Hero = () => {
               </span>
             </motion.div>
             
-            {/* Headline - Adjusted Size */}
+            {/* Headline - SEO optimized */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
               className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-6 leading-[1.15]"
             >
-              Skaliere dein Business mit smarten{" "}
-              <span className="text-primary">HighLevel-Funnel</span> und{" "}
-              <span className="text-primary">vollautomatisierten Prozessen</span>
+              <span className="text-primary">Marketing-Automatisierung</span> & HighLevel-Setups für dein Online-Business in{" "}
+              <span className="text-primary">Bielefeld</span> und deutschlandweit
             </motion.h1>
             
-            {/* Subheadline */}
+            {/* Subheadline - SEO optimized */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               className="font-body text-muted-foreground text-lg md:text-xl mb-10 max-w-xl leading-relaxed"
             >
-              Ich begleite dich beim Umzug und Aufbau deines Marketing-Setups mit dem All-in-One-System von HighLevel. Damit dein Marketing automatisch Leads generiert und reibungslos läuft.
+              Ich begleite dich beim Aufbau deines Marketing-Systems mit GoHighLevel – von Funnel-Erstellung über CRM-Setup bis zur vollständigen Automatisierung. Für Selbstständige, Agenturen und SaaS-Anbieter.
             </motion.p>
             
             {/* Premium CTAs */}
@@ -111,26 +95,27 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-platinum/10 rounded-full blur-3xl scale-110" />
               <img 
                 src={portrait} 
-                alt="Gaetano Ficarra" 
+                alt="Gaetano Ficarra - GoHighLevel Experte aus Bielefeld" 
                 className="relative w-80 h-80 md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px] object-cover object-top rounded-full border-4 border-primary/30 shadow-2xl animate-glow-pulse"
               />
               
-              {/* GoHighLevel Badge - Bottom Right Overlay */}
+              {/* GoHighLevel Badge - Bottom Right Overlay - Larger */}
               <motion.a
                 href="https://directory.gohighlevel.com/germany/bielefeld/certified-admins/gaetano-ficarra?from=badge"
                 target="_blank"
                 rel="noopener noreferrer"
+                title="GoHighLevel Zertifizierter Admin - Bielefeld"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                className="absolute -bottom-4 -right-4 md:bottom-2 md:right-2 lg:bottom-4 lg:right-4 hover:scale-110 transition-transform duration-300"
+                className="absolute -bottom-6 -right-6 md:bottom-0 md:right-0 lg:bottom-2 lg:right-2 hover:scale-110 transition-transform duration-300"
               >
                 <div className="relative">
-                  <div className="absolute inset-0 bg-primary/30 rounded-lg blur-xl" />
+                  <div className="absolute inset-0 bg-primary/40 rounded-lg blur-xl" />
                   <img 
                     src={badge} 
-                    alt="GoHighLevel Certified Admin Badge" 
-                    className="relative w-28 h-28 md:w-36 md:h-36 lg:w-40 lg:h-40 drop-shadow-2xl"
+                    alt="GoHighLevel Certified Admin Badge - Zertifizierter HighLevel Experte" 
+                    className="relative w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 drop-shadow-2xl"
                   />
                 </div>
               </motion.a>

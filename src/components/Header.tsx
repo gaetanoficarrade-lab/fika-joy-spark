@@ -27,8 +27,8 @@ const Header = () => {
       className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border"
     >
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="GF Logo" className="w-14 h-14" />
+        <Link to="/" className="flex items-center gap-3" title="Gaetano Ficarra - HighLevel Experte Bielefeld">
+          <img src={logo} alt="Gaetano Ficarra Logo - Marketing Automatisierung Bielefeld" className="w-16 h-16 md:w-20 md:h-20" />
           <span className="font-display text-xl tracking-wide text-foreground">
             Gaetano Ficarra
           </span>
