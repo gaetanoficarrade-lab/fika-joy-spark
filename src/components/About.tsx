@@ -132,7 +132,7 @@ const About = () => {
             <div className="grid grid-cols-3 gap-8 pt-8 border-t border-border">
               {[
                 { number: "3+", label: "Jahre Erfahrung" },
-                { number: "100+", label: "Projekte" },
+                { number: "100%", label: "Engagement" },
                 { number: "100%", label: "Fokus auf HighLevel" },
               ].map((stat, index) => (
                 <div key={index} className="text-center">
