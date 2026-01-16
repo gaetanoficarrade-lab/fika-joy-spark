@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import TrustLogos from "@/components/TrustLogos";
 import ProblemSolution from "@/components/ProblemSolution";
 import Services from "@/components/Services";
+import Testimonials from "@/components/Testimonials";
 import About from "@/components/About";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
@@ -25,13 +26,16 @@ const Index = () => {
         {/* 4. Services - Was du anbietest */}
         <Services />
         
-        {/* 5. Über mich - Wer dahinter steht */}
+        {/* 5. Testimonials - Social Proof */}
+        <Testimonials />
+        
+        {/* 6. Über mich - Wer dahinter steht */}
         <About />
         
-        {/* 6. FAQ - Letzte Einwände behandeln */}
+        {/* 7. FAQ - Letzte Einwände behandeln */}
         <FAQ />
         
-        {/* 7. Kontakt - Finaler Call to Action */}
+        {/* 8. Kontakt - Finaler Call to Action */}
         <Contact />
       </main>
       <Footer />
