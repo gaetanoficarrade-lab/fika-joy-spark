@@ -125,11 +125,14 @@ const Hero = () => {
                 transition={{ duration: 0.6, delay: 0.6 }}
                 className="absolute bottom-[12%] right-[5%] md:bottom-[10%] md:right-[3%] hover:scale-110 transition-transform duration-300"
               >
-                <img 
-                  src="https://directory.gohighlevel.com/images/BD_Certified_Admin_Main_Badge.png" 
-                  alt="GoHighLevel Certified Admin Badge" 
-                  className="w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 drop-shadow-2xl"
-                />
+                <div className="relative">
+                  <div className="absolute inset-0 bg-primary/50 rounded-full blur-2xl scale-125" />
+                  <img 
+                    src="https://directory.gohighlevel.com/images/BD_Certified_Admin_Main_Badge.png" 
+                    alt="GoHighLevel Certified Admin Badge" 
+                    className="relative w-28 h-28 md:w-36 md:h-36 lg:w-44 lg:h-44 drop-shadow-2xl"
+                  />
+                </div>
               </motion.a>
             </div>
           </motion.div>
