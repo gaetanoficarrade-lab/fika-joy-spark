@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://gaetanoficarra.de/sitemap.xml
+Sitemap: https://gohighlevel-experte.de/sitemap.xml
