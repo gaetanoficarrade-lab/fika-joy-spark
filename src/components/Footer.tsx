@@ -1,26 +1,121 @@
+import { Link } from "react-router-dom";
+import { Instagram, Youtube, Facebook, MessageCircle } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
-    <footer className="py-12 border-t border-border bg-card">
+    <footer className="py-16 border-t border-border bg-card">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-3">
-            <img src={logo} alt="GF Logo" className="w-8 h-8" />
-            <span className="font-display text-lg text-foreground">Gaetano Ficarra</span>
+        <div className="grid md:grid-cols-4 gap-12 mb-12">
+          {/* Logo & Description */}
+          <div className="md:col-span-1">
+            <Link to="/" className="flex items-center gap-3 mb-4">
+              <img src={logo} alt="GF Logo" className="w-10 h-10" />
+              <span className="font-display text-lg text-foreground">Gaetano Ficarra</span>
+            </Link>
+            <p className="text-muted-foreground text-sm font-body leading-relaxed">
+              Marketing-Systemberater für Selbstständige. Zertifizierter HighLevel-Experte.
+            </p>
           </div>
-          
+
+          {/* Navigation */}
+          <div>
+            <h4 className="font-display text-sm uppercase tracking-widest text-primary mb-4">Navigation</h4>
+            <nav className="flex flex-col gap-2">
+              <Link to="/" className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-body">Home</Link>
+              <Link to="/leistungen" className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-body">Leistungen</Link>
+              <Link to="/links" className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-body">Links</Link>
+              <Link to="/highlevel-vs-funnelmate" className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-body">HighLevel vs Funnelmate</Link>
+            </nav>
+          </div>
+
+          {/* Tools */}
+          <div>
+            <h4 className="font-display text-sm uppercase tracking-widest text-primary mb-4">Tools</h4>
+            <nav className="flex flex-col gap-2">
+              <Link to="/wa-generator" className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-body">WhatsApp Generator</Link>
+              <Link to="/utm-generator" className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-body">UTM Generator</Link>
+            </nav>
+          </div>
+
+          {/* Partner & Social */}
+          <div>
+            <h4 className="font-display text-sm uppercase tracking-widest text-primary mb-4">Partner & Social</h4>
+            <div className="flex gap-4 mb-4">
+              <a 
+                href="https://wa.me/4915231039640" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors duration-300"
+                aria-label="WhatsApp"
+              >
+                <MessageCircle size={20} />
+              </a>
+              <a 
+                href="https://instagram.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors duration-300"
+                aria-label="Instagram"
+              >
+                <Instagram size={20} />
+              </a>
+              <a 
+                href="https://youtube.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors duration-300"
+                aria-label="YouTube"
+              >
+                <Youtube size={20} />
+              </a>
+              <a 
+                href="https://facebook.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors duration-300"
+                aria-label="Facebook"
+              >
+                <Facebook size={20} />
+              </a>
+            </div>
+            <div className="flex flex-col gap-2">
+              <a 
+                href="https://patrickmentler.de/?am_id=gaetano" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-body"
+              >
+                Partner: Patrick Mentler
+              </a>
+              <a 
+                href="https://funnelmate.io/?am_id=gaetano" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-body"
+              >
+                Funnelmate.io
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        {/* Bottom Bar */}
+        <div className="pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-muted-foreground text-sm font-body">
             © {new Date().getFullYear()} Gaetano Ficarra. Alle Rechte vorbehalten.
           </div>
           
           <div className="flex items-center gap-6">
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-body">
+            <Link to="/impressum" className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-body">
               Impressum
-            </a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-body">
+            </Link>
+            <Link to="/datenschutz" className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-body">
               Datenschutz
-            </a>
+            </Link>
+            <Link to="/agb" className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-body">
+              AGB
+            </Link>
           </div>
         </div>
       </div>
