@@ -1,3 +1,6 @@
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 import { ArrowRight, Shield, Clock, Database } from "lucide-react";
 
 const migrationTools = [
@@ -13,12 +16,20 @@ const migrationTools = [
 ];
 
 const Migration = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
   return (
-    <section className="py-24 md:py-32 bg-card relative">
+    <section className="py-24 md:py-32 bg-card relative" ref={ref}>
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
             <span className="text-primary text-sm tracking-widest uppercase font-body">Migration</span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mt-4 text-foreground">
               Du nutzt bereits andere Tools? <span className="text-primary">Das ist der Normalfall.</span>
@@ -27,19 +38,27 @@ const Migration = () => {
               Die meisten meiner Kunden kommen von anderen Plattformen. Ein Schwerpunkt meiner Arbeit ist die sichere
               Migration deiner bestehenden Daten und Prozesse.
             </p>
-          </div>
+          </motion.div>
 
           {/* Migration Tools Grid */}
-          <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 mb-16">
-            {migrationTools.map((tool) => (
-              <div
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 mb-16"
+          >
+            {migrationTools.map((tool, index) => (
+              <motion.div
                 key={tool.name}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ duration: 0.4, delay: 0.1 * index }}
                 className="bg-background border border-border p-6 rounded-lg text-center hover:border-primary/30 transition-colors"
               >
                 <span className="font-display text-lg text-foreground">{tool.name}</span>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
           {/* Migration Benefits */}
           <div className="grid md:grid-cols-3 gap-6 md:gap-8">
@@ -61,9 +80,12 @@ const Migration = () => {
                 description:
                   "Dein Business läuft weiter. Die Migration erfolgt parallel, ohne Unterbrechung deiner Prozesse.",
               },
-            ].map((benefit) => (
-              <div
+            ].map((benefit, index) => (
+              <motion.div
                 key={benefit.title}
+                initial={{ opacity: 0, y: 40 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.4 + 0.1 * index }}
                 className="bg-background border border-primary/20 p-8 rounded-lg"
               >
                 <div className="flex items-center justify-center w-14 h-14 bg-primary/10 rounded-full mb-6">
@@ -71,12 +93,17 @@ const Migration = () => {
                 </div>
                 <h3 className="font-display text-xl text-foreground mb-3">{benefit.title}</h3>
                 <p className="text-muted-foreground font-body text-sm leading-relaxed">{benefit.description}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
 
           {/* CTA */}
-          <div className="text-center mt-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="text-center mt-16"
+          >
             <a
               href="https://lp.gaetanoficarra.de/erstgesraech"
               target="_blank"
@@ -85,7 +112,7 @@ const Migration = () => {
             >
               Migration besprechen <ArrowRight className="w-4 h-4" />
             </a>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

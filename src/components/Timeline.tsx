@@ -1,3 +1,6 @@
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 import { MessageCircle, ClipboardCheck, Rocket, Headphones } from "lucide-react";
 
 const steps = [
@@ -28,15 +31,23 @@ const steps = [
 ];
 
 const Timeline = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
   return (
-    <section className="py-24 md:py-32 relative overflow-hidden">
+    <section className="py-24 md:py-32 relative overflow-hidden" ref={ref}>
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/10 to-background" />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
             <span className="text-primary text-sm tracking-widest uppercase font-body">Der Ablauf</span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mt-4 text-foreground">
               So kommen wir <span className="text-primary">zusammen</span>
@@ -44,7 +55,7 @@ const Timeline = () => {
             <p className="text-muted-foreground font-body mt-6 max-w-2xl mx-auto text-lg leading-relaxed">
               Vier klare Schritte von der ersten Anfrage bis zum laufenden System
             </p>
-          </div>
+          </motion.div>
 
           {/* Timeline */}
           <div className="relative">
@@ -54,15 +65,21 @@ const Timeline = () => {
             {/* Steps */}
             <div className="space-y-12 lg:space-y-0">
               {steps.map((step, index) => (
-                <div
+                <motion.div
                   key={step.step}
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: 0.15 * (index + 1) }}
                   className={`relative lg:flex lg:items-center lg:gap-8 ${
                     index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
                   }`}
                 >
                   {/* Content Card */}
                   <div className={`lg:w-[calc(50%-40px)] ${index % 2 === 0 ? "lg:text-right" : "lg:text-left"}`}>
-                    <div className="bg-card border border-border p-6 md:p-8 rounded-lg hover:border-primary/30 transition-colors">
+                    <motion.div
+                      whileHover={{ scale: 1.02 }}
+                      className="bg-card border border-border p-6 md:p-8 rounded-lg hover:border-primary/30 transition-colors"
+                    >
                       <div className={`flex items-center gap-4 mb-4 ${index % 2 === 0 ? "lg:flex-row-reverse" : ""}`}>
                         <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
                           <step.icon className="w-6 h-6 text-primary" />
@@ -79,26 +96,36 @@ const Timeline = () => {
                       >
                         {step.description}
                       </p>
-                    </div>
+                    </motion.div>
                   </div>
 
                   {/* Center dot - visible on desktop */}
                   <div className="hidden lg:flex items-center justify-center w-20 flex-shrink-0">
-                    <div className="relative">
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      animate={isInView ? { scale: 1 } : {}}
+                      transition={{ duration: 0.4, delay: 0.2 * (index + 1) }}
+                      className="relative"
+                    >
                       <div className="absolute inset-0 bg-primary/20 rounded-full blur-md scale-150" />
                       <div className="w-4 h-4 bg-primary rounded-full relative z-10" />
-                    </div>
+                    </motion.div>
                   </div>
 
                   {/* Spacer for alternating layout */}
                   <div className="hidden lg:block lg:w-[calc(50%-40px)]" />
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
 
           {/* CTA */}
-          <div className="text-center mt-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="text-center mt-16"
+          >
             <a
               href="https://lp.gaetanoficarra.de/erstgesraech"
               target="_blank"
@@ -113,7 +140,7 @@ const Timeline = () => {
             <p className="text-muted-foreground text-sm font-body mt-4">
               Kurz sprechen, Setup verstehen, nächsten Schritt klären
             </p>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

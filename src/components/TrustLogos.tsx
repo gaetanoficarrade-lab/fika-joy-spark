@@ -1,3 +1,6 @@
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 import gohighlevelLogo from "@/assets/gohighlevel-logo.jpg";
 import funnelmateLogo from "@/assets/funnelmate-logo.png";
 import funnelmateCertifiedExpert from "@/assets/funnelmate-certified-expert.png";
@@ -5,7 +8,6 @@ import patrickMentlerLogo from "@/assets/patrick-mentler-logo.png";
 import octaLogo from "@/assets/octa-logo.png";
 import cssIcon from "@/assets/css-icon.png";
 import htmlIcon from "@/assets/html-icon.png";
-import "@/styles/trust-logos.css";
 
 const partners = [
   {
@@ -46,26 +48,52 @@ const partners = [
 ];
 
 const TrustLogos = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+
   // Double the partners array for seamless infinite scroll
   const duplicatedPartners = [...partners, ...partners];
 
   return (
-    <section className="py-12 md:py-16 relative overflow-hidden">
+    <section className="py-12 md:py-16 relative overflow-hidden" ref={ref}>
       <div className="container mx-auto px-6">
-        <div className="text-center mb-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-8"
+        >
           <span className="text-muted-foreground text-xs md:text-sm tracking-widest uppercase font-body">
             Bekannt aus & Partner
           </span>
-        </div>
+        </motion.div>
 
         {/* Infinite scrolling logo slider */}
-        <div className="relative overflow-hidden">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="relative overflow-hidden"
+        >
           {/* Gradient fade edges */}
           <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
           <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
           
-          {/* Scrolling container - CSS animation instead of framer-motion */}
-          <div className="trust-logos-scroll flex items-center gap-12 md:gap-16">
+          {/* Scrolling container */}
+          <motion.div
+            className="flex items-center gap-12 md:gap-16"
+            animate={{
+              x: [0, -50 * partners.length * 3],
+            }}
+            transition={{
+              x: {
+                repeat: Infinity,
+                repeatType: "loop",
+                duration: 25,
+                ease: "linear",
+              },
+            }}
+          >
             {duplicatedPartners.map((partner, index) => {
               // Size categories for logos
               const isOctaLogo = partner.name === "OCTA Steuerberater";
@@ -94,13 +122,12 @@ const TrustLogos = () => {
                     src={partner.logo} 
                     alt={`${partner.name} Logo`}
                     className={`w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300 ${sizeClass}`}
-                    loading="lazy"
                   />
                 </a>
               );
             })}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* SEO hidden text */}
         <div className="sr-only">
