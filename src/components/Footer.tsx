@@ -45,7 +45,7 @@ const Footer = () => {
             <h4 className="font-display text-sm uppercase tracking-widest text-primary mb-4">Partner & Social</h4>
             <div className="flex gap-4 mb-4">
               <a 
-                href="https://wa.me/4915223856537?text=Hey%2C%20ich%20bin%20an%20einer%20Zusammenarbeit%20mit%20dir%20interessiert%20und%20h%C3%A4tte%20gerne%20weitere%20Infos." 
+                href="https://wa.me/4915223856537?text=Hey%2C%20ich%20bin%20an%20einer%20Zusammenarbeit%20%0Ainteressiert%20und%20h%C3%A4tte%20gerne%20weitere%20Infos." 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors duration-300"
@@ -54,7 +54,7 @@ const Footer = () => {
                 <MessageCircle size={20} />
               </a>
               <a 
-                href="https://instagram.com" 
+                href="https://www.instagram.com/gaetano.ficarra_/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors duration-300"
@@ -63,7 +63,7 @@ const Footer = () => {
                 <Instagram size={20} />
               </a>
               <a 
-                href="https://youtube.com" 
+                href="https://www.youtube.com/@smart4business.gaetano" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors duration-300"
@@ -72,7 +72,7 @@ const Footer = () => {
                 <Youtube size={20} />
               </a>
               <a 
-                href="https://facebook.com" 
+                href="https://www.facebook.com/profile.php?id=61584153672246" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors duration-300"
