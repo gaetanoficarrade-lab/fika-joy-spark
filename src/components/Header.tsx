@@ -78,7 +78,7 @@ const Header = () => {
             href="https://klick.gaetanoficarra.de/widget/booking/5s0iHWQ0crY7ogs9gviU"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-gradient-cta text-cta-foreground px-6 py-2 text-xs tracking-widest uppercase font-body hover:opacity-90 transition-all duration-300 rounded-md"
+            className="bg-primary text-primary-foreground px-6 py-2 text-xs tracking-widest uppercase font-body hover:bg-primary/90 transition-all duration-300 rounded-md"
           >
             Termin buchen
           </a>
@@ -123,7 +123,7 @@ const Header = () => {
                 href="https://klick.gaetanoficarra.de/widget/booking/5s0iHWQ0crY7ogs9gviU"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gradient-cta text-cta-foreground px-6 py-3 text-xs tracking-widest uppercase font-body hover:opacity-90 transition-all duration-300 text-center mt-4 rounded-md"
+                className="bg-primary text-primary-foreground px-6 py-3 text-xs tracking-widest uppercase font-body hover:bg-primary/90 transition-all duration-300 text-center mt-4 rounded-md"
               >
                 Termin buchen
               </a>
