@@ -8,21 +8,34 @@ const services = [
   {
     icon: Settings,
     title: "Done-For-You Setup",
-    description: "Ich richte dein HighLevel komplett für dich ein. Funnels, Automations, CRM – alles perfekt konfiguriert und startklar. Du lehnst dich zurück, ich mache den Rest.",
-    benefits: ["Komplett fertig eingerichtet", "Funnels & Automationen", "CRM-Setup & Integrationen", "30 Tage Support inklusive"],
+    description:
+      "Ich richte dein HighLevel komplett für dich ein. Funnels, Automations, CRM alles perfekt konfiguriert und startklar. Du lehnst dich zurück, ich mache den Rest.",
+    benefits: [
+      "Komplett fertig eingerichtet",
+      "Funnels & Automationen",
+      "CRM-Setup & Integrationen",
+      "30 Tage Support inklusive",
+    ],
     popular: true,
   },
   {
     icon: Users,
     title: "Done-With-You Live",
-    description: "Wir arbeiten gemeinsam live an deinem System. Du lernst dabei, stellst Fragen und bekommst gleichzeitig alles professionell eingerichtet.",
-    benefits: ["Live Zusammenarbeit", "Du lernst während wir bauen", "Aufnahmen aller Sessions", "60 Tage Support inklusive"],
+    description:
+      "Wir arbeiten gemeinsam live an deinem System. Du lernst dabei, stellst Fragen und bekommst gleichzeitig alles professionell eingerichtet.",
+    benefits: [
+      "Live Zusammenarbeit",
+      "Du lernst während wir bauen",
+      "Aufnahmen aller Sessions",
+      "60 Tage Support inklusive",
+    ],
     popular: false,
   },
   {
     icon: Headphones,
     title: "Support-Call",
-    description: "Steckst du fest oder hast eine spezifische Frage? Buche einen 1:1 Support-Call und ich löse dein Problem schnell und unkompliziert.",
+    description:
+      "Steckst du fest oder hast eine spezifische Frage? Buche einen 1:1 Support-Call und ich löse dein Problem schnell und unkompliziert.",
     benefits: ["1:1 Video-Call", "Bildschirmfreigabe", "Problemlösung in Echtzeit", "Aufnahme des Calls"],
     popular: false,
   },
@@ -36,12 +49,15 @@ const Services = () => {
     <section id="leistungen" className="py-24 md:py-32 bg-card relative" ref={ref}>
       {/* Subtle pattern overlay */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--foreground)) 1px, transparent 0)`,
-          backgroundSize: '40px 40px'
-        }} />
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--foreground)) 1px, transparent 0)`,
+            backgroundSize: "40px 40px",
+          }}
+        />
       </div>
-      
+
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <motion.div
@@ -50,14 +66,13 @@ const Services = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <span className="text-primary text-sm tracking-widest uppercase font-body">
-            Leistungen
-          </span>
+          <span className="text-primary text-sm tracking-widest uppercase font-body">Leistungen</span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mt-4 text-foreground">
             So kann ich <span className="text-primary">dich unterstützen</span>
           </h2>
           <p className="text-muted-foreground font-body mt-6 max-w-2xl mx-auto text-lg">
-            Ob komplette Einrichtung, gemeinsames Arbeiten oder schnelle Hilfe bei Problemen – wähle die Option, die zu dir passt.
+            Ob komplette Einrichtung, gemeinsames Arbeiten oder schnelle Hilfe bei Problemen, wähle die Option, die zu
+            dir passt.
           </p>
         </motion.div>
 
@@ -70,7 +85,7 @@ const Services = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.1 * (index + 1) }}
               className={`relative group p-8 bg-background border rounded-lg transition-all duration-500 hover:glow-gold ${
-                service.popular ? 'border-primary' : 'border-border hover:border-primary/30'
+                service.popular ? "border-primary" : "border-border hover:border-primary/30"
               }`}
             >
               {service.popular && (
@@ -78,11 +93,11 @@ const Services = () => {
                   Beliebt
                 </div>
               )}
-              
+
               <service.icon className="w-12 h-12 text-primary mb-6 group-hover:scale-110 transition-transform duration-300" />
               <h3 className="font-display text-xl md:text-2xl text-foreground mb-4">{service.title}</h3>
               <p className="text-muted-foreground font-body text-sm leading-relaxed mb-6">{service.description}</p>
-              
+
               <ul className="space-y-3">
                 {service.benefits.map((benefit, i) => (
                   <li key={i} className="flex items-start gap-3 text-sm font-body text-foreground">
@@ -114,17 +129,18 @@ const Services = () => {
                 <p className="text-muted-foreground text-sm font-body">White-Label & Custom Solutions</p>
               </div>
             </div>
-            
+
             <p className="text-muted-foreground text-lg font-body leading-relaxed mb-6">
-              Du bist SaaS-Anbieter und nutzt GoHighLevel als Basis? Ich unterstütze dich und deine Kunden mit professionellem Support:
+              Du bist SaaS-Anbieter und nutzt GoHighLevel als Basis? Ich unterstütze dich und deine Kunden mit
+              professionellem Support:
             </p>
-            
+
             <ul className="space-y-4 mb-8">
               {[
                 "Regelmäßige Q&A Calls mit deinen Endkunden",
                 "Technischer & strategischer Support für deine Nutzer",
                 "Troubleshooting & Problemlösung",
-                "Professioneller Kundensupport für dein SaaS-Produkt"
+                "Professioneller Kundensupport für dein SaaS-Produkt",
               ].map((item, index) => (
                 <motion.li
                   key={index}
@@ -152,7 +168,7 @@ const Services = () => {
             to="/leistungen"
             className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-sm font-body text-sm uppercase tracking-widest transition-all duration-300 hover:bg-primary/90 hover:scale-105"
             style={{
-              boxShadow: '0 0 20px hsl(var(--primary) / 0.3)'
+              boxShadow: "0 0 20px hsl(var(--primary) / 0.3)",
             }}
           >
             Alle Leistungen & Preise <ArrowRight className="w-4 h-4" />

@@ -8,33 +8,39 @@ const problems = [
   {
     icon: Layers,
     title: "Zu viele Tools",
-    description: "CRM hier, E-Mail-Tool dort, Funnel-Builder woanders. Du zahlst für ein Dutzend Plattformen und keins spricht wirklich mit dem anderen."
+    description:
+      "CRM hier, E-Mail-Tool dort, Funnel-Builder woanders. Du zahlst für ein Dutzend Plattformen und keins spricht wirklich mit dem anderen.",
   },
   {
     icon: Link2Off,
     title: "Fehlerhafte Schnittstellen",
-    description: "Zapier-Zaps, die brechen. Make-Szenarien, die nicht triggern. Du verbringst Stunden damit, herauszufinden, warum deine Automatisierung nicht funktioniert."
+    description:
+      "Zapier-Zaps, die brechen. Make-Szenarien, die nicht triggern. Du verbringst Stunden damit, herauszufinden, warum deine Automatisierung nicht funktioniert.",
   },
   {
     icon: Clock,
     title: "Manuelle Prozesse",
-    description: "Listen exportieren, importieren, abgleichen. Kontakte von Hand taggen. Follow-ups manuell verschicken. Jeden Tag die gleichen Routinen."
+    description:
+      "Listen exportieren, importieren, abgleichen. Kontakte von Hand taggen. Follow-ups manuell verschicken. Jeden Tag die gleichen Routinen.",
   },
   {
     icon: AlertTriangle,
     title: "Fehlende Übersicht",
-    description: "Wo ist welcher Lead? Wer hat was gekauft? Was wurde schon kontaktiert? Du springst zwischen Tabs und verlierst trotzdem den Überblick."
+    description:
+      "Wo ist welcher Lead? Wer hat was gekauft? Was wurde schon kontaktiert? Du springst zwischen Tabs und verlierst trotzdem den Überblick.",
   },
   {
     icon: EuroIcon,
     title: "Steigende Softwarekosten",
-    description: "ActiveCampaign, ClickFunnels, Calendly, Zoom, Kajabi... Jeden Monat gehen Hunderte Euro für Tools drauf, die du nur halb nutzt."
+    description:
+      "ActiveCampaign, ClickFunnels, Calendly, Zoom, Kajabi... Jeden Monat gehen Hunderte Euro für Tools drauf, die du nur halb nutzt.",
   },
   {
     icon: TrendingDown,
     title: "Leads gehen verloren",
-    description: "Ohne ein funktionierendes System verschwinden Interessenten im Nirgendwo. Follow-ups werden vergessen, und potenzielle Kunden kaufen bei anderen."
-  }
+    description:
+      "Ohne ein funktionierendes System verschwinden Interessenten im Nirgendwo. Follow-ups werden vergessen, und potenzielle Kunden kaufen bei anderen.",
+  },
 ];
 
 const Problem = () => {
@@ -45,7 +51,6 @@ const Problem = () => {
     <section className="py-24 md:py-32 relative" ref={ref}>
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
-          
           {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -53,14 +58,14 @@ const Problem = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <span className="text-destructive/80 text-sm tracking-widest uppercase font-body">
-              Das Problem
-            </span>
+            <span className="text-destructive/80 text-sm tracking-widest uppercase font-body">Das Problem</span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mt-4 text-foreground">
-              Das Problem ist selten dein Marketing – <span className="text-destructive">sondern das System dahinter</span>
+              Das Problem ist selten dein Marketing{" "}
+              <span className="text-destructive">sondern das System dahinter</span>
             </h2>
             <p className="text-muted-foreground font-body mt-6 max-w-3xl mx-auto text-lg leading-relaxed">
-              Du investierst Zeit und Geld in dein Online-Marketing, aber die Ergebnisse bleiben hinter den Erwartungen. Die Ursache liegt oft nicht in der Strategie – sondern in der technischen Infrastruktur.
+              Du investierst Zeit und Geld in dein Online-Marketing, aber die Ergebnisse bleiben hinter den Erwartungen.
+              Die Ursache liegt oft nicht in der Strategie, sondern in der technischen Infrastruktur.
             </p>
           </motion.div>
 
@@ -91,14 +96,15 @@ const Problem = () => {
             className="mt-16 flex flex-col lg:flex-row items-center gap-8 lg:gap-12"
           >
             <div className="flex-shrink-0">
-              <img 
-                src={systemIntegration} 
-                alt="Verstreute Tools konsolidieren" 
+              <img
+                src={systemIntegration}
+                alt="Verstreute Tools konsolidieren"
                 className="w-48 h-48 md:w-64 md:h-64 object-cover rounded-lg border border-border/50 shadow-lg"
               />
             </div>
             <p className="text-muted-foreground font-body text-lg max-w-2xl text-center lg:text-left">
-              Wenn du dich hier wiedererkennst, bist du nicht allein. Das Software-Chaos ist der Alltag für die meisten Online-Unternehmer.
+              Wenn du dich hier wiedererkennst, bist du nicht allein. Das Software-Chaos ist der Alltag für die meisten
+              Online-Unternehmer.
             </p>
           </motion.div>
         </div>

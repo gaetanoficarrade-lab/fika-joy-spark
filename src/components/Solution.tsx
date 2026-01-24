@@ -8,33 +8,33 @@ const features = [
   {
     icon: Users,
     title: "CRM",
-    description: "Alle Kontakte, Leads und Kunden an einem Ort. Keine verstreuten Listen mehr."
+    description: "Alle Kontakte, Leads und Kunden an einem Ort. Keine verstreuten Listen mehr.",
   },
   {
     icon: Mail,
     title: "E-Mail-Marketing",
-    description: "Newsletter, Sequenzen und Automationen – ohne externes Tool."
+    description: "Newsletter, Sequenzen und Automationen ohne externes Tool.",
   },
   {
     icon: LayoutTemplate,
     title: "Funnel-Builder",
-    description: "Landing Pages, Sales Funnels und Opt-in-Seiten. Alles integriert."
+    description: "Landing Pages, Sales Funnels und Opt-in-Seiten. Alles integriert.",
   },
   {
     icon: Calendar,
     title: "Terminbuchung",
-    description: "Calendly-Alternative direkt im System. Sync mit deinem Kalender."
+    description: "Calendly-Alternative direkt im System. Sync mit deinem Kalender.",
   },
   {
     icon: GraduationCap,
     title: "Mitgliederbereiche",
-    description: "Online-Kurse und geschützte Inhalte ohne Kajabi oder Coachy."
+    description: "Online-Kurse und geschützte Inhalte ohne Kajabi oder Coachy.",
   },
   {
     icon: Workflow,
     title: "Automatisierungen",
-    description: "Komplexe Workflows, die Leads qualifizieren und Kunden betreuen."
-  }
+    description: "Komplexe Workflows, die Leads qualifizieren und Kunden betreuen.",
+  },
 ];
 
 const Solution = () => {
@@ -45,7 +45,6 @@ const Solution = () => {
     <section className="py-24 md:py-32 relative" ref={ref}>
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
-          
           {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -53,14 +52,13 @@ const Solution = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <span className="text-primary text-sm tracking-widest uppercase font-body">
-              Die Lösung
-            </span>
+            <span className="text-primary text-sm tracking-widest uppercase font-body">Die Lösung</span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mt-4 text-foreground">
               Ein System statt <span className="text-primary">fünf einzelner Tools</span>
             </h2>
             <p className="text-muted-foreground font-body mt-6 max-w-3xl mx-auto text-lg leading-relaxed">
-              Funnelmate vereint alle Marketing-Funktionen, die du brauchst, in einer Plattform. Basierend auf der bewährten GoHighLevel-Technologie bekommst du ein vollständiges Business-System.
+              Funnelmate vereint alle Marketing-Funktionen, die du brauchst, in einer Plattform. Basierend auf der
+              bewährten GoHighLevel-Technologie bekommst du ein vollständiges Business-System.
             </p>
           </motion.div>
 
@@ -73,9 +71,9 @@ const Solution = () => {
           >
             <div className="relative overflow-hidden rounded-xl border border-border">
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent z-10" />
-              <img 
-                src={automationWorkspace} 
-                alt="Professionelle Marketing Automation Workflows" 
+              <img
+                src={automationWorkspace}
+                alt="Professionelle Marketing Automation Workflows"
                 className="w-full h-64 md:h-80 lg:h-96 object-cover"
               />
             </div>
@@ -111,7 +109,8 @@ const Solution = () => {
               Der Unterschied liegt in der <span className="text-primary">Einrichtung</span>
             </h3>
             <p className="text-muted-foreground font-body text-lg max-w-2xl mx-auto mb-8">
-              Funnelmate ist mächtig – aber nur, wenn es richtig konfiguriert ist. Als zertifizierter Admin richte ich dein System so ein, dass es von Tag 1 an funktioniert. Keine Lernkurve, keine technischen Hürden.
+              Funnelmate ist mächtig, aber nur, wenn es richtig konfiguriert ist. Als zertifizierter Admin richte ich
+              dein System so ein, dass es von Tag 1 an funktioniert. Keine Lernkurve, keine technischen Hürden.
             </p>
             <a
               href="https://klick.gaetanoficarra.de/widget/booking/5s0iHWQ0crY7ogs9gviU"
