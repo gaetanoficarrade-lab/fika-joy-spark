@@ -3,7 +3,6 @@ import { Globe, ExternalLink, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import badge from "@/assets/ghl-badge.png";
-import { useBookingModal } from "@/hooks/useBookingModal";
 
 const links = [
   {
@@ -39,23 +38,19 @@ const links = [
   {
     title: "Kostenloses Erstgespräch",
     description: "Buche jetzt deinen Termin",
-    url: "",
+    url: "https://lp.gaetanoficarra.de/erstgesraech",
     internal: false,
     highlight: true,
-    bookingType: "erstgespraech" as const,
   },
   {
     title: "Support-Call buchen (197€)",
     description: "Schnelle Hilfe bei HighLevel-Fragen",
-    url: "",
+    url: "https://lp.gaetanoficarra.de/support_call",
     internal: false,
-    bookingType: "supportCall" as const,
   },
 ];
 
 const LinksPage = () => {
-  const { openBooking } = useBookingModal();
-  
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -89,17 +84,11 @@ const LinksPage = () => {
           {/* Links Grid */}
           <div className="space-y-4">
             {links.map((link, index) => (
-              <motion.button
+              <motion.a
                 key={link.title}
-                onClick={() => {
-                  if (link.internal) {
-                    window.location.href = link.url;
-                  } else if ((link as any).bookingType) {
-                    openBooking((link as any).bookingType);
-                  } else {
-                    window.open(link.url, "_blank", "noopener,noreferrer");
-                  }
-                }}
+                href={link.url}
+                target={link.internal ? "_self" : "_blank"}
+                rel={link.internal ? undefined : "noopener noreferrer"}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
@@ -122,7 +111,7 @@ const LinksPage = () => {
                     <ExternalLink className="w-5 h-5 text-primary flex-shrink-0" />
                   )}
                 </div>
-              </motion.button>
+              </motion.a>
             ))}
           </div>
         </div>

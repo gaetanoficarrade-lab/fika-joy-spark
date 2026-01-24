@@ -2,12 +2,10 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Calendar, Mail, MapPin, Phone } from "lucide-react";
-import { useBookingModal } from "@/hooks/useBookingModal";
 
 const FinalCTA = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const { openBooking } = useBookingModal();
 
   return (
     <section id="kontakt" className="py-32 relative" ref={ref}>
@@ -45,15 +43,17 @@ const FinalCTA = () => {
               In einem kurzen Gespräch schauen wir gemeinsam auf deine aktuelle Situation. Ich zeige dir, ob und wie
               Funnelmate für dich Sinn macht.
             </p>
-            <button
-              onClick={() => openBooking("erstgespraech")}
+            <a
+              href="https://lp.gaetanoficarra.de/erstgesraech"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-10 py-5 text-sm tracking-widest uppercase font-body text-primary-foreground rounded-sm transition-all duration-300 hover:scale-105 bg-primary hover:bg-primary/90"
               style={{
                 boxShadow: "0 0 30px hsl(var(--primary) / 0.3)",
               }}
             >
               Jetzt Erstgespräch vereinbaren
-            </button>
+            </a>
             <p className="text-muted-foreground text-sm font-body mt-4">
               Kurz sprechen, Setup verstehen, nächsten Schritt klären
             </p>
