@@ -77,7 +77,7 @@ const FinalCTA = () => {
                 icon: Phone,
                 label: "WhatsApp",
                 value: "0152 23856537",
-                href: "https://wa.me/4915223856537?text=Hey%2C%20ich%20interessiere%20mich%20für%20eine%20System-Analyse.",
+                href: "https://wa.me/4915223856537?text=Hey%2C%20ich%20bin%20an%20einer%20Zusammenarbeit%20%0Ainteressiert%20und%20h%C3%A4tte%20gerne%20weitere%20Infos.",
                 external: true,
               },
               { icon: MapPin, label: "Standort", value: "Bielefeld, Deutschland", href: null },
