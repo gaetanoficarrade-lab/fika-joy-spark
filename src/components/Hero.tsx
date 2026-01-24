@@ -6,14 +6,14 @@ const Hero = () => {
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
       {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-muted/20" />
-      
+
       {/* Subtle radial glow */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_hsl(43_74%_49%/0.05)_0%,_transparent_70%)]" />
-      
+
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -30,7 +30,7 @@ const Hero = () => {
                 ✓ Zertifizierter GoHighLevel Admin
               </span>
             </motion.div>
-            
+
             {/* Headline - Vision & Ergebnis */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -38,9 +38,10 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-6 leading-[1.15]"
             >
-              Mehr Zeit für dein Wachstum und <span className="text-primary">volle Kontrolle</span> durch ein zentrales, vollautomatisiertes Business-System!
+              Mehr Zeit für dein Wachstum und <span className="text-primary">volle Kontrolle</span> durch ein zentrales,
+              vollautomatisiertes Business-System!
             </motion.h1>
-            
+
             {/* Subheadline */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -48,9 +49,12 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="font-body text-muted-foreground text-lg md:text-xl mb-10 max-w-xl leading-relaxed"
             >
-              Gewinne täglich neue Leads und Kunden mit einer All-in-One-Lösung, die dein Marketing-Chaos beendet. Verabschiede dich von manueller Listenpflege und fehlerhaften Tool-Schnittstellen – ich richte dir mit Funnelmate (powered by HighLevel) ein Marketing-Setup ein, das reibungslos läuft und dein Online-Business planbar skaliert.
+              Gewinne täglich neue Leads und Kunden mit einer All-in-One-Lösung, die dein Marketing-Chaos beendet.
+              Verabschiede dich von manueller Listenpflege und fehlerhaften Tool-Schnittstellen. Ich richte dir mit
+              Funnelmate (powered by HighLevel) ein Marketing-Setup ein, das reibungslos läuft und dein Online-Business
+              planbar skaliert.
             </motion.p>
-            
+
             {/* CTA */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -65,7 +69,7 @@ const Hero = () => {
                   rel="noopener noreferrer"
                   className="group relative inline-flex items-center justify-center px-6 sm:px-10 py-4 sm:py-5 text-xs sm:text-sm tracking-widest uppercase font-body text-primary-foreground overflow-hidden rounded-sm transition-all duration-300 hover:scale-105 bg-primary hover:bg-primary/90"
                   style={{
-                    boxShadow: '0 0 30px hsl(var(--primary) / 0.3)'
+                    boxShadow: "0 0 30px hsl(var(--primary) / 0.3)",
                   }}
                 >
                   <span className="relative z-10">Jetzt Erstgespräch vereinbaren</span>
@@ -77,7 +81,7 @@ const Hero = () => {
               </div>
             </motion.div>
           </motion.div>
-          
+
           {/* Portrait Image with Badge Overlay */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
@@ -88,12 +92,12 @@ const Hero = () => {
             <div className="relative">
               {/* Glow effect behind image */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-platinum/10 rounded-full blur-3xl scale-110" />
-              <img 
-                src={portrait} 
-                alt="Gaetano Ficarra - Zertifizierter GoHighLevel Admin" 
+              <img
+                src={portrait}
+                alt="Gaetano Ficarra - Zertifizierter GoHighLevel Admin"
                 className="relative w-80 h-80 md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px] object-cover object-top rounded-full border-4 border-primary/30 shadow-2xl animate-glow-pulse"
               />
-              
+
               {/* GoHighLevel Badge - 5 o'clock position, sitting on circle edge */}
               <motion.a
                 href="https://directory.gohighlevel.com/germany/bielefeld/certified-admins/gaetano-ficarra?from=badge"
@@ -107,9 +111,9 @@ const Hero = () => {
               >
                 <div className="relative">
                   <div className="absolute inset-0 bg-primary/25 rounded-full blur-xl scale-110" />
-                  <img 
-                    src="https://directory.gohighlevel.com/images/BD_Certified_Admin_Main_Badge.png" 
-                    alt="GoHighLevel Certified Admin Badge" 
+                  <img
+                    src="https://directory.gohighlevel.com/images/BD_Certified_Admin_Main_Badge.png"
+                    alt="GoHighLevel Certified Admin Badge"
                     className="relative w-28 h-28 md:w-36 md:h-36 lg:w-44 lg:h-44 drop-shadow-2xl"
                   />
                 </div>
@@ -118,7 +122,7 @@ const Hero = () => {
           </motion.div>
         </div>
       </div>
-      
+
       {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
