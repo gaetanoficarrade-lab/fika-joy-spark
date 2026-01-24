@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { MessageCircle, ClipboardCheck, Rocket, Headphones } from "lucide-react";
-import { useBookingModal } from "@/hooks/useBookingModal";
 
 const steps = [
   {
@@ -34,7 +33,6 @@ const steps = [
 const Timeline = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const { openBooking } = useBookingModal();
 
   return (
     <section className="py-24 md:py-32 relative overflow-hidden" ref={ref}>
@@ -128,15 +126,17 @@ const Timeline = () => {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="text-center mt-16"
           >
-            <button
-              onClick={() => openBooking("erstgespraech")}
+            <a
+              href="https://lp.gaetanoficarra.de/erstgesraech"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-8 py-4 text-sm tracking-widest uppercase font-body text-primary-foreground bg-primary hover:bg-primary/90 rounded-sm transition-all duration-300 hover:scale-105"
               style={{
                 boxShadow: "0 0 20px hsl(var(--primary) / 0.3)",
               }}
             >
               Jetzt Erstgespräch vereinbaren
-            </button>
+            </a>
             <p className="text-muted-foreground text-sm font-body mt-4">
               Kurz sprechen, Setup verstehen, nächsten Schritt klären
             </p>

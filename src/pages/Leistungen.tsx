@@ -15,7 +15,6 @@ import {
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { useBookingModal } from "@/hooks/useBookingModal";
 
 const mainServices = [
   {
@@ -40,7 +39,7 @@ const mainServices = [
       { icon: Sparkles, text: "Best Practices aus 3+ Jahren Erfahrung" },
     ],
     cta: "Projekt anfragen",
-    ctaLink: "https://lp.gaetanoficarra.de/highlevel-erstgespraech",
+    ctaLink: "https://lp.gaetanoficarra.de/erstgesraech",
     popular: true,
     price: "Auf Anfrage",
     priceNote: "Individuell nach Projektumfang",
@@ -66,7 +65,7 @@ const mainServices = [
       { icon: Sparkles, text: "Perfekt für Hands-on-Typen" },
     ],
     cta: "Sessions buchen",
-    ctaLink: "https://lp.gaetanoficarra.de/highlevel-erstgespraech",
+    ctaLink: "https://lp.gaetanoficarra.de/erstgesraech",
     popular: false,
     price: "Auf Anfrage",
     priceNote: "Nach Anzahl der Sessions",
@@ -126,8 +125,6 @@ const additionalServices = [
 ];
 
 const Leistungen = () => {
-  const { openBooking } = useBookingModal();
-  
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -203,12 +200,14 @@ const Leistungen = () => {
                             <p className="font-display text-3xl text-primary">{service.price}</p>
                             <p className="text-muted-foreground text-sm font-body">{service.priceNote}</p>
                           </div>
-                          <button
-                            onClick={() => openBooking(service.ctaLink.includes("support_call") ? "supportCall" : "erstgespraech")}
+                          <a
+                            href={service.ctaLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground text-sm tracking-widest uppercase font-body hover:bg-primary/90 transition-all duration-300 rounded-sm"
                           >
                             {service.cta} <ArrowRight className="w-4 h-4" />
-                          </button>
+                          </a>
                         </div>
                       </div>
 
@@ -282,15 +281,17 @@ const Leistungen = () => {
                 Kein Problem. In einem kostenlosen Erstgespräch finden wir gemeinsam heraus, welche Option für deine
                 Situation am besten geeignet ist.
               </p>
-              <button
-                onClick={() => openBooking("erstgespraech")}
+              <a
+                href="https://lp.gaetanoficarra.de/erstgesraech"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-10 py-5 text-sm tracking-widest uppercase font-body text-primary-foreground bg-primary hover:bg-primary/90 transition-all duration-300 hover:scale-105 rounded-sm"
                 style={{
                   boxShadow: "0 0 30px hsl(var(--primary) / 0.3)",
                 }}
               >
                 Kostenloses Erstgespräch <ArrowRight className="w-4 h-4" />
-              </button>
+              </a>
             </motion.div>
           </div>
         </section>

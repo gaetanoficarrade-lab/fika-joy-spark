@@ -3,7 +3,6 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Users, Mail, LayoutTemplate, Calendar, GraduationCap, Workflow, ArrowRight } from "lucide-react";
 import automationWorkspace from "@/assets/automation-workspace.jpg";
-import { useBookingModal } from "@/hooks/useBookingModal";
 
 const features = [
   {
@@ -41,7 +40,6 @@ const features = [
 const Solution = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const { openBooking } = useBookingModal();
 
   return (
     <section className="py-24 md:py-32 relative" ref={ref}>
@@ -114,12 +112,14 @@ const Solution = () => {
               Funnelmate ist mächtig, aber nur, wenn es richtig konfiguriert ist. Als zertifizierter Admin richte ich
               dein System so ein, dass es von Tag 1 an funktioniert. Keine Lernkurve, keine technischen Hürden.
             </p>
-            <button
-              onClick={() => openBooking("erstgespraech")}
+            <a
+              href="https://lp.gaetanoficarra.de/erstgesraech"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-body text-sm uppercase tracking-widest transition-colors"
             >
               Jetzt Erstgespräch vereinbaren <ArrowRight className="w-4 h-4" />
-            </button>
+            </a>
           </motion.div>
         </div>
       </div>

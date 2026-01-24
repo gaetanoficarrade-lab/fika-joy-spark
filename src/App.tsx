@@ -6,7 +6,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import useScrollToTop from "./hooks/useScrollToTop";
 import ScrollToTopButton from "./components/ScrollToTopButton";
 import CookieBanner from "./components/CookieBanner";
-import { BookingModalProvider } from "./hooks/useBookingModal";
 import Index from "./pages/Index";
 import Leistungen from "./pages/Leistungen";
 import LinksPage from "./pages/Links";
@@ -28,27 +27,25 @@ const ScrollToTop = () => {
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <BookingModalProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <ScrollToTop />
-          <ScrollToTopButton />
-          <CookieBanner />
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/leistungen" element={<Leistungen />} />
-            <Route path="/links" element={<LinksPage />} />
-            <Route path="/highlevel-vs-funnelmate" element={<HighLevelVsFunnelmate />} />
-            <Route path="/agb" element={<AGB />} />
-            <Route path="/datenschutz" element={<Datenschutz />} />
-            <Route path="/impressum" element={<Impressum />} />
-            <Route path="/wa-generator" element={<WAGenerator />} />
-            <Route path="/utm-generator" element={<UTMGenerator />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </BookingModalProvider>
+      <Toaster />
+      <Sonner />
+      <BrowserRouter>
+        <ScrollToTop />
+        <ScrollToTopButton />
+        <CookieBanner />
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/leistungen" element={<Leistungen />} />
+          <Route path="/links" element={<LinksPage />} />
+          <Route path="/highlevel-vs-funnelmate" element={<HighLevelVsFunnelmate />} />
+          <Route path="/agb" element={<AGB />} />
+          <Route path="/datenschutz" element={<Datenschutz />} />
+          <Route path="/impressum" element={<Impressum />} />
+          <Route path="/wa-generator" element={<WAGenerator />} />
+          <Route path="/utm-generator" element={<UTMGenerator />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
 );
