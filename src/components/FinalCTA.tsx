@@ -20,8 +20,7 @@ const FinalCTA = () => {
           >
             <span className="text-primary text-sm tracking-widest uppercase font-body">Nächster Schritt</span>
             <h2 className="font-display text-4xl md:text-5xl mt-4 text-foreground">
-              Lass uns dein Marketing-System{" "}
-              <span className="text-gradient-primary">aufräumen</span>
+              Lass uns dein Marketing-System <span className="text-gradient-primary">aufräumen</span>
             </h2>
             <p className="text-muted-foreground font-body mt-6 max-w-2xl mx-auto text-lg">
               Kein Verkaufsgespräch. Kein Druck. Nur eine ehrliche Analyse deiner aktuellen Situation und ein klarer
@@ -45,7 +44,7 @@ const FinalCTA = () => {
               Funnelmate für dich Sinn macht.
             </p>
             <a
-              href="https://klick.gaetanoficarra.de/widget/booking/5s0iHWQ0crY7ogs9gviU"
+              href="https://lp.gaetanoficarra.de/highlevel-erstgespraech"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-10 py-5 text-sm tracking-widest uppercase font-body text-primary-foreground rounded-sm transition-all duration-300 hover:scale-105 bg-primary hover:bg-primary/90"

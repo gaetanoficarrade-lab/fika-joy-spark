@@ -7,17 +7,20 @@ const problems = [
   {
     icon: Layers,
     title: "Zu viele Tools",
-    description: "CRM, E-Mail-Tool, Funnel-Builder, Terminbuchung – du zahlst für 10 verschiedene Plattformen und verlierst den Überblick."
+    description:
+      "CRM, E-Mail-Tool, Funnel-Builder, Terminbuchung – du zahlst für 10 verschiedene Plattformen und verlierst den Überblick.",
   },
   {
     icon: AlertTriangle,
     title: "Leads gehen verloren",
-    description: "Ohne System verschwinden Interessenten. Follow-ups werden vergessen, und potenzielle Kunden kaufen bei der Konkurrenz."
+    description:
+      "Ohne System verschwinden Interessenten. Follow-ups werden vergessen, und potenzielle Kunden kaufen bei der Konkurrenz.",
   },
   {
     icon: Clock,
     title: "Stunden an Handarbeit",
-    description: "Copy-Paste, manuelle E-Mails, ständiges Hin- und Herwechseln. Zeit, die du für dein eigentliches Business verlierst."
+    description:
+      "Copy-Paste, manuelle E-Mails, ständiges Hin- und Herwechseln. Zeit, die du für dein eigentliches Business verlierst.",
   },
 ];
 
@@ -36,7 +39,6 @@ const ProblemSolution = () => {
     <section className="py-24 md:py-32 relative" ref={ref}>
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
-          
           {/* Problem Section */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -44,9 +46,7 @@ const ProblemSolution = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <span className="text-destructive/80 text-sm tracking-widest uppercase font-body">
-              Das Problem
-            </span>
+            <span className="text-destructive/80 text-sm tracking-widest uppercase font-body">Das Problem</span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mt-4 text-foreground">
               Warum dein aktuelles Setup <span className="text-destructive">dich ausbremst</span>
             </h2>
@@ -84,18 +84,18 @@ const ProblemSolution = () => {
                   <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
                     <Zap className="w-6 h-6 text-primary" />
                   </div>
-                  <span className="text-primary text-sm tracking-widest uppercase font-body">
-                    Die Lösung
-                  </span>
+                  <span className="text-primary text-sm tracking-widest uppercase font-body">Die Lösung</span>
                 </div>
                 <h3 className="font-display text-2xl md:text-3xl lg:text-4xl text-foreground mb-6">
                   Ein <span className="text-primary">zentrales System</span>, das für dich arbeitet
                 </h3>
                 <p className="text-muted-foreground text-lg font-body leading-relaxed mb-8">
-                  Mit GoHighLevel bekommst du alles in einer Plattform: CRM, E-Mail-Marketing, Funnels, Terminbuchung, Automatisierungen. Als zertifizierter Experte richte ich dein System so ein, dass es von Tag 1 funktioniert.
+                  Mit GoHighLevel bekommst du alles in einer Plattform: CRM, E-Mail-Marketing, Funnels, Terminbuchung,
+                  Automatisierungen. Als zertifizierter Experte richte ich dein System so ein, dass es von Tag 1
+                  funktioniert.
                 </p>
                 <a
-                  href="https://klick.gaetanoficarra.de/widget/booking/5s0iHWQ0crY7ogs9gviU"
+                  href="https://lp.gaetanoficarra.de/highlevel-erstgespraech"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-body text-sm uppercase tracking-widest transition-colors"
@@ -103,7 +103,7 @@ const ProblemSolution = () => {
                   Jetzt Erstgespräch buchen <ArrowRight className="w-4 h-4" />
                 </a>
               </div>
-              
+
               <div className="space-y-4">
                 {solutions.map((solution, index) => (
                   <motion.div

@@ -282,7 +282,7 @@ const Leistungen = () => {
                 Situation am besten geeignet ist.
               </p>
               <a
-                href="https://klick.gaetanoficarra.de/widget/booking/5s0iHWQ0crY7ogs9gviU"
+                href="https://lp.gaetanoficarra.de/highlevel-erstgespraech"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-10 py-5 text-sm tracking-widest uppercase font-body text-primary-foreground bg-primary hover:bg-primary/90 transition-all duration-300 hover:scale-105 rounded-sm"

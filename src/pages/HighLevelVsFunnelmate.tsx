@@ -40,7 +40,8 @@ const HighLevelVsFunnelmate = () => {
               className="text-center max-w-3xl mx-auto mb-16"
             >
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground mb-6">
-                <span className="text-gradient-primary">HighLevel</span> vs <span className="text-gradient-primary">Funnelmate</span>
+                <span className="text-gradient-primary">HighLevel</span> vs{" "}
+                <span className="text-gradient-primary">Funnelmate</span>
               </h1>
               <p className="text-muted-foreground text-lg font-body">
                 Beide Plattformen nutzen die gleiche Technologie – aber welche ist die richtige für dich?
@@ -55,7 +56,9 @@ const HighLevelVsFunnelmate = () => {
               className="bg-card border border-primary/30 p-8 rounded-lg max-w-3xl mx-auto mb-20 text-center"
             >
               <p className="text-foreground font-body text-lg leading-relaxed">
-                <span className="text-primary font-display">Wichtig zu wissen:</span> Funnelmate basiert auf HighLevel und bietet die gleichen Funktionen – aber mit deutschem Support, deutscher Community und DSGVO-Konformität.
+                <span className="text-primary font-display">Wichtig zu wissen:</span> Funnelmate basiert auf HighLevel
+                und bietet die gleichen Funktionen – aber mit deutschem Support, deutscher Community und
+                DSGVO-Konformität.
               </p>
             </motion.div>
 
@@ -69,15 +72,23 @@ const HighLevelVsFunnelmate = () => {
               <h2 className="font-display text-3xl text-center text-foreground mb-8">
                 Ein Tool ersetzt <span className="text-gradient-primary">alles</span>
               </h2>
-              
+
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse">
                   <thead>
                     <tr className="border-b border-border">
-                      <th className="text-left py-4 px-4 font-display text-sm uppercase tracking-widest text-primary">Funktion</th>
-                      <th className="text-left py-4 px-4 font-display text-sm uppercase tracking-widest text-primary">Typische Alternative</th>
-                      <th className="text-left py-4 px-4 font-display text-sm uppercase tracking-widest text-primary">Einzelkosten</th>
-                      <th className="text-center py-4 px-4 font-display text-sm uppercase tracking-widest text-primary">All-in-One</th>
+                      <th className="text-left py-4 px-4 font-display text-sm uppercase tracking-widest text-primary">
+                        Funktion
+                      </th>
+                      <th className="text-left py-4 px-4 font-display text-sm uppercase tracking-widest text-primary">
+                        Typische Alternative
+                      </th>
+                      <th className="text-left py-4 px-4 font-display text-sm uppercase tracking-widest text-primary">
+                        Einzelkosten
+                      </th>
+                      <th className="text-center py-4 px-4 font-display text-sm uppercase tracking-widest text-primary">
+                        All-in-One
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
@@ -112,7 +123,7 @@ const HighLevelVsFunnelmate = () => {
               <h2 className="font-display text-3xl text-center text-foreground mb-8">
                 Direkt-<span className="text-gradient-primary">Vergleich</span>
               </h2>
-              
+
               <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 {/* HighLevel Card */}
                 <div className="bg-card border border-border p-8 rounded-lg">
@@ -202,10 +213,11 @@ const HighLevelVsFunnelmate = () => {
                 Nicht sicher, was das Richtige für dich ist?
               </h2>
               <p className="text-muted-foreground font-body mb-8 max-w-xl mx-auto">
-                In einem kostenlosen Erstgespräch finden wir gemeinsam heraus, welche Plattform am besten zu deinen Anforderungen passt.
+                In einem kostenlosen Erstgespräch finden wir gemeinsam heraus, welche Plattform am besten zu deinen
+                Anforderungen passt.
               </p>
               <a
-                href="https://klick.gaetanoficarra.de/widget/booking/5s0iHWQ0crY7ogs9gviU"
+                href="https://lp.gaetanoficarra.de/highlevel-erstgespraech"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 text-sm tracking-widest uppercase font-body hover:bg-primary/90 transition-all duration-300"

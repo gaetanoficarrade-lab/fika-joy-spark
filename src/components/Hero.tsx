@@ -38,9 +38,8 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-6 leading-[1.15]"
             >
-              Mehr Zeit für dein Wachstum und{" "}
-              <span className="text-gradient-primary">volle Kontrolle</span> durch ein zentrales,
-              vollautomatisiertes Business-System!
+              Mehr Zeit für dein Wachstum und <span className="text-gradient-primary">volle Kontrolle</span> durch ein
+              zentrales, vollautomatisiertes Business-System!
             </motion.h1>
 
             {/* Subheadline */}
@@ -65,7 +64,7 @@ const Hero = () => {
             >
               <div className="flex flex-col items-start sm:items-start">
                 <a
-                  href="https://klick.gaetanoficarra.de/widget/booking/5s0iHWQ0crY7ogs9gviU"
+                  href="https://lp.gaetanoficarra.de/highlevel-erstgespraech"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group relative inline-flex items-center justify-center px-6 sm:px-10 py-4 sm:py-5 text-xs sm:text-sm tracking-widest uppercase font-body text-primary-foreground overflow-hidden rounded-sm transition-all duration-300 hover:scale-105 bg-primary hover:bg-primary/90"

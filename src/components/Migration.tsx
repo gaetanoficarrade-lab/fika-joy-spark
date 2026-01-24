@@ -23,7 +23,6 @@ const Migration = () => {
     <section className="py-24 md:py-32 bg-card relative" ref={ref}>
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
-          
           {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -31,14 +30,13 @@ const Migration = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <span className="text-primary text-sm tracking-widest uppercase font-body">
-              Migration
-            </span>
+            <span className="text-primary text-sm tracking-widest uppercase font-body">Migration</span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mt-4 text-foreground">
               Du nutzt bereits andere Tools? <span className="text-primary">Das ist der Normalfall.</span>
             </h2>
             <p className="text-muted-foreground font-body mt-6 max-w-3xl mx-auto text-lg leading-relaxed">
-              Die meisten meiner Kunden kommen von anderen Plattformen. Ein Schwerpunkt meiner Arbeit ist die sichere Migration deiner bestehenden Daten und Prozesse.
+              Die meisten meiner Kunden kommen von anderen Plattformen. Ein Schwerpunkt meiner Arbeit ist die sichere
+              Migration deiner bestehenden Daten und Prozesse.
             </p>
           </motion.div>
 
@@ -68,18 +66,20 @@ const Migration = () => {
               {
                 icon: Database,
                 title: "Sichere Migration",
-                description: "Kontakte, Tags, Listen und Automationen werden sorgfältig in dein neues System übertragen."
+                description:
+                  "Kontakte, Tags, Listen und Automationen werden sorgfältig in dein neues System übertragen.",
               },
               {
                 icon: Shield,
                 title: "Kein Datenverlust",
-                description: "Alle wichtigen Daten bleiben erhalten. Ich prüfe jeden Schritt, bevor wir live gehen."
+                description: "Alle wichtigen Daten bleiben erhalten. Ich prüfe jeden Schritt, bevor wir live gehen.",
               },
               {
                 icon: Clock,
                 title: "Kein Stillstand",
-                description: "Dein Business läuft weiter. Die Migration erfolgt parallel, ohne Unterbrechung deiner Prozesse."
-              }
+                description:
+                  "Dein Business läuft weiter. Die Migration erfolgt parallel, ohne Unterbrechung deiner Prozesse.",
+              },
             ].map((benefit, index) => (
               <motion.div
                 key={benefit.title}
@@ -105,7 +105,7 @@ const Migration = () => {
             className="text-center mt-16"
           >
             <a
-              href="https://klick.gaetanoficarra.de/widget/booking/5s0iHWQ0crY7ogs9gviU"
+              href="https://lp.gaetanoficarra.de/highlevel-erstgespraech"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-body text-sm uppercase tracking-widest transition-colors"

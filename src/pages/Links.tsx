@@ -38,7 +38,7 @@ const links = [
   {
     title: "Kostenloses Erstgespräch",
     description: "Buche jetzt deinen Termin",
-    url: "https://klick.gaetanoficarra.de/widget/booking/5s0iHWQ0crY7ogs9gviU",
+    url: "https://lp.gaetanoficarra.de/highlevel-erstgespraech",
     internal: false,
     highlight: true,
   },
