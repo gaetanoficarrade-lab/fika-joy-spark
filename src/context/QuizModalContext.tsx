@@ -87,35 +87,32 @@ export const QuizModalProvider = ({ children }: { children: ReactNode }) => {
               className="absolute inset-0 bg-background/90 backdrop-blur-sm"
             />
 
-            {/* Modal */}
+            {/* Modal - transparent design */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ duration: 0.3 }}
-              className="relative w-full max-w-2xl bg-card border border-border rounded-xl shadow-2xl overflow-hidden max-h-[90vh] flex flex-col"
+              className="relative w-full max-w-2xl max-h-[90vh] flex flex-col items-center"
             >
               {/* Close Button */}
               <button
                 onClick={closeQuizModal}
-                className="absolute top-4 right-4 z-10 p-2 text-muted-foreground hover:text-foreground transition-colors rounded-full hover:bg-muted"
+                className="absolute top-0 right-0 z-10 p-2 text-white/70 hover:text-white transition-colors rounded-full hover:bg-white/10"
                 aria-label="Schließen"
               >
-                <X className="w-6 h-6" />
+                <X className="w-7 h-7" />
               </button>
 
-              {/* Header */}
-              <div className="p-6 pb-4 border-b border-border">
-                <h2 className="font-display text-2xl text-foreground pr-10">
-                  Erzähl mir mehr über dich
-                </h2>
-                <p className="text-muted-foreground font-body mt-2 text-sm">
+              {/* Header - yellow, larger */}
+              <div className="text-center mb-6 px-12">
+                <h2 className="font-display text-3xl md:text-4xl text-[#D4A853] leading-tight">
                   Beantworte ein paar Fragen, damit ich optimal auf unser Gespräch vorbereitet bin.
-                </p>
+                </h2>
               </div>
 
               {/* Survey Iframe */}
-              <div className="flex-1 overflow-auto p-6">
+              <div className="w-full overflow-auto">
                 <iframe
                   src={surveyUrl}
                   style={{ width: "100%", minHeight: "500px", border: "none", overflow: "hidden" }}
