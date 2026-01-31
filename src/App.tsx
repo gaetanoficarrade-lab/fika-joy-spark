@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import useScrollToTop from "./hooks/useScrollToTop";
 import ScrollToTopButton from "./components/ScrollToTopButton";
 import CookieBanner from "./components/CookieBanner";
+import ExitIntentPopup from "./components/ExitIntentPopup";
 import { QuizModalProvider } from "./context/QuizModalContext";
 import Index from "./pages/Index";
 import Leistungen from "./pages/Leistungen";
@@ -36,6 +37,7 @@ const App = () => (
           <ScrollToTop />
           <ScrollToTopButton />
           <CookieBanner />
+          <ExitIntentPopup />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/leistungen" element={<Leistungen />} />
