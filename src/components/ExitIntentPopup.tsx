@@ -6,18 +6,21 @@ const ExitIntentPopup = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [hasShown, setHasShown] = useState(false);
 
-  const handleExitIntent = useCallback((e: MouseEvent) => {
-    // Nur triggern wenn Maus nach oben verlässt (y < 10) und noch nicht gezeigt wurde
-    if (e.clientY < 10 && !hasShown) {
-      // Check localStorage ob schon mal gezeigt wurde (in dieser Session)
-      const alreadyShown = sessionStorage.getItem("exitIntentShown");
-      if (!alreadyShown) {
-        setIsOpen(true);
-        setHasShown(true);
-        sessionStorage.setItem("exitIntentShown", "true");
+  const handleExitIntent = useCallback(
+    (e: MouseEvent) => {
+      // Nur triggern wenn Maus nach oben verlässt (y < 10) und noch nicht gezeigt wurde
+      if (e.clientY < 10 && !hasShown) {
+        // Check localStorage ob schon mal gezeigt wurde (in dieser Session)
+        const alreadyShown = sessionStorage.getItem("exitIntentShown");
+        if (!alreadyShown) {
+          setIsOpen(true);
+          setHasShown(true);
+          sessionStorage.setItem("exitIntentShown", "true");
+        }
       }
-    }
-  }, [hasShown]);
+    },
+    [hasShown],
+  );
 
   useEffect(() => {
     // Kurze Verzögerung bevor Exit-Intent aktiv wird (3 Sekunden)
@@ -34,7 +37,9 @@ const ExitIntentPopup = () => {
   // Body-Scroll verhindern wenn Popup offen
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [isOpen]);
 
   const closePopup = () => setIsOpen(false);
@@ -42,7 +47,7 @@ const ExitIntentPopup = () => {
   const features = [
     "Funnel-Plan in 15 Minuten erstellen",
     "KI-gestützte Textgenerierung",
-    "Fertige Checklisten & Templates"
+    "Fertige Checklisten & Templates",
   ];
 
   return (
@@ -74,7 +79,7 @@ const ExitIntentPopup = () => {
           >
             {/* Gradient Accent Top */}
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500" />
-            
+
             {/* Glow Effect */}
             <div className="absolute -top-20 -right-20 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl" />
             <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl" />
@@ -92,14 +97,18 @@ const ExitIntentPopup = () => {
               {/* Badge */}
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-white/10 mb-6">
                 <Sparkles className="w-4 h-4 text-purple-400" />
-                <span className="text-sm font-medium text-white/80">
-                  Bevor du gehst...
-                </span>
+                <span className="text-sm font-medium text-white/80">Bevor du gehst...</span>
               </div>
 
               {/* Logo/Icon */}
               <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center shadow-lg shadow-purple-500/30">
-                <svg viewBox="0 0 24 24" className="w-8 h-8 text-white" fill="none" stroke="currentColor" strokeWidth="2">
+                <svg
+                  viewBox="0 0 24 24"
+                  className="w-8 h-8 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
                   <path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z" strokeLinejoin="round" />
                   <path d="M13 13l6 6" strokeLinecap="round" />
                 </svg>
@@ -116,7 +125,7 @@ const ExitIntentPopup = () => {
 
               {/* Subheadline */}
               <p className="text-white/60 text-lg mb-6 max-w-md mx-auto">
-                Erstelle deinen kompletten Funnel-Plan in nur 15 Minuten – mit KI-Power.
+                Erstelle deinen kompletten Funnel-Plan in nur 15 Minuten mit KI-Power.
               </p>
 
               {/* Features */}
@@ -149,9 +158,7 @@ const ExitIntentPopup = () => {
               </motion.a>
 
               {/* Secondary Text */}
-              <p className="text-white/40 text-sm mt-4">
-                100% kostenlos • Keine Kreditkarte nötig
-              </p>
+              <p className="text-white/40 text-sm mt-4">100% kostenlos • Keine Kreditkarte nötig</p>
             </div>
           </motion.div>
         </motion.div>
