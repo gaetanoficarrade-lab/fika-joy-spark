@@ -60,12 +60,12 @@ const Problem = () => {
           >
             <span className="text-destructive/80 text-sm tracking-widest uppercase font-body">Das Problem</span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mt-4 text-foreground">
-              Das Problem ist selten dein Marketing{" "}
-              <span className="text-gradient-primary">sondern das System dahinter</span>
+              Dein Wachstum scheitert nicht am Marketing{" "}
+              <span className="text-gradient-primary">sondern an fehlender Struktur</span>
             </h2>
             <p className="text-muted-foreground font-body mt-6 max-w-3xl mx-auto text-lg leading-relaxed">
-              Du investierst Zeit und Geld in dein Online-Marketing, aber die Ergebnisse bleiben hinter den Erwartungen.
-              Die Ursache liegt oft nicht in der Strategie, sondern in der technischen Infrastruktur.
+              Du bekommst Anfragen und Leads, aber sie versickern im System-Chaos. Manuelle Prozesse, unübersichtliche Tools
+              und fehlende Automatisierung kosten dich Zeit, Nerven und letztlich Umsatz.
             </p>
           </motion.div>
 
@@ -103,8 +103,7 @@ const Problem = () => {
               />
             </div>
             <p className="text-muted-foreground font-body text-lg max-w-2xl text-center lg:text-left">
-              Wenn du dich hier wiedererkennst, bist du nicht allein. Das Software-Chaos ist der Alltag für die meisten
-              Online-Unternehmer.
+              Wenn du regelmäßig Anfragen bekommst, aber trotzdem das Gefühl hast, ständig hinterherzurennen, dann liegt es nicht an dir. Es fehlt ein System, das für dich arbeitet.
             </p>
           </motion.div>
         </div>

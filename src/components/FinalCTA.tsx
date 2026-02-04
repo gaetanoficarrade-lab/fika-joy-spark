@@ -22,11 +22,11 @@ const FinalCTA = () => {
           >
             <span className="text-primary text-sm tracking-widest uppercase font-body">Nächster Schritt</span>
             <h2 className="font-display text-4xl md:text-5xl mt-4 text-foreground">
-              Lass uns dein Marketing-System <span className="text-gradient-primary">aufräumen</span>
+              Lass uns <span className="text-gradient-primary">Ordnung schaffen</span>
             </h2>
             <p className="text-muted-foreground font-body mt-6 max-w-2xl mx-auto text-lg">
-              Kein Verkaufsgespräch. Kein Druck. Nur eine ehrliche Analyse deiner aktuellen Situation und ein klarer
-              Plan, wie es weitergehen kann.
+              Kein Verkaufsgespräch. Kein Druck. Wir schauen gemeinsam auf deine aktuelle Situation und klären,
+              ob und wie ich dir helfen kann.
             </p>
           </motion.div>
 
@@ -40,10 +40,10 @@ const FinalCTA = () => {
             <div className="flex items-center justify-center w-16 h-16 bg-primary/10 rounded-lg mb-6 mx-auto">
               <Calendar className="w-8 h-8 text-primary" />
             </div>
-            <h3 className="font-display text-2xl md:text-3xl text-foreground mb-4">System-Analyse</h3>
+            <h3 className="font-display text-2xl md:text-3xl text-foreground mb-4">Kostenlose System-Analyse</h3>
             <p className="text-muted-foreground font-body mb-8 leading-relaxed max-w-xl mx-auto">
-              In einem kurzen Gespräch schauen wir gemeinsam auf deine aktuelle Situation. Ich zeige dir, ob und wie
-              Funnelmate für dich Sinn macht.
+              In einem kurzen Gespräch schauen wir gemeinsam auf deine aktuelle Situation. Ich zeige dir, wo
+              Potenzial liegt und wie wir Ordnung in dein System bringen können.
             </p>
             <button
               onClick={openQuizModal}

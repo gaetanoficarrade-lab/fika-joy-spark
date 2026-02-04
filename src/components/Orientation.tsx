@@ -6,18 +6,18 @@ import { Users, Building2, Briefcase, ArrowRight } from "lucide-react";
 const targetGroups = [
   {
     icon: Briefcase,
-    title: "Selbstständige",
-    description: "Solopreneure, die ihr Marketing systematisieren und automatisieren wollen.",
+    title: "Coaches & Berater",
+    description: "Selbstständige mit laufendem Business, die endlich Struktur in Leads, Termine und Follow-ups bringen wollen.",
   },
   {
     icon: Building2,
-    title: "Kleine & mittlere Unternehmen",
-    description: "Teams, die mehrere Tools konsolidieren und Prozesse effizienter gestalten möchten.",
+    title: "Dienstleister & Agenturen",
+    description: "Unternehmer, deren Wachstum nicht am Marketing scheitert, sondern an fehlenden Prozessen und Übersicht.",
   },
   {
     icon: Users,
-    title: "SaaS- & White-Label-Agenturen",
-    description: "Anbieter, die GoHighLevel als technische Basis nutzen und Experten-Support brauchen.",
+    title: "Unternehmer mit Wachstumsfokus",
+    description: "Menschen, die verstanden haben: Ordnung und Automatisierung sind kein Nice-to-have, sondern Voraussetzung.",
   },
 ];
 
@@ -38,13 +38,11 @@ const Orientation = () => {
           >
             <span className="text-primary text-sm tracking-widest uppercase font-body">Orientierung</span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mt-4 text-foreground">
-              Für alle, die ihr Marketing <span className="text-primary">vereinfachen</span> wollen und nicht
-              verkomplizieren
+              Für Unternehmer, die <span className="text-primary">Klarheit</span> wollen statt Tool-Chaos
             </h2>
             <p className="text-muted-foreground font-body mt-6 max-w-3xl mx-auto text-lg leading-relaxed">
-              Hier geht es nicht um ein weiteres Tool. Hier geht es um ein durchdachtes System, das für dich arbeitet.
-              Funnelmate ist die All-in-One-Plattform, die auf der Technologie von GoHighLevel basiert und ich bin dein
-              zertifizierter Admin, der dieses System für dich einrichtet und optimiert.
+              Du willst keine neuen Tools lernen, keine Systeme vergleichen und nicht an Technik basteln. Du willst ein zentrales Setup,
+              das zuverlässig Leads sammelt, Termine koordiniert und Follow-ups automatisiert. Genau das baue ich für dich.
             </p>
           </motion.div>
 
@@ -76,23 +74,23 @@ const Orientation = () => {
           >
             <div className="grid md:grid-cols-3 gap-8 text-center">
               <div>
-                <span className="text-primary text-sm tracking-widest uppercase font-body block mb-3">Das System</span>
-                <h4 className="font-display text-lg text-foreground">Funnelmate</h4>
-                <p className="text-muted-foreground font-body text-sm mt-2">Deine All-in-One Marketing-Plattform</p>
+                <span className="text-primary text-sm tracking-widest uppercase font-body block mb-3">Das Ergebnis</span>
+                <h4 className="font-display text-lg text-foreground">Ein aufgeräumtes System</h4>
+                <p className="text-muted-foreground font-body text-sm mt-2">Alles an einem Ort, nichts geht verloren</p>
               </div>
               <div>
                 <span className="text-primary text-sm tracking-widest uppercase font-body block mb-3">
-                  Die Technologie
+                  Dein Vorteil
                 </span>
-                <h4 className="font-display text-lg text-foreground">GoHighLevel</h4>
-                <p className="text-muted-foreground font-body text-sm mt-2">Die technische Basis dahinter</p>
+                <h4 className="font-display text-lg text-foreground">Keine Technik-Arbeit</h4>
+                <p className="text-muted-foreground font-body text-sm mt-2">Ich baue, du konzentrierst dich auf Kunden</p>
               </div>
               <div>
                 <span className="text-primary text-sm tracking-widest uppercase font-body block mb-3">
                   Dein Ansprechpartner
                 </span>
-                <h4 className="font-display text-lg text-foreground">Zertifizierter Admin</h4>
-                <p className="text-muted-foreground font-body text-sm mt-2">Technischer Architekt für dein System</p>
+                <h4 className="font-display text-lg text-foreground">Gaetano Ficarra</h4>
+                <p className="text-muted-foreground font-body text-sm mt-2">Zertifizierter Admin & System-Architekt</p>
               </div>
             </div>
           </motion.div>

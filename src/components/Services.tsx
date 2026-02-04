@@ -7,25 +7,25 @@ import { Link } from "react-router-dom";
 const services = [
   {
     icon: Settings,
-    title: "Done-For-You Setup",
+    title: "Komplett-Setup",
     description:
-      "Ich richte dein HighLevel komplett für dich ein. Funnels, Automations, CRM alles perfekt konfiguriert und startklar. Du lehnst dich zurück, ich mache den Rest.",
+      "Ich baue dir dein komplettes System: Leads, Termine, Follow-ups, Automationen. Du lehnst dich zurück und bekommst alles startklar übergeben.",
     benefits: [
-      "Komplett fertig eingerichtet",
-      "Funnels & Automationen",
-      "CRM-Setup & Integrationen",
+      "Fertig eingerichtet & funktionsfähig",
+      "Alle Prozesse automatisiert",
+      "Kein Technik-Wissen nötig",
       "30 Tage Support inklusive",
     ],
     popular: true,
   },
   {
     icon: Users,
-    title: "Done-With-You Live",
+    title: "Gemeinsam aufbauen",
     description:
-      "Wir arbeiten gemeinsam live an deinem System. Du lernst dabei, stellst Fragen und bekommst gleichzeitig alles professionell eingerichtet.",
+      "Wir arbeiten live zusammen an deinem System. Du verstehst, was passiert, kannst Fragen stellen und hast am Ende volle Klarheit.",
     benefits: [
       "Live Zusammenarbeit",
-      "Du lernst während wir bauen",
+      "Volle Transparenz",
       "Aufnahmen aller Sessions",
       "60 Tage Support inklusive",
     ],
@@ -35,7 +35,7 @@ const services = [
     icon: Headphones,
     title: "Support-Call",
     description:
-      "Steckst du fest oder hast eine spezifische Frage? Buche einen 1:1 Support-Call und ich löse dein Problem schnell und unkompliziert.",
+      "Du hast eine spezifische Frage oder steckst fest? In einem 1:1 Call lösen wir dein Problem schnell und unkompliziert.",
     benefits: ["1:1 Video-Call", "Bildschirmfreigabe", "Problemlösung in Echtzeit", "Aufnahme des Calls"],
     popular: false,
   },
@@ -131,8 +131,7 @@ const Services = () => {
             </div>
 
             <p className="text-muted-foreground text-lg font-body leading-relaxed mb-6">
-              Du bist SaaS-Anbieter und nutzt GoHighLevel als Basis? Ich unterstütze dich und deine Kunden mit
-              professionellem Support:
+              Du bist SaaS-Anbieter und brauchst professionellen Support für deine Kunden? Ich übernehme das für dich:
             </p>
 
             <ul className="space-y-4 mb-8">
