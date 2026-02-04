@@ -72,7 +72,7 @@ const Hero = () => {
                     boxShadow: "0 0 30px hsl(var(--primary) / 0.3)",
                   }}
                 >
-                  <span className="relative z-10">Jetzt Erstgespräch vereinbaren</span>
+                  <span className="relative z-10">System-Analyse starten</span>
                   <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                 </button>
                 <span className="text-muted-foreground text-xs sm:text-sm font-body mt-3 max-w-[280px] sm:max-w-none">
