@@ -56,11 +56,11 @@ const Solution = () => {
           >
             <span className="text-primary text-sm tracking-widest uppercase font-body">Die Lösung</span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mt-4 text-foreground">
-              Ein System statt <span className="text-gradient-primary">fünf einzelner Tools</span>
+              Ein zentrales System <span className="text-gradient-primary">das für dich arbeitet</span>
             </h2>
             <p className="text-muted-foreground font-body mt-6 max-w-3xl mx-auto text-lg leading-relaxed">
-              Funnelmate vereint alle Marketing-Funktionen, die du brauchst, in einer Plattform. Basierend auf der
-              bewährten GoHighLevel-Technologie bekommst du ein vollständiges Business-System.
+              Statt fünf einzelner Tools, die nicht miteinander sprechen, bekommst du ein sauber aufgebautes System.
+              Alles an einem Ort: Leads, Termine, Follow-ups, Automationen. Ich richte es dir so ein, dass es vom ersten Tag an funktioniert.
             </p>
           </motion.div>
 
@@ -108,11 +108,11 @@ const Solution = () => {
             className="bg-gradient-to-br from-card to-primary/5 border border-primary/20 p-10 md:p-12 rounded-lg text-center"
           >
             <h3 className="font-display text-2xl md:text-3xl text-foreground mb-4">
-              Der Unterschied liegt in der <span className="text-primary">Einrichtung</span>
+              Der Unterschied: <span className="text-primary">Ich baue es für dich</span>
             </h3>
             <p className="text-muted-foreground font-body text-lg max-w-2xl mx-auto mb-8">
-              Funnelmate ist mächtig, aber nur, wenn es richtig konfiguriert ist. Als zertifizierter Admin richte ich
-              dein System so ein, dass es von Tag 1 an funktioniert. Keine Lernkurve, keine technischen Hürden.
+              Du musst kein Tool lernen, keine Tutorials schauen, keine Technik verstehen. Ich richte dein System
+              komplett ein, sodass du dich auf das konzentrieren kannst, was wirklich zählt: Kunden und Umsatz.
             </p>
             <button
               onClick={openQuizModal}

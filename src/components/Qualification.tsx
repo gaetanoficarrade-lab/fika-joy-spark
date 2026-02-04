@@ -4,17 +4,17 @@ import { useRef } from "react";
 import { Check, X } from "lucide-react";
 
 const suitableFor = [
-  "Selbstständige, die ihr Marketing endlich systematisieren wollen",
-  "Kleine und mittlere Unternehmen mit Wachstumsambitionen",
-  "Coaches, Berater und Dienstleister, die Leads automatisiert gewinnen möchten",
-  "SaaS- und White-Label-Agenturen, die GoHighLevel als Basis nutzen",
-  "Unternehmer, die bereit sind, in ein langfristiges System zu investieren"
+  "Selbstständige, Coaches und Berater mit laufendem Business",
+  "Unternehmer, die regelmäßig Anfragen oder Leads bekommen",
+  "Menschen, deren Wachstum an fehlender Struktur scheitert, nicht am Marketing",
+  "Unternehmer, die verstanden haben: Ordnung und Prozesse sind Voraussetzung für planbares Wachstum",
+  "Alle, die sich auf Kunden und Umsatz konzentrieren wollen, statt auf Technik"
 ];
 
 const notSuitableFor = [
-  "Wer nur ein einzelnes Tool sucht, ohne systemischen Ansatz",
-  "Wer nicht bereit ist, Prozesse zu überdenken",
-  "Wer keine Zeit für eine saubere Einrichtung investieren möchte"
+  "Anfänger, die noch kein laufendes Business haben",
+  "Bastler und Toolspieler, die alles selbst machen wollen",
+  "Wer nicht bereit ist, Verantwortung für Prozesse abzugeben"
 ];
 
 const Qualification = () => {
@@ -37,10 +37,10 @@ const Qualification = () => {
               Zielgruppe
             </span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mt-4 text-foreground">
-              Für wen diese Lösung <span className="text-primary">sinnvoll ist</span>
+              Für wen ich <span className="text-primary">der richtige Partner</span> bin
             </h2>
             <p className="text-muted-foreground font-body mt-6 max-w-2xl mx-auto text-lg leading-relaxed">
-              Nicht jede Lösung passt zu jedem. Hier ist eine klare Orientierung.
+              Meine Dienstleistung ist nicht für jeden geeignet. Hier ist eine ehrliche Orientierung.
             </p>
           </motion.div>
 

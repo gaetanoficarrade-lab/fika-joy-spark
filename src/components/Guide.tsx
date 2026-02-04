@@ -19,7 +19,7 @@ const Guide = () => {
           >
             <span className="text-primary text-sm tracking-widest uppercase font-body">Dein Ansprechpartner</span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mt-4 text-foreground">
-              Technik, die läuft <span className="text-primary">weil jemand mitdenkt</span>
+              Ich bringe <span className="text-primary">Ordnung in dein System</span>
             </h2>
           </motion.div>
 
@@ -48,28 +48,26 @@ const Guide = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
             >
               <p className="text-muted-foreground text-lg font-body leading-relaxed mb-6">
-                Ich bin Gaetano Ficarra, zertifizierter GoHighLevel Admin. Meine Rolle ist nicht, dir ein Tool zu
-                verkaufen, sondern als technischer Architekt dein Marketing-System so aufzubauen, dass es zuverlässig
-                funktioniert.
+                Ich bin Gaetano Ficarra, zertifizierter GoHighLevel Admin. Meine Aufgabe ist es, dir ein System aufzubauen,
+                das zuverlässig funktioniert, damit du dich auf Kunden und Umsatz konzentrieren kannst.
               </p>
 
               <p className="text-muted-foreground text-lg font-body leading-relaxed mb-6">
-                Mein Fokus liegt auf Backend, Logik und Workflows. Ich denke in Prozessen, nicht in Features. Das
-                bedeutet: Ich verstehe, wie Automatisierungen zusammenspielen müssen, damit am Ende ein System steht,
-                das für dich arbeitet.
+                Du sollst keine Tools lernen, keine Technik basteln und keine Schnittstellen debuggen. Das ist mein Job.
+                Ich denke in Prozessen und baue dir ein zentrales Setup, das Leads sammelt, Termine koordiniert und Follow-ups automatisiert.
               </p>
 
               <p className="text-muted-foreground text-lg font-body leading-relaxed mb-8">
-                Mit Erfahrung in Migration, komplexer Automatisierung und DSGVO-konformer Einrichtung helfe ich dir, das
-                Software-Chaos hinter dir zu lassen.
+                Mit Erfahrung in Migration, komplexer Automatisierung und DSGVO-konformer Einrichtung bringe ich Ordnung
+                in dein Business, sodass du endlich planbar wachsen kannst.
               </p>
 
               <div className="grid grid-cols-2 gap-6 pt-8 border-t border-border">
                 {[
                   { label: "Zertifizierter", value: "GoHighLevel Admin" },
-                  { label: "Fokus", value: "Backend & Workflows" },
+                  { label: "Fokus", value: "Ordnung & Klarheit" },
                   { label: "Erfahrung", value: "5+ Jahre Online Business" },
-                  { label: "Spezialgebiet", value: "Migration & Automatisierung" },
+                  { label: "Spezialgebiet", value: "Systeme & Automatisierung" },
                 ].map((stat, index) => (
                   <motion.div
                     key={index}
