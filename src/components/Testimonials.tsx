@@ -105,13 +105,19 @@ const Testimonials = () => {
 
                 {/* Author */}
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-primary/20">
-                    <img 
-                      src={testimonials[currentIndex].image} 
-                      alt={testimonials[currentIndex].name}
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
+                  <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-primary/20 bg-primary/10 flex items-center justify-center">
+                    {testimonials[currentIndex].image ? (
+                      <img 
+                        src={testimonials[currentIndex].image} 
+                        alt={testimonials[currentIndex].name}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <span className="font-display text-primary text-lg">
+                        {testimonials[currentIndex].name.split(' ').map(n => n[0]).join('')}
+                      </span>
+                    )}
                   </div>
                   <div>
                     <div className="font-display text-foreground text-lg">
