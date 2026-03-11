@@ -23,7 +23,7 @@ const Blog = () => {
   return (
     <>
       <SEOHead
-        title="Blog | Gaetano Ficarra – Marketing Automation Tipps & Insights"
+        title="Marketing Automation Blog — Tipps & Insights | Gaetano Ficarra"
         description="Praxistipps zu Marketing Automation, CRM, Funnelmate und GoHighLevel. Lerne, wie du dein Business mit smarten Tools skalierst."
       />
       <Header />

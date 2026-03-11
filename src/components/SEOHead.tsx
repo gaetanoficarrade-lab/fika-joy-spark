@@ -52,9 +52,16 @@ const SEOHead = ({
     setMeta("property", "og:url", canonicalUrl);
     setMeta("property", "og:image", ogImage);
     setMeta("property", "og:type", ogType);
+    setMeta("property", "og:site_name", "Gaetano Ficarra");
+    setMeta("property", "og:locale", "de_DE");
+
+    // Twitter Card tags
+    setMeta("name", "twitter:card", "summary_large_image");
+    setMeta("name", "twitter:title", ogTitle || title);
+    setMeta("name", "twitter:description", ogDescription || description);
+    setMeta("name", "twitter:image", ogImage);
 
     return () => {
-      // Reset to defaults on unmount
       document.title = "Gaetano Ficarra | GoHighLevel & Funnelmate Experte | Marketing Automation";
     };
   }, [title, description, canonical, ogTitle, ogDescription, ogImage, ogType]);

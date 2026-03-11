@@ -140,8 +140,8 @@ const Leistungen = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Leistungen | Gaetano Ficarra – Funnelmate & GoHighLevel Experte"
-        description="Komplett-Setup, gemeinsamer Aufbau oder Support-Calls – entdecke meine Leistungen rund um Funnelmate & GoHighLevel für dein Business."
+        title="GoHighLevel Setup & Funnelmate Einrichtung — Gaetano Ficarra"
+        description="Professionelles GoHighLevel Setup für dein Business. CRM-Aufbau, Funnel-Erstellung & Automation-Konfiguration durch zertifizierten Admin in Bielefeld."
       />
       <Header />
       <main className="pt-24">
