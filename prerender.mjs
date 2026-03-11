@@ -1,5 +1,5 @@
 import puppeteer from 'puppeteer';
-import { createServer } from 'vite';
+import { preview } from 'vite';
 import fs from 'fs';
 import path from 'path';
 
@@ -17,14 +17,10 @@ const routes = [
   '/blog',
 ];
 
-const server = await createServer({
+const server = await preview({
   root: '/var/www/gaetanoficarra',
-  server: { port: 3333 },
-  preview: false,
-  build: { outDir: 'dist' },
+  preview: { port: 3333 },
 });
-
-await server.listen();
 
 const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
 
@@ -42,4 +38,4 @@ for (const route of routes) {
 }
 
 await browser.close();
-await server.close();
+server.httpServer.close();
