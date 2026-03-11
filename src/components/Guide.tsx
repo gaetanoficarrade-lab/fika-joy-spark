@@ -37,6 +37,7 @@ const Guide = () => {
                   src={portrait}
                   alt="Gaetano Ficarra - Zertifizierter GoHighLevel Admin"
                   className="relative w-full max-w-md rounded-2xl border border-border shadow-xl"
+                  loading="lazy"
                 />
               </div>
             </motion.div>

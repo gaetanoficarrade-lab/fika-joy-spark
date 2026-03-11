@@ -115,6 +115,7 @@ const Footer = () => {
                   src={ghlBadge} 
                   alt="GoHighLevel Certified Admin" 
                   className="h-20 w-auto object-contain"
+                  loading="lazy"
                 />
               </a>
               <a 
@@ -127,6 +128,7 @@ const Footer = () => {
                   src={funnelmateBadge} 
                   alt="Funnelmate Certified Expert" 
                   className="h-20 w-auto object-contain"
+                  loading="lazy"
                 />
               </a>
             </div>

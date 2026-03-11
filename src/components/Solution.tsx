@@ -77,6 +77,7 @@ const Solution = () => {
                 src={automationWorkspace}
                 alt="Professionelle Marketing Automation Workflows"
                 className="w-full h-64 md:h-80 lg:h-96 object-cover"
+                loading="lazy"
               />
             </div>
           </motion.div>

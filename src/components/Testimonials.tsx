@@ -132,6 +132,7 @@ const Testimonials = () => {
                       src={testimonials[currentIndex].image} 
                       alt={testimonials[currentIndex].name}
                       className="w-full h-full object-cover"
+                      loading="lazy"
                     />
                   </div>
                   <div>

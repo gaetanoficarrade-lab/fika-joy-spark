@@ -100,6 +100,7 @@ const Problem = () => {
                 src={systemIntegration}
                 alt="Verstreute Tools konsolidieren"
                 className="w-48 h-48 md:w-64 md:h-64 object-cover rounded-lg border border-border/50 shadow-lg"
+                loading="lazy"
               />
             </div>
             <p className="text-muted-foreground font-body text-lg max-w-2xl text-center lg:text-left">
