@@ -20,7 +20,7 @@ export const blogCategories: BlogCategory[] = [
   "Tipps & Tricks",
 ];
 
-export const blogPosts: BlogPost[] = [
+export const blogPosts: BlogPost[] = [];
   {
     slug: "warum-marketing-automatisierung-unverzichtbar-ist",
     title: "Warum Marketing-Automatisierung für Selbstständige unverzichtbar ist",
