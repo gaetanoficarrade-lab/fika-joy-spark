@@ -1,25 +1,48 @@
+import { useState, useEffect } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import { motion } from "framer-motion";
-import { Calendar, Clock, ArrowLeft, ArrowRight } from "lucide-react";
+import { Calendar, ArrowLeft, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { blogPosts } from "@/data/blogPosts";
+import { supabase, type BlogPost } from "@/lib/supabase";
 import { useQuizModal } from "@/context/QuizModalContext";
 
 const BlogArticle = () => {
   const { slug } = useParams<{ slug: string }>();
   const { openQuizModal } = useQuizModal();
-  const post = blogPosts.find((p) => p.slug === slug);
+  const [post, setPost] = useState<BlogPost | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [notFound, setNotFound] = useState(false);
 
-  if (!post) return <Navigate to="/blog" replace />;
+  useEffect(() => {
+    const fetchPost = async () => {
+      const { data } = await supabase
+        .from("blog_posts")
+        .select("*")
+        .eq("slug", slug)
+        .eq("published", true)
+        .maybeSingle();
+      if (!data) {
+        setNotFound(true);
+      } else {
+        setPost(data);
+      }
+      setLoading(false);
+    };
+    fetchPost();
+  }, [slug]);
+
+  if (notFound) return <Navigate to="/blog" replace />;
 
   const formatDate = (dateStr: string) => {
     const d = new Date(dateStr);
     return d.toLocaleDateString("de-DE", { day: "2-digit", month: "long", year: "numeric" });
   };
 
-  // Simple markdown-to-html (headings, bold, lists, paragraphs)
+  const parseBold = (text: string) =>
+    text.replace(/\*\*(.*?)\*\*/g, '<strong class="text-foreground font-semibold">$1</strong>');
+
   const renderContent = (content: string) => {
     const lines = content.trim().split("\n");
     const elements: JSX.Element[] = [];
@@ -39,30 +62,16 @@ const BlogArticle = () => {
       }
     };
 
-    const parseBold = (text: string) =>
-      text.replace(/\*\*(.*?)\*\*/g, '<strong class="text-foreground font-semibold">$1</strong>');
-
     for (const line of lines) {
       const trimmed = line.trim();
-      if (!trimmed) {
-        flushList();
-        continue;
-      }
+      if (!trimmed) { flushList(); continue; }
 
       if (trimmed.startsWith("## ")) {
         flushList();
-        elements.push(
-          <h2 key={key++} className="font-display text-2xl md:text-3xl font-bold text-foreground mt-12 mb-4">
-            {trimmed.replace("## ", "")}
-          </h2>
-        );
+        elements.push(<h2 key={key++} className="font-display text-2xl md:text-3xl font-bold text-foreground mt-12 mb-4">{trimmed.replace("## ", "")}</h2>);
       } else if (trimmed.startsWith("### ")) {
         flushList();
-        elements.push(
-          <h3 key={key++} className="font-display text-xl md:text-2xl font-semibold text-foreground mt-8 mb-3">
-            {trimmed.replace("### ", "")}
-          </h3>
-        );
+        elements.push(<h3 key={key++} className="font-display text-xl md:text-2xl font-semibold text-foreground mt-8 mb-3">{trimmed.replace("### ", "")}</h3>);
       } else if (trimmed.startsWith("- ")) {
         listItems.push(trimmed.replace("- ", ""));
       } else if (/^\d+\.\s/.test(trimmed)) {
@@ -70,24 +79,32 @@ const BlogArticle = () => {
         listItems.push(trimmed.replace(/^\d+\.\s/, ""));
       } else {
         flushList();
-        elements.push(
-          <p
-            key={key++}
-            className="text-muted-foreground font-body leading-relaxed mb-4"
-            dangerouslySetInnerHTML={{ __html: parseBold(trimmed) }}
-          />
-        );
+        elements.push(<p key={key++} className="text-muted-foreground font-body leading-relaxed mb-4" dangerouslySetInnerHTML={{ __html: parseBold(trimmed) }} />);
       }
     }
     flushList();
     return elements;
   };
 
+  if (loading) {
+    return (
+      <>
+        <Header />
+        <main className="min-h-screen pt-24 pb-20 bg-background flex items-center justify-center">
+          <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" />
+        </main>
+        <Footer />
+      </>
+    );
+  }
+
+  if (!post) return null;
+
   return (
     <>
       <SEOHead
-        title={post.metaTitle}
-        description={post.metaDescription}
+        title={`${post.title} | Gaetano Ficarra`}
+        description={post.description}
         canonical={`https://gaetanoficarra.de/blog/${post.slug}`}
         ogType="article"
         breadcrumbs={[
@@ -98,10 +115,10 @@ const BlogArticle = () => {
         jsonLd={{
           "@type": "BlogPosting",
           "headline": post.title,
-          "description": post.metaDescription,
+          "description": post.description,
           "url": `https://gaetanoficarra.de/blog/${post.slug}`,
-          "datePublished": post.date,
-          "dateModified": post.date,
+          "datePublished": post.published_at,
+          "dateModified": post.published_at,
           "author": { "@type": "Person", "name": "Gaetano Ficarra", "url": "https://gaetanoficarra.de" },
           "publisher": { "@type": "Person", "name": "Gaetano Ficarra", "url": "https://gaetanoficarra.de" },
           "inLanguage": "de-DE",
@@ -112,57 +129,33 @@ const BlogArticle = () => {
       <Header />
       <main className="min-h-screen pt-24 pb-20 bg-background">
         <article className="container mx-auto px-6 max-w-3xl">
-          {/* Back link */}
-          <motion.div
-            initial={{ opacity: 0, x: -10 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.4 }}
-            className="mb-8"
-          >
-            <Link
-              to="/blog"
-              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors duration-300 font-body"
-            >
-              <ArrowLeft size={16} />
-              Zurück zum Blog
+          <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.4 }} className="mb-8">
+            <Link to="/blog" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors duration-300 font-body">
+              <ArrowLeft size={16} /> Zurück zum Blog
             </Link>
           </motion.div>
 
-          {/* Header */}
-          <motion.header
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mb-12"
-          >
-            <span className="inline-block px-3 py-1 rounded-full text-xs font-body tracking-wide bg-primary/10 text-primary mb-4">
-              {post.category}
-            </span>
+          {post.cover_image && (
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="mb-8 rounded-xl overflow-hidden">
+              <img src={post.cover_image} alt={post.title} className="w-full aspect-video object-cover" />
+            </motion.div>
+          )}
+
+          <motion.header initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="mb-12">
             <h1 className="font-display text-3xl md:text-5xl font-bold text-foreground leading-tight mb-6">
               {post.title}
             </h1>
-            <div className="flex items-center gap-4 text-sm text-muted-foreground font-body">
-              <span className="flex items-center gap-1">
-                <Calendar size={14} />
-                {formatDate(post.date)}
-              </span>
-              <span className="flex items-center gap-1">
-                <Clock size={14} />
-                {post.readingTime}
-              </span>
-            </div>
+            {post.published_at && (
+              <div className="flex items-center gap-4 text-sm text-muted-foreground font-body">
+                <span className="flex items-center gap-1"><Calendar size={14} />{formatDate(post.published_at)}</span>
+              </div>
+            )}
           </motion.header>
 
-          {/* Content */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
             {renderContent(post.content)}
           </motion.div>
 
-          {/* CTA Section */}
           <motion.section
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -184,12 +177,8 @@ const BlogArticle = () => {
             </button>
           </motion.section>
 
-          {/* Related posts hint */}
           <div className="mt-12 text-center">
-            <Link
-              to="/blog"
-              className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300 font-body"
-            >
+            <Link to="/blog" className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300 font-body">
               ← Alle Artikel anzeigen
             </Link>
           </div>
