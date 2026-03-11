@@ -6,7 +6,7 @@ import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react";
 const testimonials = [
   {
     name: "Anna-Lena Hickmann",
-    role: "Local Guide",
+    role: "Google Bewertung",
     text: "Tolle Erfahrung und ich kann Gaetano nur empfehlen! Er hat mir im 90 Minuten Beratungscall sauber und schnell erklärt und ich konnte direkt umsetzen. Das hätte mich sonst wahrscheinlich Stunden an Recherchearbeit und ganz viele Nerven gekostet. Die Kommunikation war auch schnell und ich bin sehr froh auch kurzfristig einen Termin bekommen zu haben :) Gaetano hat eine freundliche und unkomplizierte Art. Wenn ich ab jetzt ein Thema mit HighLevel / Stripe habe, weiß ich, wem ich als erstes schreibe.",
     rating: 5,
     image: "",
