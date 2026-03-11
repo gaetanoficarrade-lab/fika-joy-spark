@@ -122,6 +122,7 @@ const TrustLogos = () => {
                     src={partner.logo} 
                     alt={`${partner.name} Logo`}
                     className={`w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300 ${sizeClass}`}
+                    loading="lazy"
                   />
                 </a>
               );
