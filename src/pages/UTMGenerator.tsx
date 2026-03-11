@@ -78,16 +78,28 @@ const UTMGenerator = () => {
           { name: "Startseite", url: "https://gaetanoficarra.de/" },
           { name: "UTM Generator", url: "https://gaetanoficarra.de/utm-generator" },
         ]}
-        jsonLd={{
-          "@type": "WebApplication",
-          "name": "UTM-Generator",
-          "url": "https://gaetanoficarra.de/utm-generator",
-          "applicationCategory": "UtilityApplication",
-          "operatingSystem": "Web",
-          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
-          "author": { "@type": "Person", "name": "Gaetano Ficarra", "url": "https://gaetanoficarra.de" },
-          "description": "Erstelle UTM-Parameter für Google Analytics in Sekunden. Kostenloser Tool-Rechner."
-        }}
+        jsonLd={[
+          {
+            "@type": "WebApplication",
+            "name": "UTM-Generator",
+            "url": "https://gaetanoficarra.de/utm-generator",
+            "applicationCategory": "UtilityApplication",
+            "operatingSystem": "Web",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+            "author": { "@type": "Person", "name": "Gaetano Ficarra", "url": "https://gaetanoficarra.de" },
+            "description": "Erstelle UTM-Parameter für Google Analytics in Sekunden. Kostenloser Tool-Rechner."
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              { "@type": "Question", "name": "Sind UTM-Parameter kostenlos?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, UTM-Parameter sind komplett kostenlos. Sie sind ein offener Standard und werden von allen gängigen Analytics-Tools unterstützt." } },
+              { "@type": "Question", "name": "Funktionieren UTM-Parameter mit Google Analytics 4 (GA4)?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. GA4 erkennt UTM-Parameter automatisch und ordnet sie den richtigen Dimensionen zu." } },
+              { "@type": "Question", "name": "Kann ich UTM-Parameter auch in GoHighLevel / Funnelmate nutzen?", "acceptedAnswer": { "@type": "Answer", "text": "Absolut. GoHighLevel und Funnelmate können UTM-Parameter aus eingehenden Links automatisch auslesen und im Kontaktprofil speichern." } },
+              { "@type": "Question", "name": "Wie viele UTM-Parameter sollte ich verwenden?", "acceptedAnswer": { "@type": "Answer", "text": "Mindestens drei: utm_source, utm_medium und utm_campaign. Die beiden optionalen sind nützlich für bezahlte Kampagnen und A/B-Tests." } },
+              { "@type": "Question", "name": "Beeinflusst die UTM-URL mein SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Nein, UTM-Parameter haben keinen direkten Einfluss auf dein SEO-Ranking. Google ignoriert sie beim Crawlen." } }
+            ]
+          }
+        ]}
       />
       <Header />
       <main className="pt-32 pb-20">
@@ -243,24 +255,123 @@ const UTMGenerator = () => {
             </div>
           </motion.div>
 
-          {/* Info Box */}
+          {/* SEO Content: Was sind UTM-Parameter? */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-8 bg-card border border-border p-6 rounded-lg"
+            className="mt-12 bg-card border border-border p-8 rounded-lg"
           >
-            <h3 className="font-display text-lg text-foreground mb-4">Was sind UTM-Parameter?</h3>
-            <p className="font-body text-sm text-muted-foreground mb-4">
-              UTM-Parameter sind Tags, die du an URLs anhängst, um zu tracken, woher dein Traffic kommt. Sie werden von Google Analytics und anderen Tools erkannt.
+            <h2 className="font-display text-2xl text-foreground mb-6">Was sind UTM-Parameter?</h2>
+            <p className="font-body text-muted-foreground mb-6 leading-relaxed">
+              UTM-Parameter (Urchin Tracking Module) sind spezielle Tags, die du an URLs anhängst, um den Ursprung deines Website-Traffics zu tracken. Sie wurden ursprünglich von Google entwickelt und sind heute der Standard für Kampagnen-Tracking in Google Analytics, Funnelmate, GoHighLevel und anderen Marketing-Tools.
             </p>
-            <ul className="font-body text-sm text-muted-foreground space-y-2">
-              <li><span className="text-primary">utm_source</span> – Die Quelle des Traffics (z.B. Google, Facebook)</li>
-              <li><span className="text-primary">utm_medium</span> – Das Medium (z.B. CPC, Social, Email)</li>
-              <li><span className="text-primary">utm_campaign</span> – Der Kampagnenname</li>
-              <li><span className="text-primary">utm_term</span> – Bezahlte Keywords (optional)</li>
-              <li><span className="text-primary">utm_content</span> – Für A/B-Tests (optional)</li>
+            <p className="font-body text-muted-foreground mb-6 leading-relaxed">
+              Mit UTM-Parametern siehst du genau, welche Kampagne, welches Medium und welche Quelle zu einem Klick, Lead oder Verkauf geführt hat. Das ist die Grundlage für datenbasierte Marketing-Entscheidungen.
+            </p>
+            
+            <h3 className="font-display text-xl text-foreground mb-4">Die 5 UTM-Parameter erklärt</h3>
+            <ul className="font-body text-muted-foreground space-y-3 mb-8">
+              <li className="flex items-start gap-2">
+                <span className="text-primary font-semibold shrink-0">utm_source</span>
+                <span>– Woher kommt der Traffic? Z.B. Google, Facebook, Newsletter. Pflichtfeld für sinnvolles Tracking.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary font-semibold shrink-0">utm_medium</span>
+                <span>– Über welchen Kanal? Z.B. CPC (bezahlte Werbung), Social Media, E-Mail, Organic.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary font-semibold shrink-0">utm_campaign</span>
+                <span>– Welche Kampagne? Z.B. „winter_sale_2026" oder „lead_magnet_ebook". Hilft, Kampagnen zu vergleichen.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary font-semibold shrink-0">utm_term</span>
+                <span>– Welches Keyword wurde beworben? Besonders relevant für Google Ads und bezahlte Suchanzeigen.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary font-semibold shrink-0">utm_content</span>
+                <span>– Welche Anzeigenvariante? Perfekt für A/B-Tests, z.B. „header_cta" vs. „footer_cta".</span>
+              </li>
             </ul>
+
+            <h3 className="font-display text-xl text-foreground mb-4">Warum UTM-Tracking wichtig ist</h3>
+            <p className="font-body text-muted-foreground mb-4 leading-relaxed">
+              Ohne UTM-Parameter weißt du nicht, welche Marketing-Maßnahme wirklich funktioniert. Du investierst Budget in Facebook Ads, Google Ads, Newsletter und Social Media – aber welcher Kanal bringt tatsächlich Leads und Umsatz?
+            </p>
+            <p className="font-body text-muted-foreground mb-4 leading-relaxed">
+              UTM-Parameter machen genau das sichtbar. In Kombination mit einem CRM wie GoHighLevel oder Funnelmate kannst du den gesamten Kundenweg nachvollziehen: vom ersten Klick bis zum Abschluss.
+            </p>
+          </motion.div>
+
+          {/* SEO Content: Best Practices */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="mt-8 bg-card border border-border p-8 rounded-lg"
+          >
+            <h2 className="font-display text-2xl text-foreground mb-6">UTM-Parameter Best Practices</h2>
+            <ul className="font-body text-muted-foreground space-y-3">
+              <li className="flex items-start gap-2">
+                <span className="text-primary">✓</span>
+                <span><strong className="text-foreground">Immer Kleinbuchstaben verwenden</strong> – UTM-Parameter sind case-sensitive. „Facebook" und „facebook" werden als unterschiedliche Quellen gezählt.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary">✓</span>
+                <span><strong className="text-foreground">Einheitliche Benennung</strong> – Erstelle eine Namenskonvention und halte dich daran. Z.B. immer „instagram" statt abwechselnd „ig", „insta", „Instagram".</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary">✓</span>
+                <span><strong className="text-foreground">Keine Leerzeichen</strong> – Verwende Unterstriche (_) oder Bindestriche (-) statt Leerzeichen.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary">✓</span>
+                <span><strong className="text-foreground">Nicht für interne Links</strong> – UTM-Parameter sind nur für externe Quellen gedacht. Interne Links mit UTM-Tags verfälschen deine Analytics-Daten.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary">✓</span>
+                <span><strong className="text-foreground">In einer Tabelle dokumentieren</strong> – Führe eine zentrale Liste aller UTM-Links, damit du den Überblick behältst.</span>
+              </li>
+            </ul>
+          </motion.div>
+
+          {/* FAQ Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="mt-8 bg-card border border-border p-8 rounded-lg"
+          >
+            <h2 className="font-display text-2xl text-foreground mb-6">Häufige Fragen zum UTM-Generator</h2>
+            <div className="space-y-6">
+              {[
+                {
+                  q: "Sind UTM-Parameter kostenlos?",
+                  a: "Ja, UTM-Parameter sind komplett kostenlos. Sie sind ein offener Standard und werden von allen gängigen Analytics-Tools unterstützt – darunter Google Analytics, Funnelmate, GoHighLevel, HubSpot und viele weitere."
+                },
+                {
+                  q: "Funktionieren UTM-Parameter mit Google Analytics 4 (GA4)?",
+                  a: "Ja. GA4 erkennt UTM-Parameter automatisch und ordnet sie den richtigen Dimensionen zu (Quelle, Medium, Kampagne). Du siehst die Daten unter Akquisition → Traffic-Akquisition."
+                },
+                {
+                  q: "Kann ich UTM-Parameter auch in GoHighLevel / Funnelmate nutzen?",
+                  a: "Absolut. GoHighLevel und Funnelmate können UTM-Parameter aus eingehenden Links automatisch auslesen und im Kontaktprofil speichern. So weißt du für jeden Lead, woher er kam."
+                },
+                {
+                  q: "Wie viele UTM-Parameter sollte ich verwenden?",
+                  a: "Mindestens drei: utm_source, utm_medium und utm_campaign. Die beiden optionalen (utm_term und utm_content) sind nützlich für bezahlte Kampagnen und A/B-Tests."
+                },
+                {
+                  q: "Beeinflusst die UTM-URL mein SEO?",
+                  a: "Nein, UTM-Parameter haben keinen direkten Einfluss auf dein SEO-Ranking. Google ignoriert sie beim Crawlen. Achte aber darauf, Canonical-Tags korrekt zu setzen, damit keine Duplikate entstehen."
+                },
+              ].map((faq, i) => (
+                <div key={i} className="border-b border-border pb-4 last:border-0 last:pb-0">
+                  <h3 className="font-display text-lg text-foreground mb-2">{faq.q}</h3>
+                  <p className="font-body text-sm text-muted-foreground leading-relaxed">{faq.a}</p>
+                </div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </main>
