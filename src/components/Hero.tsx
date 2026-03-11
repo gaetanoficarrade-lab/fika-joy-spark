@@ -116,6 +116,7 @@ const Hero = () => {
                     src="https://directory.gohighlevel.com/images/BD_Certified_Admin_Main_Badge.png"
                     alt="GoHighLevel Certified Admin Badge"
                     className="relative w-28 h-28 md:w-36 md:h-36 lg:w-44 lg:h-44 drop-shadow-2xl"
+                    loading="lazy"
                   />
                 </div>
               </motion.a>
