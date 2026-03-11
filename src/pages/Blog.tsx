@@ -1,19 +1,28 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SEOHead from "@/components/SEOHead";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { blogPosts, blogCategories, type BlogCategory } from "@/data/blogPosts";
+import { supabase, type BlogPost } from "@/lib/supabase";
 
 const Blog = () => {
-  const [activeCategory, setActiveCategory] = useState<BlogCategory | "Alle">("Alle");
+  const [posts, setPosts] = useState<BlogPost[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  const filteredPosts =
-    activeCategory === "Alle"
-      ? blogPosts
-      : blogPosts.filter((p) => p.category === activeCategory);
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const { data } = await supabase
+        .from("blog_posts")
+        .select("*")
+        .eq("published", true)
+        .order("published_at", { ascending: false });
+      setPosts(data || []);
+      setLoading(false);
+    };
+    fetchPosts();
+  }, []);
 
   const formatDate = (dateStr: string) => {
     const d = new Date(dateStr);
@@ -60,24 +69,76 @@ const Blog = () => {
           </motion.p>
         </section>
 
-        {/* Coming Soon */}
-        <section className="container mx-auto px-6 py-20 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="max-w-xl mx-auto"
-          >
-            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Clock className="w-8 h-8 text-primary" />
+        {/* Posts */}
+        <section className="container mx-auto px-6 pb-20">
+          {loading ? (
+            <div className="flex justify-center py-20">
+              <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" />
             </div>
-            <h2 className="font-display text-2xl md:text-3xl text-foreground mb-4">
-              Artikel in Vorbereitung — <span className="text-gradient-primary">bald verfügbar</span>
-            </h2>
-            <p className="text-muted-foreground font-body text-lg">
-              Ich arbeite gerade an spannenden Artikeln rund um Marketing-Automatisierung, CRM-Systeme und Marketing. Schau bald wieder vorbei!
-            </p>
-          </motion.div>
+          ) : posts.length === 0 ? (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="max-w-xl mx-auto text-center py-20"
+            >
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Clock className="w-8 h-8 text-primary" />
+              </div>
+              <h2 className="font-display text-2xl md:text-3xl text-foreground mb-4">
+                Artikel in Vorbereitung — <span className="text-gradient-primary">bald verfügbar</span>
+              </h2>
+              <p className="text-muted-foreground font-body text-lg">
+                Ich arbeite gerade an spannenden Artikeln rund um Marketing-Automatisierung, CRM-Systeme und Marketing. Schau bald wieder vorbei!
+              </p>
+            </motion.div>
+          ) : (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              {posts.map((post, i) => (
+                <motion.article
+                  key={post.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.1 * i }}
+                >
+                  <Link
+                    to={`/blog/${post.slug}`}
+                    className="group block rounded-xl border border-border bg-card overflow-hidden hover:border-primary/30 transition-all duration-300"
+                  >
+                    {post.cover_image && (
+                      <div className="aspect-video overflow-hidden">
+                        <img
+                          src={post.cover_image}
+                          alt={post.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          loading="lazy"
+                        />
+                      </div>
+                    )}
+                    <div className="p-6">
+                      <h2 className="font-display text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                        {post.title}
+                      </h2>
+                      <p className="text-muted-foreground font-body text-sm mb-4 line-clamp-2">
+                        {post.description}
+                      </p>
+                      <div className="flex items-center justify-between text-xs text-muted-foreground font-body">
+                        {post.published_at && (
+                          <span className="flex items-center gap-1">
+                            <Calendar size={12} />
+                            {formatDate(post.published_at)}
+                          </span>
+                        )}
+                        <span className="flex items-center gap-1 text-primary group-hover:gap-2 transition-all">
+                          Lesen <ArrowRight size={12} />
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
+                </motion.article>
+              ))}
+            </div>
+          )}
         </section>
       </main>
       <Footer />

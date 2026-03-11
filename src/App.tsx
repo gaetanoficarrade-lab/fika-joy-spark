@@ -25,6 +25,7 @@ const UTMGenerator = lazy(() => import("./pages/UTMGenerator"));
 const Absage = lazy(() => import("./pages/Absage"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogArticle = lazy(() => import("./pages/BlogArticle"));
+const AdminBlog = lazy(() => import("./pages/AdminBlog"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -65,6 +66,7 @@ const App = () => (
               <Route path="/absage" element={<Absage />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:slug" element={<BlogArticle />} />
+              <Route path="/admin/blog" element={<AdminBlog />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
