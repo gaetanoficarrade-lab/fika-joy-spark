@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import SEOHead from "@/components/SEOHead";
 import { Check, ArrowRight, Globe, Users, Shield, Zap, HelpCircle, X } from "lucide-react";
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useQuizModal } from "@/context/QuizModalContext";
