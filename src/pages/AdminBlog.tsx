@@ -32,6 +32,22 @@ const AdminBlog = () => {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
 
+  const fetchPosts = async () => {
+    setLoading(true);
+    const { data, error } = await supabase
+      .from("blog_posts")
+      .select("*")
+      .order("created_at", { ascending: false });
+    if (error) {
+      toast({ title: "Fehler", description: error.message, variant: "destructive" });
+    } else {
+      setPosts(data || []);
+    }
+    setLoading(false);
+  };
+
+  useEffect(() => { if (authenticated) fetchPosts(); }, [authenticated]);
+
   if (!authenticated) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center p-4">
@@ -66,22 +82,6 @@ const AdminBlog = () => {
       </div>
     );
   }
-
-  const fetchPosts = async () => {
-    setLoading(true);
-    const { data, error } = await supabase
-      .from("blog_posts")
-      .select("*")
-      .order("created_at", { ascending: false });
-    if (error) {
-      toast({ title: "Fehler", description: error.message, variant: "destructive" });
-    } else {
-      setPosts(data || []);
-    }
-    setLoading(false);
-  };
-
-  useEffect(() => { fetchPosts(); }, []);
 
   const generateSlug = (title: string) =>
     title
