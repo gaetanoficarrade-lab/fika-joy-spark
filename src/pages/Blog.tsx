@@ -48,7 +48,7 @@ const Blog = () => {
             transition={{ duration: 0.6 }}
             className="font-display text-4xl md:text-6xl font-bold mb-6"
           >
-            <span className="text-gradient-primary">Blog</span>
+            Marketing Automation <span className="text-gradient-primary">Blog & Ressourcen</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -72,7 +72,7 @@ const Blog = () => {
               <Clock className="w-8 h-8 text-primary" />
             </div>
             <h2 className="font-display text-2xl md:text-3xl text-foreground mb-4">
-              Hier entsteht demnächst ein <span className="text-gradient-primary">Blog</span>
+              Artikel in Vorbereitung — <span className="text-gradient-primary">bald verfügbar</span>
             </h2>
             <p className="text-muted-foreground font-body text-lg">
               Ich arbeite gerade an spannenden Artikeln rund um Marketing-Automatisierung, CRM-Systeme und Marketing. Schau bald wieder vorbei!
