@@ -51,6 +51,8 @@ const App = () => (
             <Route path="/wa-generator" element={<WAGenerator />} />
             <Route path="/utm-generator" element={<UTMGenerator />} />
             <Route path="/absage" element={<Absage />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogArticle />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </QuizModalProvider>
