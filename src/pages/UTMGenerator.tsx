@@ -72,8 +72,8 @@ const UTMGenerator = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="UTM Parameter Generator | Gaetano Ficarra"
-        description="Erstelle UTM-Parameter für deine Kampagnen-URLs. Kostenloser Generator für Google Analytics Tracking mit Source, Medium und Campaign."
+        title="Kostenloser UTM-Generator — Marketing Links erstellen"
+        description="Erstelle UTM-Parameter für Google Analytics in Sekunden. Kostenloser Tool-Rechner von Gaetano Ficarra."
       />
       <Header />
       <main className="pt-32 pb-20">
