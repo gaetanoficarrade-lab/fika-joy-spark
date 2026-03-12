@@ -141,8 +141,9 @@ const Leistungen = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="GoHighLevel Setup & Funnelmate Einrichtung — Gaetano Ficarra"
-        description="GoHighLevel & Funnelmate Setup, Co-Building oder Support-Call. CRM, Funnels & Automationen — Leistungen und Preise im Überblick."
+        title="Leistungen & Preise: Marketing Automation Setup | Gaetano Ficarra"
+        description="Komplett-Setup, gemeinsam aufbauen oder Support-Call: Ich richte dir dein Marketing-System ein. CRM, Automationen, Follow-ups — fertig übergeben. Zertifizierter GoHighLevel Admin aus Bielefeld."
+        canonical="https://gaetanoficarra.de/leistungen"
         breadcrumbs={[
           { name: "Startseite", url: "https://gaetanoficarra.de/" },
           { name: "Leistungen", url: "https://gaetanoficarra.de/leistungen" },
