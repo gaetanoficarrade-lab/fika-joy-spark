@@ -81,7 +81,7 @@ const SEOHead = ({
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Gaetano Ficarra",
-      "jobTitle": "Marketing Automation & GoHighLevel Experte",
+      "jobTitle": "Marketing Automation Berater für Selbstständige",
       "url": BASE_URL,
       "image": `${BASE_URL}/og-image.png`,
       "address": { "@type": "PostalAddress", "addressLocality": "Bielefeld", "addressCountry": "DE" },
