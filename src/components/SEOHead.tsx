@@ -108,7 +108,7 @@ const SEOHead = ({
         { "@type": "Country", "name": "Schweiz" }
       ],
       "priceRange": "€€",
-      "knowsAbout": ["GoHighLevel", "Funnelmate", "Marketing Automation", "CRM", "Funnel Building"]
+      "knowsAbout": ["GoHighLevel", "Funnelmate", "Marketing Automation", "CRM", "Funnel Building", "Marketing Automation Beratung", "CRM Setup", "Business Systeme"]
     });
     scriptIds.push("seo-professional-service-ld");
 
