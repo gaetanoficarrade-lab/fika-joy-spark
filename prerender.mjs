@@ -18,7 +18,7 @@ const routes = [
 ];
 
 const server = await preview({
-  root: '/var/www/gaetanoficarra',
+  root: '/app',
   preview: { port: 3333 },
 });
 
