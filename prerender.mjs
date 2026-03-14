@@ -46,7 +46,7 @@ for (const route of routes) {
 
   const html = await page.content();
   
-  const dir = path.join('/var/www/gaetanoficarra/dist', route);
+  const dir = path.join('/app/dist', route);
   fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(path.join(dir, 'index.html'), html);
   
