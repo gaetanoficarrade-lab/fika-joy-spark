@@ -88,7 +88,11 @@ const SEOHead = ({
   jsonLd,
   breadcrumbs,
 }: SEOHeadProps) => {
-  const canonicalUrl = canonical || `${BASE_URL}${window.location.pathname}`;
+  const rawCanonical = canonical || `${BASE_URL}${window.location.pathname}`;
+  // Ensure trailing slash on all pages except the homepage
+  const canonicalUrl = rawCanonical === BASE_URL || rawCanonical === `${BASE_URL}/`
+    ? `${BASE_URL}/`
+    : rawCanonical.endsWith("/") ? rawCanonical : `${rawCanonical}/`;
   const resolvedOgTitle = ogTitle || title;
   const resolvedOgDesc = ogDescription || description;
 
