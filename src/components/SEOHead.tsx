@@ -103,6 +103,9 @@ const SEOHead = ({
   const appliedRef = useRef(false);
   if (!appliedRef.current) {
     applyCriticalTags(title, description, canonicalUrl, resolvedOgTitle, resolvedOgDesc, ogImage, ogType);
+    if (noIndex) {
+      setMeta("name", "robots", "noindex, nofollow");
+    }
     appliedRef.current = true;
   }
 
