@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import SEOHead from "@/components/SEOHead";
 import { supabase, type BlogPost } from "@/lib/supabase";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -50,6 +51,8 @@ const AdminBlog = () => {
 
   if (!authenticated) {
     return (
+      <>
+      <SEOHead title="Admin Blog — Gaetano Ficarra" description="Admin-Bereich" noIndex={true} />
       <div className="min-h-screen bg-background flex items-center justify-center p-4">
         <Card className="w-full max-w-sm">
           <CardHeader>
@@ -80,6 +83,7 @@ const AdminBlog = () => {
           </CardContent>
         </Card>
       </div>
+      </>
     );
   }
 
@@ -139,6 +143,8 @@ const AdminBlog = () => {
   // Editor view
   if (editing) {
     return (
+      <>
+      <SEOHead title="Admin Blog — Gaetano Ficarra" description="Admin-Bereich" noIndex={true} />
       <div className="min-h-screen bg-background text-foreground">
         <div className="container mx-auto px-6 py-8 max-w-4xl">
           <button onClick={() => setEditing(null)} className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary mb-6 font-body">
@@ -231,11 +237,14 @@ const AdminBlog = () => {
           </div>
         </div>
       </div>
+      </>
     );
   }
 
   // List view
   return (
+    <>
+    <SEOHead title="Admin Blog — Gaetano Ficarra" description="Admin-Bereich" noIndex={true} />
     <div className="min-h-screen bg-background text-foreground">
       <div className="container mx-auto px-6 py-8 max-w-4xl">
         <div className="flex items-center justify-between mb-8">
@@ -294,6 +303,7 @@ const AdminBlog = () => {
         )}
       </div>
     </div>
+    </>
   );
 };
 

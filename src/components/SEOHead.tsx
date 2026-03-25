@@ -10,6 +10,7 @@ interface SEOHeadProps {
   ogDescription?: string;
   ogImage?: string;
   ogType?: string;
+  noIndex?: boolean;
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
   breadcrumbs?: { name: string; url: string }[];
 }
@@ -85,6 +86,7 @@ const SEOHead = ({
   ogDescription,
   ogImage = `${BASE_URL}/og-image.png`,
   ogType = "website",
+  noIndex = false,
   jsonLd,
   breadcrumbs,
 }: SEOHeadProps) => {
@@ -101,12 +103,21 @@ const SEOHead = ({
   const appliedRef = useRef(false);
   if (!appliedRef.current) {
     applyCriticalTags(title, description, canonicalUrl, resolvedOgTitle, resolvedOgDesc, ogImage, ogType);
+    if (noIndex) {
+      setMeta("name", "robots", "noindex, nofollow");
+    }
     appliedRef.current = true;
   }
 
   useEffect(() => {
-    // Re-apply on prop changes (client-side navigation)
     applyCriticalTags(title, description, canonicalUrl, resolvedOgTitle, resolvedOgDesc, ogImage, ogType);
+
+    if (noIndex) {
+      setMeta("name", "robots", "noindex, nofollow");
+    } else {
+      const robotsMeta = document.querySelector('meta[name="robots"]');
+      if (robotsMeta) robotsMeta.remove();
+    }
 
     // Track IDs for cleanup on unmount
     const scriptIds: string[] = [];
