@@ -237,6 +237,7 @@ const AdminBlog = () => {
           </div>
         </div>
       </div>
+      </>
     );
   }
 
