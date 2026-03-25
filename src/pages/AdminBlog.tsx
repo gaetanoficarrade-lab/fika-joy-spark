@@ -143,6 +143,8 @@ const AdminBlog = () => {
   // Editor view
   if (editing) {
     return (
+      <>
+      <SEOHead title="Admin Blog — Gaetano Ficarra" description="Admin-Bereich" noIndex={true} />
       <div className="min-h-screen bg-background text-foreground">
         <div className="container mx-auto px-6 py-8 max-w-4xl">
           <button onClick={() => setEditing(null)} className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary mb-6 font-body">
