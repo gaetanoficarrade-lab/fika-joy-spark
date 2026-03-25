@@ -26,6 +26,7 @@ const Absage = lazy(() => import("./pages/Absage"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogArticle = lazy(() => import("./pages/BlogArticle"));
 const AdminBlog = lazy(() => import("./pages/AdminBlog"));
+const Sitemap = lazy(() => import("./pages/Sitemap"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
