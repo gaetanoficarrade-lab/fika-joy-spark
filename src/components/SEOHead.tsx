@@ -154,6 +154,10 @@ const SEOHead = ({
         { "@type": "Country", "name": "Schweiz" }
       ],
       "priceRange": "€€",
+      "telephone": "+49-152-23856537",
+      "email": "kontakt@gaetanoficarra.de",
+      "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00"}],
+      "hasMap": "https://maps.google.com/?q=Elverdisser+Str.+51,+33729+Bielefeld",
       "knowsAbout": ["GoHighLevel", "Funnelmate", "Marketing Automation", "CRM", "Funnel Building", "Marketing Automation Beratung", "CRM Setup", "Business Systeme"]
     });
     scriptIds.push("seo-professional-service-ld");
