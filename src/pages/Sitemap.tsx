@@ -8,13 +8,17 @@ import { motion } from "framer-motion";
 import { Map } from "lucide-react";
 
 const staticPages: SitemapEntry[] = [
-  { loc: "https://gaetanoficarra.de/", lastmod: "", changefreq: "weekly", priority: "1.0" },
-  { loc: "https://gaetanoficarra.de/leistungen/", lastmod: "", changefreq: "monthly", priority: "0.9" },
-  { loc: "https://gaetanoficarra.de/highlevel-vs-funnelmate/", lastmod: "", changefreq: "monthly", priority: "0.8" },
-  { loc: "https://gaetanoficarra.de/blog/", lastmod: "", changefreq: "weekly", priority: "0.7" },
-  { loc: "https://gaetanoficarra.de/wa-generator/", lastmod: "", changefreq: "monthly", priority: "0.7" },
-  { loc: "https://gaetanoficarra.de/utm-generator/", lastmod: "", changefreq: "monthly", priority: "0.7" },
-  { loc: "https://gaetanoficarra.de/links/", lastmod: "", changefreq: "monthly", priority: "0.5" },
+  { loc: "https://gaetanoficarra.de/", lastmod: "2026-03-26", changefreq: "weekly", priority: "1.0" },
+  { loc: "https://gaetanoficarra.de/leistungen", lastmod: "2026-03-26", changefreq: "monthly", priority: "0.9" },
+  {
+    loc: "https://gaetanoficarra.de/highlevel-vs-funnelmate",
+    lastmod: "2026-03-26",
+    changefreq: "monthly",
+    priority: "0.8",
+  },
+  { loc: "https://gaetanoficarra.de/blog", lastmod: "2026-03-26", changefreq: "weekly", priority: "0.7" },
+  { loc: "https://gaetanoficarra.de/wa-generator", lastmod: "2026-03-26", changefreq: "monthly", priority: "0.6" },
+  { loc: "https://gaetanoficarra.de/utm-generator", lastmod: "2026-03-26", changefreq: "monthly", priority: "0.6" },
 ];
 
 const Sitemap = () => {
@@ -48,7 +52,6 @@ const Sitemap = () => {
             <h1 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">Sitemap</h1>
             <p className="text-muted-foreground font-body">Alle Seiten auf einen Blick.</p>
           </motion.div>
-
           <motion.ul
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
