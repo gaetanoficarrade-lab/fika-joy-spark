@@ -9,9 +9,6 @@ export interface SitemapEntry {
   priority: string;
 }
 
-/**
- * Fetches published blog posts from Supabase and returns sitemap entries for them.
- */
 export const fetchBlogSitemapEntries = async (): Promise<SitemapEntry[]> => {
   const { data: posts } = await supabase
     .from("blog_posts")
@@ -24,7 +21,7 @@ export const fetchBlogSitemapEntries = async (): Promise<SitemapEntry[]> => {
   return posts.map((post) => {
     const lastmod = (post.updated_at || post.published_at || new Date().toISOString()).slice(0, 10);
     return {
-      loc: `${BASE_URL}/blog/${post.slug}/`,
+      loc: `${BASE_URL}/blog/${post.slug}`,
       lastmod,
       changefreq: "weekly",
       priority: "0.6",
@@ -32,9 +29,6 @@ export const fetchBlogSitemapEntries = async (): Promise<SitemapEntry[]> => {
   });
 };
 
-/**
- * Generates a complete sitemap XML string including static pages and dynamic blog posts.
- */
 export const generateSitemapXml = (staticEntries: SitemapEntry[], blogEntries: SitemapEntry[]): string => {
   const allEntries = [...staticEntries, ...blogEntries];
   const urls = allEntries
@@ -44,7 +38,7 @@ export const generateSitemapXml = (staticEntries: SitemapEntry[], blogEntries: S
     <lastmod>${e.lastmod}</lastmod>
     <changefreq>${e.changefreq}</changefreq>
     <priority>${e.priority}</priority>
-  </url>`
+  </url>`,
     )
     .join("\n");
 
