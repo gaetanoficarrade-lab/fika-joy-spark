@@ -3,25 +3,17 @@ Allow: /
 Disallow: /absage
 Disallow: /admin
 Disallow: /admin/blog
-Disallow: /impressum
-Disallow: /datenschutz
-Disallow: /agb
-Disallow: /assets/
 
 User-agent: Googlebot-Image
-Allow: /og-image.png
-Allow: /favicon.png
-Disallow: /assets/
+Allow: /
+Disallow: /absage
+Disallow: /admin
 
 User-agent: Bingbot
 Allow: /
 Disallow: /absage
 Disallow: /admin
 Disallow: /admin/blog
-Disallow: /impressum
-Disallow: /datenschutz
-Disallow: /agb
-Disallow: /assets/
 Crawl-delay: 2
 
 User-agent: Twitterbot
@@ -35,9 +27,5 @@ Allow: /
 Disallow: /absage
 Disallow: /admin
 Disallow: /admin/blog
-Disallow: /impressum
-Disallow: /datenschutz
-Disallow: /agb
-Disallow: /assets/
 
 Sitemap: https://gaetanoficarra.de/sitemap.xml
