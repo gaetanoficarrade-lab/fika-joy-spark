@@ -51,16 +51,13 @@ const Guide = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
             >
               <p className="text-muted-foreground text-lg font-body leading-relaxed mb-6">
-                Ich bin Gaetano Ficarra. Meine Aufgabe ist es, dir ein zentrales Marketing-System aufzubauen, das zuverlässig funktioniert, damit du dich auf Kunden, Umsatz und Wachstum konzentrieren kannst.
+                Ich kenne das Hamsterrad aus eigener Erfahrung. Ich habe selbst mehrere Businesses aufgebaut und weiß wie es sich anfühlt, wenn eine Woche Urlaub bedeutet: Chaos im Hintergrund.
               </p>
               <p className="text-muted-foreground text-lg font-body leading-relaxed mb-6">
-                Du sollst keine neuen Tools lernen, keine Technik basteln und keine Schnittstellen debuggen. Das ist mein Job. Ich denke in Prozessen und setze dir ein sauberes Setup auf, in dem Leads, Termine und Follow-ups klar strukturiert zusammenlaufen.
-              </p>
-              <p className="text-muted-foreground text-lg font-body leading-relaxed mb-6">
-                Ich sorge dafür, dass dein System verständlich aufgebaut ist, stabil läuft und ohne ständiges Nachjustieren funktioniert, als Grundlage für planbares Wachstum.
+                Seit über 5 Jahren baue ich Systeme für Selbstständige, Coaches und Berater im DACH-Raum. Nicht als Tool-Erklärer. Nicht als Berater der eine Empfehlung schreibt und verschwindet. Ich baue es. Komplett. Und ich übergebe es so, dass du es wirklich nutzt.
               </p>
               <p className="text-muted-foreground text-lg font-body leading-relaxed mb-8">
-                Als zertifizierter GoHighLevel Admin mit Erfahrung in Migration, komplexen Automationen und DSGVO-konformer Einrichtung stelle ich sicher, dass dein System nicht nur heute funktioniert, sondern auch langfristig tragfähig ist.
+                Das Ergebnis ist kein Tool. Es ist ein Business das ohne dich funktioniert – damit du endlich das lebst, weswegen du dich selbstständig gemacht hast.
               </p>
 
               <div className="grid grid-cols-2 gap-6 pt-8 border-t border-border/50">
