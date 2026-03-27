@@ -30,13 +30,10 @@ const Timeline = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <span className="text-primary text-sm tracking-widest uppercase font-body">Der Ablauf</span>
+             <span className="text-primary text-sm tracking-widest uppercase font-body">Der Ablauf</span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mt-4 text-foreground">
-              So kommen wir <span className="text-primary">zusammen</span>
+              Von heute bis zum laufenden System – <span className="text-primary">in 2 Wochen.</span>
             </h2>
-            <p className="text-muted-foreground font-body mt-6 max-w-2xl mx-auto text-lg leading-relaxed">
-              Vier klare Schritte von der ersten Anfrage bis zum laufenden System
-            </p>
           </motion.div>
 
           {/* Timeline */}

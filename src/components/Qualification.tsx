@@ -93,7 +93,16 @@ const Qualification = () => {
                 ))}
               </ul>
             </motion.div>
-          </div>
+           </div>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="text-center text-muted-foreground font-body italic text-sm mt-10"
+          >
+            Beides ist legitim. Aber ich bin nur für das erste gemacht.
+          </motion.p>
         </div>
       </div>
     </section>
