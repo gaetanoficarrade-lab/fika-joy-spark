@@ -4,17 +4,16 @@ import { useRef } from "react";
 import { Check, X } from "lucide-react";
 
 const suitableFor = [
-  "Selbstständige, Coaches und Berater mit laufendem Business",
-  "Unternehmer, die regelmäßig Anfragen oder Leads bekommen",
-  "Menschen, deren Wachstum an fehlender Struktur scheitert, nicht am Marketing",
-  "Unternehmer, die verstanden haben: Ordnung und Prozesse sind Voraussetzung für planbares Wachstum",
-  "Alle, die sich auf Kunden und Umsatz konzentrieren wollen, statt auf Technik"
+  "Du ein laufendes Business mit aktiven Kunden hast",
+  "Dein Wachstum nicht am Marketing hängt – sondern daran, dass die Prozesse dahinter noch nicht stehen",
+  "Du nicht selbst an Technik sitzen willst – du willst, dass jemand es baut und es danach einfach läuft",
+  "Mehr Kunden für dich mehr Freiheit bedeuten soll, nicht mehr Chaos"
 ];
 
 const notSuitableFor = [
-  "Anfänger, die noch kein laufendes Business haben",
-  "Bastler und Toolspieler, die alles selbst machen wollen",
-  "Wer nicht bereit ist, Verantwortung für Prozesse abzugeben"
+  "Du gerade erst anfängst und noch keine Kunden hast",
+  "Du alles selbst in der Hand behalten und jeden Schritt selbst verstehen willst",
+  "Du ein Tool suchst das du selbst lernst und bedienst"
 ];
 
 const Qualification = () => {
@@ -31,13 +30,10 @@ const Qualification = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <span className="text-primary text-sm tracking-widest uppercase font-body">Zielgruppe</span>
+             <span className="text-primary text-sm tracking-widest uppercase font-body">Zielgruppe</span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mt-4 text-foreground">
-              Für wen ich <span className="text-primary">der richtige Partner</span> bin
+              Für wen das wirklich <span className="text-primary">Sinn macht</span> – und für wen nicht.
             </h2>
-            <p className="text-muted-foreground font-body mt-6 max-w-2xl mx-auto text-lg leading-relaxed">
-              Meine Dienstleistung ist nicht für jeden geeignet. Hier ist eine ehrliche Orientierung.
-            </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -52,7 +48,7 @@ const Qualification = () => {
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
                   <Check className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="font-display text-xl text-foreground">Geeignet für</h3>
+                 <h3 className="font-display text-xl text-foreground">Richtig für dich wenn:</h3>
               </div>
               <ul className="space-y-4">
                 {suitableFor.map((item, index) => (
@@ -80,7 +76,7 @@ const Qualification = () => {
                 <div className="w-12 h-12 bg-muted rounded-full flex items-center justify-center">
                   <X className="w-6 h-6 text-muted-foreground" />
                 </div>
-                <h3 className="font-display text-xl text-foreground">Nicht geeignet für</h3>
+                 <h3 className="font-display text-xl text-foreground">Nicht das Richtige wenn:</h3>
               </div>
               <ul className="space-y-4">
                 {notSuitableFor.map((item, index) => (
@@ -97,7 +93,16 @@ const Qualification = () => {
                 ))}
               </ul>
             </motion.div>
-          </div>
+           </div>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="text-center text-muted-foreground font-body italic text-sm mt-10"
+          >
+            Beides ist legitim. Aber ich bin nur für das erste gemacht.
+          </motion.p>
         </div>
       </div>
     </section>
