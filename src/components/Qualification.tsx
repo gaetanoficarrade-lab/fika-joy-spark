@@ -30,13 +30,10 @@ const Qualification = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <span className="text-primary text-sm tracking-widest uppercase font-body">Zielgruppe</span>
+             <span className="text-primary text-sm tracking-widest uppercase font-body">Zielgruppe</span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mt-4 text-foreground">
-              Für wen ich <span className="text-primary">der richtige Partner</span> bin
+              Für wen das wirklich <span className="text-primary">Sinn macht</span> – und für wen nicht.
             </h2>
-            <p className="text-muted-foreground font-body mt-6 max-w-2xl mx-auto text-lg leading-relaxed">
-              Meine Dienstleistung ist nicht für jeden geeignet. Hier ist eine ehrliche Orientierung.
-            </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8">
