@@ -52,7 +52,7 @@ const App = () => (
           <ScrollToTop />
           <ScrollToTopButton />
           <CookieBanner />
-          <ExitIntentPopup />
+          
           <Suspense fallback={<PageLoader />}>
             <Routes>
               <Route path="/" element={<Index />} />
