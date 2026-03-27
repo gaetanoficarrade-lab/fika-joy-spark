@@ -4,15 +4,20 @@ import fs from 'fs';
 import path from 'path';
 import { createClient } from '@supabase/supabase-js';
 
-const SUPABASE_URL = process.env.VITE_SUPABASE_URL || 'https://supabase.gaetanoficarra.de';
-const SUPABASE_ANON_KEY = process.env.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlzcyI6InN1cGFiYXNlIiwiaWF0IjoxNjQxNzY5MjAwLCJleHAiOjE3OTk1MzU2MDB9.ayn7R9jwFZYZCHSFQcpggY8DpS3jIXXm1gFBgeOFdtE';
+const SUPABASE_URL = process.env.VITE_SUPABASE_URL;
+const SUPABASE_ANON_KEY = process.env.VITE_SUPABASE_ANON_KEY;
 const BASE_URL = 'https://gaetanoficarra.de';
 
-// Statische Routen — /absage raus (noindex), /admin/blog raus (kein SEO-Wert)
+// Validierung: Keys müssen vorhanden sein
+if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
+  console.warn('⚠️  VITE_SUPABASE_URL oder VITE_SUPABASE_ANON_KEY nicht gesetzt!');
+  console.warn('Blog-Artikel werden übersprungen.');
+}
+
+// Statische Routen — /links raus (noindex)
 const staticRoutes = [
   '/',
   '/leistungen',
-  '/links',
   '/highlevel-vs-funnelmate',
   '/agb',
   '/datenschutz',
@@ -26,23 +31,25 @@ const staticRoutes = [
 let blogRoutes = [];
 let blogPosts = [];
 
-try {
-  const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-  const { data: posts } = await supabase
-    .from('blog_posts')
-    .select('slug, published_at, updated_at')
-    .eq('published', true)
-    .order('published_at', { ascending: false });
+if (SUPABASE_URL && SUPABASE_ANON_KEY) {
+  try {
+    const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    const { data: posts } = await supabase
+      .from('blog_posts')
+      .select('slug, published_at, updated_at')
+      .eq('published', true)
+      .order('published_at', { ascending: false });
 
-  if (posts && posts.length > 0) {
-    blogPosts = posts;
-    blogRoutes = posts.map((post) => `/blog/${post.slug}`);
-    console.log(`Blog-Artikel gefunden: ${posts.length} — werden vorgerendert.`);
-  } else {
-    console.log('Keine veröffentlichten Blog-Artikel gefunden.');
+    if (posts && posts.length > 0) {
+      blogPosts = posts;
+      blogRoutes = posts.map((post) => `/blog/${post.slug}`);
+      console.log(`✅ Blog-Artikel gefunden: ${posts.length} — werden vorgerendert.`);
+    } else {
+      console.log('⚠️  Keine veröffentlichten Blog-Artikel gefunden.');
+    }
+  } catch (err) {
+    console.warn('⚠️  Blog-Artikel konnten nicht geladen werden:', err.message);
   }
-} catch (err) {
-  console.warn('Blog-Artikel konnten nicht geladen werden:', err.message);
 }
 
 const routes = [...staticRoutes, ...blogRoutes];
@@ -59,31 +66,60 @@ const port = address.port;
 const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
 const fallbackTitle = 'Gaetano Ficarra — GoHighLevel & Funnelmate Experte für Marketing Automation';
 
+// Prerendering mit Error Handling pro Route
+let successCount = 0;
+let failedRoutes = [];
+
 for (const route of routes) {
-  const page = await browser.newPage();
-  await page.goto(`http://localhost:${port}${route}`, { waitUntil: 'networkidle0' });
+  try {
+    const page = await browser.newPage();
 
-  // Warten bis SEOHead die seitenspezifischen Tags gesetzt hat
-  await page.waitForFunction(
-    (ft, isHome) => {
-      const title = document.title;
-      return isHome ? true : title !== ft;
-    },
-    { timeout: 5000 },
-    fallbackTitle,
-    route === '/'
-  ).catch(() => console.warn(`Warning: title may not have updated for ${route}`));
+    try {
+      await page.goto(`http://localhost:${port}${route}`, { waitUntil: 'networkidle0', timeout: 30000 });
 
-  const html = await page.content();
-  const dir = path.join('/app/dist', route);
-  fs.mkdirSync(dir, { recursive: true });
-  fs.writeFileSync(path.join(dir, 'index.html'), html);
-  console.log(`Prerendered: ${route}`);
-  await page.close();
+      // Warten bis SEOHead die seitenspezifischen Tags gesetzt hat
+      await page.waitForFunction(
+        (ft, isHome) => {
+          const title = document.title;
+          return isHome ? true : title !== ft;
+        },
+        { timeout: 5000 },
+        fallbackTitle,
+        route === '/'
+      ).catch(() => console.warn(`⚠️  Warning: title may not have updated for ${route}`));
+
+      const html = await page.content();
+
+      if (!html || html.length < 100) {
+        console.warn(`⚠️  WARNUNG: ${route} hat leeres oder zu kurzes HTML — möglicherweise Fehler`);
+        failedRoutes.push(route);
+      } else {
+        const dir = path.join('/app/dist', route);
+        fs.mkdirSync(dir, { recursive: true });
+        fs.writeFileSync(path.join(dir, 'index.html'), html);
+        console.log(`✅ Prerendered: ${route}`);
+        successCount++;
+      }
+    } finally {
+      await page.close();
+    }
+  } catch (err) {
+    console.error(`❌ FEHLER beim Prerendering von ${route}:`, err.message);
+    failedRoutes.push(route);
+  }
 }
 
 await browser.close();
 server.httpServer.close();
+
+// Zusammenfassung
+console.log(`\n${'='.repeat(60)}`);
+console.log(`Prerendering abgeschlossen:`);
+console.log(`✅ Erfolgreich: ${successCount}/${routes.length}`);
+if (failedRoutes.length > 0) {
+  console.log(`❌ Fehler bei: ${failedRoutes.join(', ')}`);
+}
+console.log(`${'='.repeat(60)}\n`);
 
 // SITEMAP AKTUALISIEREN — mit automatischen lastmod-Daten
 try {
@@ -112,13 +148,13 @@ try {
     }).join('\n');
 
     sitemap = sitemap.replace('</urlset>', `${blogUrls}\n</urlset>`);
-    console.log(`Sitemap angereichert mit ${blogPosts.length} Blog-Artikel(n).`);
+    console.log(`✅ Sitemap angereichert mit ${blogPosts.length} Blog-Artikel(n).`);
   } else {
-    console.log('Keine Blog-Artikel — Sitemap unverändert.');
+    console.log('⚠️  Keine Blog-Artikel — Sitemap unverändert.');
   }
 
   fs.writeFileSync(sitemapPath, sitemap);
   console.log(`✅ Sitemap aktualisiert — alle lastmod-Daten sind aktuell (${today}).`);
 } catch (err) {
-  console.error('Sitemap konnte nicht angereichert werden:', err.message);
+  console.error('❌ Sitemap konnte nicht angereichert werden:', err.message);
 }
