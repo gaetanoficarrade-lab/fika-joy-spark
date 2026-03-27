@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import SEOHead from "@/components/SEOHead";
-import MarketingNav from "@/components/MarketingNav";
-import { CookieBanner } from "@/components/CookieBanner";
+import Header from "@/components/Header";
+import CookieBanner from "@/components/CookieBanner";
 
 const NotFound = () => {
   const location = useLocation();
@@ -22,7 +22,7 @@ const NotFound = () => {
       />
 
       <div className="min-h-screen flex flex-col" style={{ color: "#44484E", background: "#FFFFFF" }}>
-        <MarketingNav />
+        <Header />
 
         <main className="flex-1 flex items-center justify-center px-6 py-20">
           <div className="text-center max-w-md">
