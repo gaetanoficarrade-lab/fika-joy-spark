@@ -34,17 +34,18 @@ const Blog = () => {
       <SEOHead
         title="Marketing Automation Blog — Tipps & Insights | Gaetano Ficarra"
         description="Marketing Automation Blog: Praxistipps zu GoHighLevel, Funnelmate & CRM-Strategie. Wissen für Selbstständige, die ihr Business skalieren wollen."
+        canonical="https://gaetanoficarra.de/blog"
         breadcrumbs={[
           { name: "Startseite", url: "https://gaetanoficarra.de/" },
           { name: "Blog", url: "https://gaetanoficarra.de/blog" },
         ]}
         jsonLd={{
           "@type": "Blog",
-          "name": "Marketing Automation Blog",
-          "url": "https://gaetanoficarra.de/blog",
-          "description": "Praxistipps zu Marketing Automation, CRM, Funnelmate und GoHighLevel.",
-          "author": { "@type": "Person", "name": "Gaetano Ficarra", "url": "https://gaetanoficarra.de" },
-          "inLanguage": "de-DE"
+          name: "Marketing Automation Blog",
+          url: "https://gaetanoficarra.de/blog",
+          description: "Praxistipps zu Marketing Automation, CRM, Funnelmate und GoHighLevel.",
+          author: { "@type": "Person", name: "Gaetano Ficarra", url: "https://gaetanoficarra.de" },
+          inLanguage: "de-DE",
         }}
       />
       <Header />
@@ -89,7 +90,8 @@ const Blog = () => {
                 Artikel in Vorbereitung — <span className="text-gradient-primary">bald verfügbar</span>
               </h2>
               <p className="text-muted-foreground font-body text-lg">
-                Ich arbeite gerade an spannenden Artikeln rund um Marketing-Automatisierung, CRM-Systeme und Marketing. Schau bald wieder vorbei!
+                Ich arbeite gerade an spannenden Artikeln rund um Marketing-Automatisierung, CRM-Systeme und Marketing.
+                Schau bald wieder vorbei!
               </p>
             </motion.div>
           ) : (
@@ -119,9 +121,7 @@ const Blog = () => {
                       <h2 className="font-display text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
                         {post.title}
                       </h2>
-                      <p className="text-muted-foreground font-body text-sm mb-4 line-clamp-2">
-                        {post.description}
-                      </p>
+                      <p className="text-muted-foreground font-body text-sm mb-4 line-clamp-2">{post.description}</p>
                       <div className="flex items-center justify-between text-xs text-muted-foreground font-body">
                         {post.published_at && (
                           <span className="flex items-center gap-1">
@@ -147,9 +147,7 @@ const Blog = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="max-w-3xl mx-auto mt-16 rounded-xl border border-primary/20 bg-card p-8 md:p-10 text-center"
           >
-            <p className="text-muted-foreground font-body text-lg mb-4">
-              Nicht sicher welches Tool das Richtige ist?
-            </p>
+            <p className="text-muted-foreground font-body text-lg mb-4">Nicht sicher welches Tool das Richtige ist?</p>
             <Link
               to="/highlevel-vs-funnelmate"
               className="inline-flex items-center gap-2 text-primary font-body text-sm tracking-widest uppercase hover:gap-3 transition-all duration-300"
