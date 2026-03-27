@@ -48,7 +48,7 @@ const Qualification = () => {
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
                   <Check className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="font-display text-xl text-foreground">Geeignet für</h3>
+                 <h3 className="font-display text-xl text-foreground">Richtig für dich wenn:</h3>
               </div>
               <ul className="space-y-4">
                 {suitableFor.map((item, index) => (
