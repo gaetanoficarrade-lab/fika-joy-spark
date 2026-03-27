@@ -18,14 +18,14 @@ const Hero = () => {
         <div
           className="absolute inset-0 w-[200%] h-full"
           style={{
-            background: "linear-gradient(90deg, transparent 0%, hsl(var(--primary) / 0.08) 50%, transparent 100%)",
+            background: "linear-gradient(90deg, transparent 0%, hsl(var(--primary) / 0.18) 50%, transparent 100%)",
             animation: "shimmer-ltr 10s ease-in-out infinite",
           }}
         />
         <div
           className="absolute inset-0 w-[200%] h-full"
           style={{
-            background: "linear-gradient(90deg, transparent 0%, hsl(var(--primary) / 0.06) 50%, transparent 100%)",
+            background: "linear-gradient(90deg, transparent 0%, hsl(var(--secondary) / 0.12) 50%, transparent 100%)",
             animation: "shimmer-rtl 14s ease-in-out infinite",
           }}
         />
