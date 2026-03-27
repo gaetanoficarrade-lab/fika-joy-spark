@@ -65,6 +65,7 @@ const LinksPage = () => {
       <SEOHead
         title="Alle Links — Gaetano Ficarra | GoHighLevel & Funnelmate"
         description="Alle wichtigen Links von Gaetano Ficarra auf einen Blick: Erstgespräch, Leistungen, Blog und mehr."
+        noIndex={true}
       />
       <Header />
       <main className="pt-32 pb-20">
@@ -113,7 +114,9 @@ const LinksPage = () => {
                   >
                     <div className="flex items-center justify-between">
                       <div>
-                        <h3 className={`font-display text-lg mb-1 ${link.highlight ? "text-primary" : "text-foreground"}`}>
+                        <h3
+                          className={`font-display text-lg mb-1 ${link.highlight ? "text-primary" : "text-foreground"}`}
+                        >
                           {link.title}
                         </h3>
                         <p className="text-muted-foreground text-sm font-body">{link.description}</p>
@@ -141,7 +144,9 @@ const LinksPage = () => {
                 >
                   <div className="flex items-center justify-between">
                     <div>
-                      <h3 className={`font-display text-lg mb-1 ${link.highlight ? "text-primary" : "text-foreground"}`}>
+                      <h3
+                        className={`font-display text-lg mb-1 ${link.highlight ? "text-primary" : "text-foreground"}`}
+                      >
                         {link.title}
                       </h3>
                       <p className="text-muted-foreground text-sm font-body">{link.description}</p>
