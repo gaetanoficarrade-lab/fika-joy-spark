@@ -41,7 +41,7 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="mb-6"
             >
-              <span className="inline-flex items-center px-4 py-2 glass-card text-primary text-sm tracking-widest uppercase font-body">
+              <span className="inline-flex items-center px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-primary text-sm tracking-widest uppercase font-body">
                 ✓ Zertifizierter GoHighLevel Admin
               </span>
             </motion.div>
