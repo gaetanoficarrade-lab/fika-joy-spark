@@ -59,7 +59,7 @@ const Problem = () => {
             </h2>
             <p className="text-muted-foreground font-body mt-6 max-w-3xl mx-auto text-lg leading-relaxed">
               Du hast dir das anders vorgestellt. Mehr Freiheit. Mehr Kontrolle. Selbst entscheiden wann, wo und mit wem du arbeitest.
-              Stattdessen sitzt du abends noch am Laptop, onboardest neue Kunden per Hand, jagst Follow-ups hinterher – und fragst dich:
+              Stattdessen sitzt du abends noch am Laptop, onboardest neue Kunden per Hand, jagst Follow-ups hinterher und fragst dich:
               Hab ich auf die Anfrage von gestern schon geantwortet? Das ist die Zeit-gegen-Geld-Falle. Nicht weil du etwas falsch machst.
               Sondern weil kein System dahinter ist. Und das ändere ich.
             </p>
