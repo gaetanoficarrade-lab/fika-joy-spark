@@ -75,16 +75,17 @@ const applyAllTags = (
   setMeta("property", "og:description", ogDescription);
   setMeta("property", "og:url", canonicalUrl);
   setMeta("property", "og:image", ogImage);
+  setMeta("property", "og:image:alt", ogTitle);
   setMeta("property", "og:type", ogType);
   setMeta("property", "og:site_name", "Gaetano Ficarra");
   setMeta("property", "og:locale", "de_DE");
 
   setMeta("name", "twitter:card", "summary_large_image");
+  setMeta("name", "twitter:site", "@gaetano_ficarra");
   setMeta("name", "twitter:title", ogTitle);
   setMeta("name", "twitter:description", ogDescription);
   setMeta("name", "twitter:image", ogImage);
 
-  // ✅ FIX: Richtig setzen statt löschen!
   if (noIndex) {
     setMeta("name", "robots", "noindex, nofollow");
   } else {
