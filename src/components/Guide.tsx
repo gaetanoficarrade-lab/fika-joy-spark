@@ -63,9 +63,9 @@ const Guide = () => {
               <div className="grid grid-cols-2 gap-6 pt-8 border-t border-border/50">
                 {[
                   { label: "Zertifizierter", value: "GoHighLevel Admin" },
-                  { label: "Fokus", value: "Ordnung & Klarheit" },
+                  { label: "Fokus", value: "Systemaufbau für Selbstständige" },
                   { label: "Erfahrung", value: "5+ Jahre Online Business" },
-                  { label: "Spezialgebiet", value: "Systeme & Automatisierung" },
+                  { label: "Spezialgebiet", value: "Automatisierung & Migration" },
                 ].map((stat, index) => (
                   <motion.div
                     key={index}
