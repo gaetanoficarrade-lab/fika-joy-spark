@@ -3,17 +3,20 @@ Allow: /
 Disallow: /absage
 Disallow: /admin
 Disallow: /admin/blog
+Disallow: /links
 
 User-agent: Googlebot-Image
 Allow: /
 Disallow: /absage
 Disallow: /admin
+Disallow: /links
 
 User-agent: Bingbot
 Allow: /
 Disallow: /absage
 Disallow: /admin
 Disallow: /admin/blog
+Disallow: /links
 Crawl-delay: 2
 
 User-agent: Twitterbot
@@ -27,5 +30,5 @@ Allow: /
 Disallow: /absage
 Disallow: /admin
 Disallow: /admin/blog
-
+Disallow: /links
 Sitemap: https://gaetanoficarra.de/sitemap.xml
