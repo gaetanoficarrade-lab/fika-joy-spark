@@ -30,7 +30,7 @@ const mainServices = [
       "Einweisung und Übergabe – du verstehst was läuft und warum",
       "30 Tage Support nach Go-Live",
     ],
-    price: "ab 3.000 €",
+    price: "",
     popular: false,
     icon: Zap,
   },
@@ -48,7 +48,7 @@ const mainServices = [
       "Migration deiner bestehenden Kontakte und Daten",
       "30 Tage Support nach Go-Live",
     ],
-    price: "ab 4.500 €",
+    price: "",
     popular: true,
     icon: Rocket,
   },
@@ -65,7 +65,7 @@ const mainServices = [
       "Mitgliederbereich falls du Kurse oder Inhalte anbietest",
       "60 Tage Support nach Go-Live",
     ],
-    price: "ab 6.000 €",
+    price: "",
     popular: false,
     icon: Crown,
   },
@@ -204,9 +204,6 @@ const Leistungen = () => {
 
                         {/* Price & CTA */}
                         <div className="flex flex-wrap items-center gap-6">
-                          <div>
-                            <p className="font-display text-3xl text-primary">{service.price}</p>
-                          </div>
                           <button
                             onClick={openQuizModal}
                             className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground text-sm tracking-widest uppercase font-body hover:bg-primary/90 transition-all duration-300 rounded-sm"
