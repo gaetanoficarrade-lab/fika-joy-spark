@@ -96,7 +96,8 @@ const applyAllTags = (
   setMeta("property", "og:locale", "de_DE");
 
   setMeta("name", "twitter:card", "summary_large_image");
-  setMeta("name", "twitter:site", "@gaetano_ficarra");
+    setMeta("name", "twitter:site", "@gaetano_ficarra");
+    setMeta("name", "twitter:creator", "@gaetano_ficarra");
   setMeta("name", "twitter:title", ogTitle);
   setMeta("name", "twitter:description", ogDescription);
   setMeta("name", "twitter:image", ogImage);
