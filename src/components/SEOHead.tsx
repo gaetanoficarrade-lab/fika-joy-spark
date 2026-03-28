@@ -144,7 +144,7 @@ const SEOHead = ({
       "@type": "ProfessionalService",
       name: "Gaetano Ficarra",
       description:
-        "Marketing Automation Berater für Selbstständige, Coaches und Dienstleister im DACH-Raum. Zertifizierter GoHighLevel Admin aus Bielefeld.",
+        "Done-for-you Business Systeme für selbstständige Coaches, Berater und Dienstleister. Funnel aufbauen lassen, CRM einrichten und Prozesse automatisieren – in 2 Wochen.",
       url: BASE_URL,
       image: `${BASE_URL}/og-image.png`,
       telephone: "+49-152-23856537",
