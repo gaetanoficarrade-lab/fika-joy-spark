@@ -354,9 +354,9 @@ const Leistungen = () => {
               transition={{ duration: 0.6 }}
               className="text-center mb-12"
             >
-              <h3 className="font-display text-3xl md:text-4xl text-foreground">
+              <h2 className="font-display text-3xl md:text-4xl text-foreground">
                 Das biete ich <span className="text-gradient-primary">außerdem an.</span>
-              </h3>
+              </h2>
             </motion.div>
 
             <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
