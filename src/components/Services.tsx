@@ -21,12 +21,13 @@ const services = [
   {
     icon: Users,
     title: "Growth",
-    description: "Du arbeitest aktiv an deinem System, während ich dich strategisch und technisch begleite. Du bekommst klare Aufgaben und Umsetzungs-Schritte, setzt sie in deinem Tempo um und ich prüfe die Ergebnisse, bevor wir den nächsten Schritt gehen.",
+    description: "Funnel, Automatisierungen, CRM und automatisiertes Onboarding – alles was du brauchst damit mehr Kunden nicht mehr Arbeit bedeutet.",
     benefits: [
-      "Du verstehst, wie dein System funktioniert",
-      "Änderungen kannst du sicher einschätzen",
-      "Alle Abläufe sind dokumentiert und nachvollziehbar",
-      "Wissen bleibt bei dir und geht nicht verloren",
+      "Alles aus dem Starter-Paket",
+      "Funnel und Landingpages fertig aufgebaut, keine Bastelei",
+      "E-Mail-Sequenzen und automatisierte Follow-ups",
+      "Automatisiertes Kunden-Onboarding",
+      "Migration deiner bestehenden Kontakte und Daten",
       "30 Tage Support nach Go-Live",
     ],
     popular: true,
