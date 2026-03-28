@@ -3,6 +3,7 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { MessageCircle, ClipboardCheck, Rocket, Headphones } from "lucide-react";
 import { useQuizModal } from "@/context/QuizModalContext";
+import solutionBg from "@/assets/solution-bg.jpg";
 
 const steps = [
   {
@@ -41,9 +42,16 @@ const Timeline = () => {
   const { openQuizModal } = useQuizModal();
 
   return (
-    <section className="py-24 md:py-32 relative overflow-hidden" ref={ref}>
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-white/20 to-background" />
+    <section className="py-24 md:py-32 relative overflow-hidden isolate" ref={ref}>
+      <div className="absolute inset-0 pointer-events-none z-0">
+        <img
+          src={solutionBg}
+          alt=""
+          className="w-full h-full object-cover opacity-40"
+          loading="lazy"
+          aria-hidden="true"
+        />
+      </div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
@@ -72,16 +80,16 @@ const Timeline = () => {
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.15 * (index + 1) }}
                   className={`relative lg:flex lg:items-center lg:gap-8 ${
-                    index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+                    index % 2 === 0 ? "lg:flex-row-reverse" : "lg:flex-row"
                   }`}
                 >
-                  <div className={`lg:w-[calc(50%-40px)] ${index % 2 === 0 ? "lg:text-right" : "lg:text-left"}`}>
+                  <div className={`lg:w-[calc(50%-40px)] ${index % 2 === 0 ? "lg:text-left" : "lg:text-right"}`}>
                     <motion.div whileHover={{ scale: 1.02 }} className="glass-card-premium p-6 md:p-8">
-                      <div className={`flex items-center gap-4 mb-4 ${index % 2 === 0 ? "lg:flex-row-reverse" : ""}`}>
+                      <div className={`flex items-center gap-4 mb-4 ${index % 2 === 0 ? "" : "lg:flex-row-reverse"}`}>
                         <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
                           <step.icon className="w-6 h-6 text-primary" />
                         </div>
-                        <div className={index % 2 === 0 ? "lg:text-right" : ""}>
+                        <div className={index % 2 === 0 ? "" : "lg:text-right"}>
                           <span className="text-primary text-xs tracking-widest uppercase font-body">
                             Schritt {step.step}
                           </span>
@@ -89,7 +97,7 @@ const Timeline = () => {
                         </div>
                       </div>
                       <p
-                        className={`text-muted-foreground font-body leading-relaxed ${index % 2 === 0 ? "lg:text-right" : "lg:text-left"}`}
+                        className={`text-muted-foreground font-body leading-relaxed ${index % 2 === 0 ? "lg:text-left" : "lg:text-right"}`}
                       >
                         {step.description}
                       </p>
