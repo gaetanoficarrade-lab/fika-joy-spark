@@ -102,7 +102,7 @@ const Leistungen = () => {
         description="Funnel aufbauen lassen, CRM einrichten und Prozesse automatisieren – done for you, in 2 Wochen. Drei Pakete für Coaches und Berater die ihr Business skalieren wollen."
         canonical="https://gaetanoficarra.de/leistungen"
         ogTitle="Leistungen & Pakete: Funnel aufbauen lassen & CRM einrichten | Gaetano Ficarra"
-        ogDescription="Funnel aufbauen lassen, CRM einrichten und Prozesse automatisieren – done for you, in 2 Wochen. Drei Pakete für Coaches und Berater die ihr Business skalieren wollen."
+        ogDescription="Funnel aufbauen lassen, CRM einrichten und Prozesse automatisieren, done for you, in 2 Wochen. Drei Pakete für Coaches und Berater die ihr Business skalieren wollen."
         breadcrumbs={[
           { name: "Startseite", url: "https://gaetanoficarra.de/" },
           { name: "Leistungen", url: "https://gaetanoficarra.de/leistungen" },
