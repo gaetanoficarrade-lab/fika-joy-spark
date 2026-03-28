@@ -8,7 +8,7 @@ const services = [
   {
     icon: Zap,
     title: "Starter",
-    description: "Du willst anfangen ohne gleich alles auf einmal umzubauen. Ich richte dir ein sauberes System mit CRM und einer Kernautomatisierung ein die sofort Zeit spart.",
+    description: "Du willst anfangen, ohne gleich alles auf einmal umzubauen. Ich richte dir ein sauberes System mit CRM und einer Kernautomatisierung ein die sofort Zeit spart.",
     benefits: [
       "Vollständiges System-Setup (CRM, Pipelines, Lead-Struktur)",
       "Eine zentrale Automatisierung nach deinen Prozessen",
