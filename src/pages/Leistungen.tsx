@@ -255,7 +255,7 @@ const Leistungen = () => {
                     <p className="font-display text-3xl text-primary mb-6">250 € / Stunde</p>
 
                     <p className="text-muted-foreground font-body text-lg leading-relaxed mb-6">
-                      Du nutzt dein System bereits und hast ein konkretes Problem. Eine Automatisierung läuft nicht. Ein Funnel konvertiert nicht. Wir teilen den Bildschirm und ich löse es mit dir live. Kein Drumherum, keine langen Vorgespräche, keine Verpflichtung.
+                       Du nutzt dein System bereits und hast ein konkretes Problem. Eine Automatisierung läuft nicht. Ein Funnel konvertiert nicht. Wir teilen den Bildschirm und ich löse es mit dir live. Kein Drumherum, keine langen Vorgespräche, keine Verpflichtung.
                     </p>
 
                     <p className="text-muted-foreground font-body text-sm leading-relaxed mb-8">
