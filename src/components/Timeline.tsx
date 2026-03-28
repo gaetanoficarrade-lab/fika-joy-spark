@@ -97,7 +97,7 @@ const Timeline = () => {
                         </div>
                       </div>
                       <p
-                        className={`text-muted-foreground font-body leading-relaxed ${index % 2 === 0 ? "lg:text-right" : "lg:text-left"}`}
+                        className={`text-muted-foreground font-body leading-relaxed ${index % 2 === 0 ? "lg:text-left" : "lg:text-right"}`}
                       >
                         {step.description}
                       </p>
