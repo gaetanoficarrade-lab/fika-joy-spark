@@ -1,7 +1,7 @@
 {
-  "name": "Gaetano Ficarra - GoHighLevel & Funnelmate Experte",
+  "name": "Gaetano Ficarra — Marketing Automation Berater",
   "short_name": "Gaetano Ficarra",
-  "description": "Zertifizierter GoHighLevel & Funnelmate Experte. Marketing Automation für dein Business.",
+  "description": "Zertifizierter GoHighLevel Admin. Marketing Automation Systeme für Coaches & Berater.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0a0a0a",
@@ -9,13 +9,8 @@
   "lang": "de",
   "icons": [
     {
-      "src": "/favicon.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "/favicon.png",
-      "sizes": "512x512",
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
       "type": "image/png"
     }
   ]
