@@ -2,7 +2,7 @@ import { useState } from "react";
 import SEOHead from "@/components/SEOHead";
 import { motion } from "framer-motion";
 import { Copy, Check, MessageCircle, ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
