@@ -3,6 +3,7 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import { motion } from "framer-motion";
 import { Calendar, ArrowRight, Clock, ChevronRight } from "lucide-react";
+import DOMPurify from "isomorphic-dompurify";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { supabase, type BlogPost } from "@/lib/supabase";
