@@ -36,7 +36,7 @@ const Guide = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/15 to-transparent rounded-2xl blur-2xl scale-105" />
                 <img
                   src={portrait}
-                  alt="Gaetano Ficarra - Zertifizierter GoHighLevel Admin"
+                  alt="Gaetano Ficarra — Zertifizierter GoHighLevel Admin aus Bielefeld"
                   className="relative w-full max-w-md rounded-2xl border border-white/60 shadow-[0_20px_60px_rgba(0,0,0,0.1)]"
                   width={448}
                   height={448}
