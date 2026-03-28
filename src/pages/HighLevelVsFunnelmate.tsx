@@ -422,7 +422,7 @@ const HighLevelVsFunnelmate = () => {
                     <h3 className="font-display text-2xl text-foreground">Funnelmate</h3>
                   </div>
                   <p className="text-muted-foreground font-body mb-6">
-                    GoHighLevel für den DACH-Raum – mit deutscher Oberfläche, deutschem Support und DSGVO-konformer
+                    GoHighLevel für den DACH-Raum, mit deutscher Oberfläche, deutschem Support und DSGVO-konformer
                     Infrastruktur. Perfekt für deutschsprachige Unternehmer.
                   </p>
                   <ul className="space-y-4">
