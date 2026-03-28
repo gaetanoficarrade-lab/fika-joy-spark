@@ -25,7 +25,7 @@ const problems = [
   },
   {
     icon: AlertTriangle,
-    title: "Kein Überblick - nur ein ungutes Gefühl",
+    title: "Kein Überblick, nur ein ungutes Gefühl",
     description:
       "Wo steht welcher Lead? Wer wurde kontaktiert? Wer ist kurz vorm Abschluss? Du weißt es irgendwie aber eben nicht wirklich.",
   },
