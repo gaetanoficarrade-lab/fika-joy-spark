@@ -75,7 +75,7 @@ const applyAllTags = (
   setMeta("property", "og:description", ogDescription);
   setMeta("property", "og:url", canonicalUrl);
   setMeta("property", "og:image", ogImage);
-  setMeta("property", "og:image:alt", ogTitle);
+  setMeta("property", "og:image:alt", `${ogTitle} — Gaetano Ficarra`);
   setMeta("property", "og:type", ogType);
   setMeta("property", "og:site_name", "Gaetano Ficarra");
   setMeta("property", "og:locale", "de_DE");
