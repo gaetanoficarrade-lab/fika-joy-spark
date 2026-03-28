@@ -24,6 +24,7 @@ const BlogArticle = () => {
   const { slug } = useParams<{ slug: string }>();
   const { openQuizModal } = useQuizModal();
   const [post, setPost] = useState<BlogPost | null>(null);
+  const [relatedPosts, setRelatedPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
 
