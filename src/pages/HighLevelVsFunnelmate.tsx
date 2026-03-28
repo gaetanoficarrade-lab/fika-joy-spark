@@ -113,7 +113,7 @@ const HighLevelVsFunnelmate = () => {
               className="text-center max-w-3xl mx-auto mb-16"
             >
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground mb-6">
-                GoHighLevel vs. Funnelmate 2026 — <span className="text-gradient-primary">Der direkte Vergleich</span>
+                GoHighLevel vs. Funnelmate 2026. <span className="text-gradient-primary">Der direkte Vergleich</span>
               </h1>
               <p className="text-muted-foreground text-lg font-body">
                 Beide Plattformen nutzen die gleiche Technologie – aber welche ist die richtige für dein Business im
