@@ -6,8 +6,6 @@ import funnelmateLogo from "@/assets/funnelmate-logo.png";
 import funnelmateCertifiedExpert from "@/assets/funnelmate-certified-expert.png";
 import patrickMentlerLogo from "@/assets/patrick-mentler-logo.png";
 import octaLogo from "@/assets/octa-logo.png";
-import cssIcon from "@/assets/css-icon.png";
-import htmlIcon from "@/assets/html-icon.png";
 
 const partners = [
   { name: "GoHighLevel", alt: "GoHighLevel zertifizierter Partner", logo: gohighlevelLogo, url: "https://www.gohighlevel.com/?fp_ref=gaetano62" },
