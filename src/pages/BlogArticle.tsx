@@ -251,7 +251,7 @@ const BlogArticle = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="font-display text-3xl md:text-5xl font-bold text-white leading-tight mb-5 line-clamp-2"
+            className="font-display text-3xl md:text-5xl font-bold text-white leading-tight mb-5"
           >
             {post.title}
           </motion.h1>
