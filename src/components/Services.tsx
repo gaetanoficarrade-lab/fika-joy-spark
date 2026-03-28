@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const services = [
   {
     icon: Settings,
-    title: "Komplett-Setup",
+    title: "Full System",
     description: "Ich baue dir dein komplettes System: Leads, Termine, Follow-ups, Automationen. Du lehnst dich zurück und bekommst alles startklar übergeben.",
     benefits: [
       "Du arbeitest mit einem vollständig eingerichteten System",
