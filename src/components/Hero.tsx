@@ -101,7 +101,7 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-primary/15 to-secondary/10 rounded-full blur-3xl scale-110" />
               <img
                 src={portrait}
-                alt="Gaetano Ficarra - Zertifizierter GoHighLevel Admin"
+                alt="Gaetano Ficarra — Marketing Automation Berater für Coaches und Berater"
                 className="relative w-80 h-80 md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px] object-cover object-top rounded-full border-4 border-white/60 shadow-[0_20px_60px_rgba(0,0,0,0.1)] animate-glow-pulse"
                 width={500}
                 height={500}
