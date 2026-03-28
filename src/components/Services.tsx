@@ -6,17 +6,17 @@ import { Link } from "react-router-dom";
 
 const services = [
   {
-    icon: Settings,
-    title: "Full System",
-    description: "Ich baue dir dein komplettes System: Leads, Termine, Follow-ups, Automationen. Du lehnst dich zurück und bekommst alles startklar übergeben.",
+    icon: Zap,
+    title: "Starter",
+    description: "Du willst anfangen ohne gleich alles auf einmal umzubauen. Ich richte dir ein sauberes System mit CRM und einer Kernautomatisierung ein die sofort Zeit spart.",
     benefits: [
-      "Du arbeitest mit einem vollständig eingerichteten System",
-      "Routineaufgaben laufen im Hintergrund",
-      "Technikfragen spielen im Alltag keine Rolle mehr",
-      "Du kannst dich auf Kunden und Umsatz konzentrieren",
-      "30 Tage Support für Anpassungen und Fragen",
+      "Vollständiges System-Setup (CRM, Pipelines, Lead-Struktur)",
+      "Eine zentrale Automatisierung nach deinen Prozessen",
+      "Terminbuchung und Kalender-Integration",
+      "Einweisung und Übergabe – du verstehst was läuft und warum",
+      "30 Tage Support nach Go-Live",
     ],
-    popular: true,
+    popular: false,
   },
   {
     icon: Users,
@@ -27,7 +27,20 @@ const services = [
       "Änderungen kannst du sicher einschätzen",
       "Alle Abläufe sind dokumentiert und nachvollziehbar",
       "Wissen bleibt bei dir und geht nicht verloren",
-      "60 Tage Support für Rückfragen und Feinschliff",
+      "30 Tage Support nach Go-Live",
+    ],
+    popular: true,
+  },
+  {
+    icon: Settings,
+    title: "Full System",
+    description: "Ich baue dir dein komplettes System: Leads, Termine, Follow-ups, Automationen. Du lehnst dich zurück und bekommst alles startklar übergeben.",
+    benefits: [
+      "Du arbeitest mit einem vollständig eingerichteten System",
+      "Routineaufgaben laufen im Hintergrund",
+      "Technikfragen spielen im Alltag keine Rolle mehr",
+      "Du kannst dich auf Kunden und Umsatz konzentrieren",
+      "60 Tage Support nach Go-Live",
     ],
     popular: false,
   },
