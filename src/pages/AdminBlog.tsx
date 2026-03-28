@@ -83,7 +83,7 @@ const AdminBlog = () => {
   if (!authenticated) {
     return (
       <>
-        <SEOHead title="Admin Blog — Gaetano Ficarra" description="Admin-Bereich" noIndex={true} />
+        <SEOHead title="Admin Blog. Gaetano Ficarra" description="Admin-Bereich" noIndex={true} />
         <div className="min-h-screen bg-background flex items-center justify-center p-4">
           <Card className="w-full max-w-sm">
             <CardHeader>
