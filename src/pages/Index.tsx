@@ -19,10 +19,10 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Coaching Business skalieren ohne mehr zu arbeiten | Gaetano Ficarra"
+        title="Business skalieren ohne mehr zu arbeiten | Gaetano Ficarra"
         description="Du hast ein laufendes Business und willst mehr Kunden ohne mehr Zeit? Ich baue dir in 2 Wochen ein System das dein Business von dir unabhängig macht. Jetzt starten."
         canonical="https://gaetanoficarra.de/"
-        ogTitle="Coaching Business skalieren ohne mehr zu arbeiten | Gaetano Ficarra"
+        ogTitle="Business skalieren ohne mehr zu arbeiten | Gaetano Ficarra"
         ogDescription="Du hast ein laufendes Business und willst mehr Kunden ohne mehr Zeit? Ich baue dir in 2 Wochen ein System das dein Business von dir unabhängig macht."
         breadcrumbs={[
           { name: "Startseite", url: "https://gaetanoficarra.de/" },
