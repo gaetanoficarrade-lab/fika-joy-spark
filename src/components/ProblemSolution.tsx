@@ -39,17 +39,17 @@ const ProblemSolution = () => {
   const { openQuizModal } = useQuizModal();
 
   return (
-    <section className="py-24 md:py-32 relative overflow-hidden" ref={ref}>
-      <div className="absolute inset-0 pointer-events-none">
+    <section className="py-24 md:py-32 relative overflow-hidden isolate" ref={ref}>
+      <div className="absolute inset-0 pointer-events-none z-0">
         <img
           src={solutionBg}
           alt=""
-          className="w-full h-full object-cover opacity-[0.35]"
+          className="w-full h-full object-cover opacity-[0.8] saturate-125 contrast-110 scale-[1.03]"
           loading="lazy"
           aria-hidden="true"
         />
       </div>
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
