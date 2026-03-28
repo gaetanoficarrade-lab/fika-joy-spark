@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const services = [
   {
     icon: Settings,
-    title: "Komplett-Setup",
+    title: "Full System",
     description: "Ich baue dir dein komplettes System: Leads, Termine, Follow-ups, Automationen. Du lehnst dich zurück und bekommst alles startklar übergeben.",
     benefits: [
       "Du arbeitest mit einem vollständig eingerichteten System",
@@ -20,7 +20,7 @@ const services = [
   },
   {
     icon: Users,
-    title: "Gemeinsam aufbauen",
+    title: "Growth",
     description: "Du arbeitest aktiv an deinem System, während ich dich strategisch und technisch begleite. Du bekommst klare Aufgaben und Umsetzungs-Schritte, setzt sie in deinem Tempo um und ich prüfe die Ergebnisse, bevor wir den nächsten Schritt gehen.",
     benefits: [
       "Du verstehst, wie dein System funktioniert",
