@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, Component, ReactNode } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -42,6 +42,32 @@ const PageLoader = () => (
   </div>
 );
 
+class ErrorBoundary extends Component<{ children: ReactNode }, { hasError: boolean }> {
+  constructor(props: { children: ReactNode }) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div className="min-h-screen bg-background flex items-center justify-center">
+          <div className="text-center max-w-md px-6">
+            <h1 className="font-display text-4xl text-foreground mb-4">Etwas ist schiefgelaufen.</h1>
+            <p className="text-muted-foreground font-body mb-8">Bitte lade die Seite neu oder kehre zur Startseite zurück.</p>
+            <a href="/" className="bg-primary text-primary-foreground px-6 py-3 rounded-md font-body text-sm uppercase tracking-widest">Zur Startseite</a>
+          </div>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
@@ -53,25 +79,27 @@ const App = () => (
           <ScrollToTopButton />
           <CookieBanner />
           
-          <Suspense fallback={<PageLoader />}>
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/leistungen" element={<Leistungen />} />
-              <Route path="/links" element={<LinksPage />} />
-              <Route path="/highlevel-vs-funnelmate" element={<HighLevelVsFunnelmate />} />
-              <Route path="/agb" element={<AGB />} />
-              <Route path="/datenschutz" element={<Datenschutz />} />
-              <Route path="/impressum" element={<Impressum />} />
-              <Route path="/wa-generator" element={<WAGenerator />} />
-              <Route path="/utm-generator" element={<UTMGenerator />} />
-              <Route path="/absage" element={<Absage />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/blog/:slug" element={<BlogArticle />} />
-              <Route path="/admin/blog" element={<AdminBlog />} />
-              <Route path="/sitemap" element={<Sitemap />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Suspense>
+          <ErrorBoundary>
+            <Suspense fallback={<PageLoader />}>
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/leistungen" element={<Leistungen />} />
+                <Route path="/links" element={<LinksPage />} />
+                <Route path="/highlevel-vs-funnelmate" element={<HighLevelVsFunnelmate />} />
+                <Route path="/agb" element={<AGB />} />
+                <Route path="/datenschutz" element={<Datenschutz />} />
+                <Route path="/impressum" element={<Impressum />} />
+                <Route path="/wa-generator" element={<WAGenerator />} />
+                <Route path="/utm-generator" element={<UTMGenerator />} />
+                <Route path="/absage" element={<Absage />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/blog/:slug" element={<BlogArticle />} />
+                <Route path="/admin/blog" element={<AdminBlog />} />
+                <Route path="/sitemap" element={<Sitemap />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </Suspense>
+          </ErrorBoundary>
         </QuizModalProvider>
       </BrowserRouter>
     </TooltipProvider>
