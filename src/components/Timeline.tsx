@@ -83,7 +83,7 @@ const Timeline = () => {
                     index % 2 === 0 ? "lg:flex-row-reverse" : "lg:flex-row"
                   }`}
                 >
-                  <div className={`lg:w-[calc(50%-40px)] ${index % 2 === 0 ? "lg:text-right" : "lg:text-left"}`}>
+                  <div className={`lg:w-[calc(50%-40px)] ${index % 2 === 0 ? "lg:text-left" : "lg:text-right"}`}>
                     <motion.div whileHover={{ scale: 1.02 }} className="glass-card-premium p-6 md:p-8">
                       <div className={`flex items-center gap-4 mb-4 ${index % 2 === 0 ? "lg:flex-row-reverse" : ""}`}>
                         <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
