@@ -113,7 +113,7 @@ const Blog = () => {
                 <Clock className="w-8 h-8 text-primary" />
               </div>
               <h2 className="font-display text-2xl md:text-3xl text-foreground mb-4">
-                Artikel in Vorbereitung — <span className="text-gradient-primary">bald verfügbar</span>
+                Artikel in Vorbereitung, <span className="text-gradient-primary">bald verfügbar</span>
               </h2>
               <p className="text-muted-foreground font-body text-lg">
                 Ich arbeite gerade an spannenden Artikeln rund um Marketing-Automatisierung, CRM-Systeme und Marketing.
