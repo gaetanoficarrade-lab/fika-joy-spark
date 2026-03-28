@@ -9,6 +9,17 @@ import { supabase, type BlogPost } from "@/lib/supabase";
 import { useQuizModal } from "@/context/QuizModalContext";
 import portrait from "@/assets/gaetano-portrait.jpg";
 
+// Local blog banner images mapped by slug
+const localBanners: Record<string, string> = Object.fromEntries(
+  Object.entries(import.meta.glob("@/assets/blog/*-banner.{jpg,png,webp}", { eager: true, import: "default" })).map(
+    ([path, url]) => {
+      const filename = path.split("/").pop() || "";
+      const slug = filename.replace(/-banner\.\w+$/, "");
+      return [slug, url as string];
+    }
+  )
+);
+
 const BlogArticle = () => {
   const { slug } = useParams<{ slug: string }>();
   const { openQuizModal } = useQuizModal();
@@ -146,6 +157,7 @@ const BlogArticle = () => {
 
   const readingTime = getReadingTime(post.content);
   const truncatedTitle = post.title.length > 40 ? post.title.slice(0, 40) + "…" : post.title;
+  const coverImg = localBanners[post.slug] || post.cover_image;
 
   return (
     <>
@@ -154,7 +166,7 @@ const BlogArticle = () => {
         description={post.description}
         canonical={`https://gaetanoficarra.de/blog/${post.slug}`}
         ogType="article"
-        ogImage={post.cover_image || "https://gaetanoficarra.de/og-image.png"}
+        ogImage={coverImg || "https://gaetanoficarra.de/og-image.png"}
         breadcrumbs={[
           { name: "Startseite", url: "https://gaetanoficarra.de/" },
           { name: "Blog", url: "https://gaetanoficarra.de/blog" },
@@ -164,7 +176,7 @@ const BlogArticle = () => {
           "@type": "BlogPosting",
           headline: post.title,
           description: post.description,
-          image: post.cover_image || "https://gaetanoficarra.de/og-image.png",
+          image: coverImg || "https://gaetanoficarra.de/og-image.png",
           url: `https://gaetanoficarra.de/blog/${post.slug}`,
           datePublished: post.published_at,
           dateModified: post.updated_at || post.published_at,
@@ -179,12 +191,11 @@ const BlogArticle = () => {
 
       {/* HERO BANNER */}
       <section className="relative pt-28 pb-16 md:pt-36 md:pb-20 overflow-hidden">
-        {/* Background: cover image dimmed or solid dark */}
-        {post.cover_image ? (
+        {coverImg ? (
           <>
             <div
               className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: `url(${post.cover_image})` }}
+              style={{ backgroundImage: `url(${coverImg})` }}
             />
             <div className="absolute inset-0 bg-foreground/85" />
           </>

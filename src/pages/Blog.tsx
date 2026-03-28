@@ -7,6 +7,17 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { supabase, type BlogPost } from "@/lib/supabase";
 
+// Local blog banner images mapped by slug
+const localBanners: Record<string, string> = Object.fromEntries(
+  Object.entries(import.meta.glob("@/assets/blog/*-banner.{jpg,png,webp}", { eager: true, import: "default" })).map(
+    ([path, url]) => {
+      const filename = path.split("/").pop() || "";
+      const slug = filename.replace(/-banner\.\w+$/, "");
+      return [slug, url as string];
+    }
+  )
+);
+
 const Blog = () => {
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
@@ -107,10 +118,10 @@ const Blog = () => {
                     to={`/blog/${post.slug}`}
                     className="group block rounded-xl border border-border bg-card overflow-hidden hover:border-primary/30 transition-all duration-300"
                   >
-                    {post.cover_image && (
+                    {(localBanners[post.slug] || post.cover_image) && (
                       <div className="aspect-video overflow-hidden">
                         <img
-                          src={post.cover_image}
+                          src={localBanners[post.slug] || post.cover_image!}
                           alt={post.title}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                           loading="lazy"
