@@ -110,16 +110,6 @@ const Leistungen = () => {
               { "@type": "Country", name: "Schweiz" },
             ],
             serviceType: "CRM & Automation Setup",
-            offers: {
-              "@type": "Offer",
-              price: "3000",
-              priceCurrency: "EUR",
-              priceSpecification: {
-                "@type": "PriceSpecification",
-                minPrice: "3000",
-                priceCurrency: "EUR"
-              }
-            },
           },
           {
             "@type": "Service",
@@ -133,16 +123,6 @@ const Leistungen = () => {
               { "@type": "Country", name: "Schweiz" },
             ],
             serviceType: "Marketing Automation Setup",
-            offers: {
-              "@type": "Offer",
-              price: "4500",
-              priceCurrency: "EUR",
-              priceSpecification: {
-                "@type": "PriceSpecification",
-                minPrice: "4500",
-                priceCurrency: "EUR"
-              }
-            },
           },
           {
             "@type": "Service",
@@ -156,16 +136,6 @@ const Leistungen = () => {
               { "@type": "Country", name: "Schweiz" },
             ],
             serviceType: "Full Business System Setup",
-            offers: {
-              "@type": "Offer",
-              price: "6000",
-              priceCurrency: "EUR",
-              priceSpecification: {
-                "@type": "PriceSpecification",
-                minPrice: "6000",
-                priceCurrency: "EUR"
-              }
-            },
           },
           {
             "@type": "Service",
@@ -179,12 +149,6 @@ const Leistungen = () => {
               { "@type": "Country", name: "Schweiz" },
             ],
             serviceType: "Technical Support",
-            offers: {
-              "@type": "Offer",
-              price: "250",
-              priceCurrency: "EUR",
-              unitText: "pro Stunde"
-            },
           },
         ]}
       />
@@ -201,7 +165,8 @@ const Leistungen = () => {
             >
               <span className="text-primary text-sm tracking-widest uppercase font-body">Leistungen</span>
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground mt-4 mb-6">
-                Funnel aufbauen, CRM einrichten und Prozesse automatisieren – <span className="text-gradient-primary">done for you.</span>
+                Funnel aufbauen, CRM einrichten und Prozesse automatisieren –{" "}
+                <span className="text-gradient-primary">done for you.</span>
               </h1>
               <p className="text-muted-foreground text-lg font-body">
                 Ob du alles abgeben oder gemeinsam aufbauen willst – hier findest du die Option die zu deiner Situation
