@@ -39,9 +39,23 @@ const BlogArticle = () => {
       if (!data) {
         setNotFound(true);
       } else {
-        // Clean title: replace colons/dashes used as separators with periods
         data.title = data.title.replace(/\s*[:\u2013\u2014–—]\s*/g, ". ").replace(/\.\s*\./g, ".");
         setPost(data);
+
+        // Fetch related posts (other published posts, exclude current)
+        const { data: others } = await supabase
+          .from("blog_posts")
+          .select("*")
+          .eq("published", true)
+          .neq("slug", slug)
+          .order("published_at", { ascending: false })
+          .limit(3);
+        setRelatedPosts(
+          (others || []).map((p) => ({
+            ...p,
+            title: p.title.replace(/\s*[:\u2013\u2014–—]\s*/g, ". ").replace(/\.\s*\./g, "."),
+          }))
+        );
       }
       setLoading(false);
     };
