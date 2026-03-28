@@ -9,6 +9,7 @@ User-agent: Googlebot-Image
 Allow: /
 Disallow: /absage
 Disallow: /admin
+Disallow: /admin/blog
 Disallow: /links
 
 User-agent: Bingbot
