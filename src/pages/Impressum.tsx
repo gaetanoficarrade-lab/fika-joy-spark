@@ -8,7 +8,7 @@ const Impressum = () => {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="Impressum | Gaetano Ficarra"
-        description="Impressum von Gaetano Ficarra. Angaben gemäß § 5 TMG. Kontakt, Adresse und rechtliche Informationen."
+        description="Impressum von Gaetano Ficarra Angaben gemäß § 5 TMG. Kontakt, Adresse und rechtliche Informationen."
       />
       <Header />
       <main className="pt-32 pb-20">
@@ -16,13 +16,14 @@ const Impressum = () => {
           <h1 className="font-display text-4xl md:text-5xl text-foreground mb-12">
             <span className="text-primary">Impressum</span>
           </h1>
-          
+
           <div className="grid md:grid-cols-2 gap-12">
             <div className="space-y-8">
               <section>
                 <h2 className="font-display text-2xl text-foreground mb-4">Angaben gemäß § 5 TMG</h2>
                 <p className="font-body text-muted-foreground">
-                  Gaetano Ficarra<br />
+                  Gaetano Ficarra
+                  <br />
                   Marketing-Systemberater für Selbstständige
                 </p>
               </section>
@@ -33,8 +34,10 @@ const Impressum = () => {
                   Anschrift
                 </h2>
                 <p className="font-body text-muted-foreground">
-                  Elverdisser Str. 51<br />
-                  33729 Bielefeld<br />
+                  Elverdisser Str. 51
+                  <br />
+                  33729 Bielefeld
+                  <br />
                   Deutschland
                 </p>
               </section>
@@ -46,8 +49,8 @@ const Impressum = () => {
                 </h2>
                 <p className="font-body text-muted-foreground">
                   WhatsApp:{" "}
-                  <a 
-                    href="https://wa.me/4915223856537?text=Hey%2C%20ich%20bin%20an%20einer%20Zusammenarbeit%20mit%20dir%20interessiert%20und%20h%C3%A4tte%20gerne%20weitere%20Infos." 
+                  <a
+                    href="https://wa.me/4915223856537?text=Hey%2C%20ich%20bin%20an%20einer%20Zusammenarbeit%20mit%20dir%20interessiert%20und%20h%C3%A4tte%20gerne%20weitere%20Infos."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-primary hover:underline"
@@ -68,7 +71,8 @@ const Impressum = () => {
               <section>
                 <h2 className="font-display text-2xl text-foreground mb-4">Berufsbezeichnung</h2>
                 <p className="font-body text-muted-foreground">
-                  Marketing-Systemberater<br />
+                  Marketing-Systemberater
+                  <br />
                   Zertifizierter HighLevel Admin
                 </p>
               </section>
@@ -77,9 +81,9 @@ const Impressum = () => {
                 <h2 className="font-display text-2xl text-foreground mb-4">Streitschlichtung</h2>
                 <p className="font-body text-muted-foreground text-sm">
                   Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:{" "}
-                  <a 
-                    href="https://ec.europa.eu/consumers/odr/" 
-                    target="_blank" 
+                  <a
+                    href="https://ec.europa.eu/consumers/odr/"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="text-primary hover:underline"
                   >
@@ -87,14 +91,18 @@ const Impressum = () => {
                   </a>
                 </p>
                 <p className="font-body text-muted-foreground text-sm mt-4">
-                  Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+                  Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer
+                  Verbraucherschlichtungsstelle teilzunehmen.
                 </p>
               </section>
 
               <section>
                 <h2 className="font-display text-2xl text-foreground mb-4">Haftung für Inhalte</h2>
                 <p className="font-body text-muted-foreground text-sm">
-                  Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+                  Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den
+                  allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht
+                  verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu
+                  forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
                 </p>
               </section>
             </div>

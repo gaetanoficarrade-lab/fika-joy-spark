@@ -7,7 +7,7 @@ const testimonials = [
   {
     name: "Martin Smits",
     role: "Google Bewertung",
-    text: "Ich arbeite aktuell mit Gaetano Ficarra an meiner neuen Webseite sowie der kompletten Implementierung von GoHighLevel (Automatisierungen, Formulare, Termin-Workflows etc.) und was soll ich sagen? Ich bin absolut begeistert! Was Gaetano für mich besonders auszeichnet, ist seine fast schon unverschämte Lockerheit, mit der er selbst die komplexesten Vorgänge aufnimmt. Man wirft ihm einen Haufen wirrer Anforderungen hin, und er schafft es, das Ganze in kürzester Zeit zu sortieren und absolut strukturiert auf den Punkt zu bringen. Er übersetzt komplexe Herausforderungen so präzise in digitale Tools, dass am Ende alles logisch und kinderleicht wirkt. Der Kontakt ist absolut einwandfrei und professionell. Er arbeitet mit den modernsten Tools und ist dabei extrem verbindlich. Wenn Gaetano etwas zusagt, dann steht das. Ich freue mich auf die weitere Zusammenarbeit und kann Gaetano jedem empfehlen, der sein Business digital auf das nächste Level heben will. Top-Experte!",
+    text: "Ich arbeite aktuell mit Gaetano Ficarra an meiner neuen Webseite sowie der kompletten Implementierung von GoHighLevel (Automatisierungen, Formulare, Termin-Workflows etc.) und was soll ich sagen? Ich bin absolut begeistert! Was Gaetano für mich besonders auszeichnet, ist seine fast schon unverschämte Lockerheit, mit der er selbst die komplexesten Vorgänge aufnimmt. Man wirft ihm einen Haufen wirrer Anforderungen hin, und er schafft es, das Ganze in kürzester Zeit zu sortieren und absolut strukturiert auf den Punkt zu bringen. Er übersetzt komplexe Herausforderungen so präzise in digitale Tools, dass am Ende alles logisch und kinderleicht wirkt. Der Kontakt ist absolut einwandfrei und professionell. Er arbeitet mit den modernsten Tools und ist dabei extrem verbindlich – wenn Gaetano etwas zusagt, dann steht das. Ich freue mich auf die weitere Zusammenarbeit und kann Gaetano jedem empfehlen, der sein Business digital auf das nächste Level heben will. Top-Experte!",
     rating: 5,
     image: "",
   },
@@ -51,10 +51,13 @@ const Testimonials = () => {
     <section className="relative" ref={ref}>
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--foreground)) 1px, transparent 0)`,
-          backgroundSize: '40px 40px'
-        }} />
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--foreground)) 1px, transparent 0)`,
+            backgroundSize: "40px 40px",
+          }}
+        />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -79,7 +82,7 @@ const Testimonials = () => {
               style={{
                 top: `${100 + index * 40}px`,
                 zIndex: index + 1,
-                marginBottom: index < testimonials.length - 1 ? '40px' : '0',
+                marginBottom: index < testimonials.length - 1 ? "40px" : "0",
               }}
             >
               <motion.div
@@ -106,10 +109,18 @@ const Testimonials = () => {
                 <div className="flex items-center gap-3 relative z-10">
                   <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-primary/20 bg-primary/10 flex items-center justify-center flex-shrink-0">
                     {testimonial.image ? (
-                      <img src={testimonial.image} alt={testimonial.name} className="w-full h-full object-cover" loading="lazy" />
+                      <img
+                        src={testimonial.image}
+                        alt={testimonial.name}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
                     ) : (
                       <span className="font-display text-primary text-sm">
-                        {testimonial.name.split(' ').map(n => n[0]).join('')}
+                        {testimonial.name
+                          .split(" ")
+                          .map((n) => n[0])
+                          .join("")}
                       </span>
                     )}
                   </div>
