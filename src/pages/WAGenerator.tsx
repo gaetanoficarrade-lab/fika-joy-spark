@@ -52,7 +52,7 @@ const WAGenerator = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Kostenloser WhatsApp Link Generator — wa.me Link erstellen"
+        title="Kostenloser WhatsApp Link Generator. wa.me Link erstellen"
         description="Kostenloser WhatsApp Link Generator: wa.me-Link mit Nachricht erstellen. Ideal für Lead-Generierung, Kundensupport & GoHighLevel-Automationen."
         breadcrumbs={[
           { name: "Startseite", url: "https://gaetanoficarra.de/" },
