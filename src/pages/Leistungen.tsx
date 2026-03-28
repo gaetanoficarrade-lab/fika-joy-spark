@@ -22,7 +22,7 @@ const mainServices = [
     tagline: "der erste Schritt raus aus dem manuellen Alltag",
     duration: "ca. 2 Wochen | Einmaliges Projekt, kein Abo",
     description:
-      "Du willst anfangen, ohne gleich alles auf einmal umzubauen. Ich richte dir ein sauberes System mit CRM und einer Kernautomatisierung ein die sofort Zeit spart. Richtig für dich wenn du noch kein System hast – oder von einem anderen Tool wechselst und einen sauberen, soliden Einstieg willst.",
+      "Du willst anfangen, ohne gleich alles auf einmal umzubauen. Ich richte dir ein sauberes System mit CRM und einer Kernautomatisierung ein die sofort Zeit spart. Richtig für dich wenn du noch kein System hast oder von einem anderen Tool wechselst und einen sauberen, soliden Einstieg willst.",
     features: [
       "Vollständiges System-Setup (CRM, Pipelines, Lead-Struktur)",
       "Eine zentrale Automatisierung nach deinen Prozessen",
