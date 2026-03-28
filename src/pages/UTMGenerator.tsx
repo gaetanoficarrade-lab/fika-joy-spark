@@ -279,7 +279,7 @@ const UTMGenerator = () => {
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary font-semibold shrink-0">utm_content</span>
-                <span>– Welche Anzeigenvariante? Perfekt für A/B-Tests, z.B. „header_cta" vs. „footer_cta".</span>
+                <span>Welche Anzeigenvariante? Perfekt für A/B-Tests, z.B. „header_cta" vs. „footer_cta".</span>
               </li>
             </ul>
 
