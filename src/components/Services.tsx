@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Settings, Users, Headphones, ArrowRight } from "lucide-react";
+import { Settings, Users, Headphones, Zap, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const services = [
