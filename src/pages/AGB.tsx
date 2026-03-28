@@ -6,8 +6,9 @@ const AGB = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="AGB | Gaetano Ficarra"
+        title="Allgemeine Geschäftsbedingungen | Gaetano Ficarra"
         description="Allgemeine Geschäftsbedingungen von Gaetano Ficarra. Geltungsbereich, Leistungsumfang, Vergütung und mehr."
+        noIndex={true}
       />
       <Header />
       <main className="pt-32 pb-20">
@@ -54,7 +55,7 @@ const AGB = () => {
                 Die Vergütung richtet sich nach dem vereinbarten Angebot. Sofern nichts anderes vereinbart ist, sind Rechnungen innerhalb von 14 Tagen nach Rechnungsstellung ohne Abzug zu zahlen.
               </p>
               <p>
-                Support-Calls werden mit 197€ pro Stunde berechnet und sind vor der Leistungserbringung zu bezahlen.
+                Support-Calls werden mit 250 € pro Stunde berechnet und sind vor der Leistungserbringung zu bezahlen.
               </p>
             </section>
 
