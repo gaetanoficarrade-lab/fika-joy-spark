@@ -16,10 +16,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0a0a0a" />
     <link rel="manifest" href="/manifest.json" />
-    <title>Coaching Business skalieren ohne mehr zu arbeiten | Gaetano Ficarra</title>
+    <title>Marketing Automation Berater für Coaches | Gaetano Ficarra</title>
     <meta
       name="description"
-      content="Du hast ein laufendes Business und willst mehr Kunden ohne mehr Zeit? Ich baue dir in 2 Wochen ein System, das dein Business von dir unabhängig macht. Jetzt starten."
+      content="Ich baue dir ein Marketing-System: CRM, Automationen und Follow-ups — fertig eingerichtet. Zertifizierter GoHighLevel Admin für Coaches & Berater."
     />
     <meta name="author" content="Gaetano Ficarra" />
     <meta
@@ -28,37 +28,41 @@
     />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="google-site-verification" content="14VUHSGBYr-aVZsbL2zRj2eI0MFCy7v4G2f9k7LT74A" />
-    <!-- canonical set dynamically per page via SEOHead component -->
+    <link rel="canonical" href="https://gaetanoficarra.de/" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <!-- Preload critical fonts -->
     <link rel="preload" href="/fonts/cormorant-garamond-700.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/inter-600.woff2" as="font" type="font/woff2" crossorigin />
     <!-- Preconnect to external origins -->
     <link rel="preconnect" href="https://www.googletagmanager.com" />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://gaetanoficarra.de/" />
-    <meta property="og:title" content="Coaching Business skalieren ohne mehr zu arbeiten | Gaetano Ficarra" />
+    <meta property="og:title" content="Marketing Automation Berater für Coaches | Gaetano Ficarra" />
     <meta
       property="og:description"
-      content="Du hast ein laufendes Business und willst mehr Kunden ohne mehr Zeit? Ich baue dir in 2 Wochen ein System, das dein Business von dir unabhängig macht."
+      content="Ich baue dir ein Marketing-System: CRM, Automationen und Follow-ups — fertig eingerichtet. Zertifizierter GoHighLevel Admin für Coaches & Berater."
     />
     <meta property="og:image" content="https://gaetanoficarra.de/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:alt" content="Marketing Automation Berater für Coaches — Gaetano Ficarra" />
     <meta property="og:site_name" content="Gaetano Ficarra" />
     <meta property="og:locale" content="de_DE" />
     <!-- Twitter / X Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Coaching Business skalieren ohne mehr zu arbeiten | Gaetano Ficarra" />
+    <meta name="twitter:site" content="@gaetano_ficarra" />
+    <meta name="twitter:title" content="Marketing Automation Berater für Coaches | Gaetano Ficarra" />
     <meta
       name="twitter:description"
-      content="Du hast ein laufendes Business und willst mehr Kunden ohne mehr Zeit? Ich baue dir in 2 Wochen ein System, das dein Business von dir unabhängig macht."
+      content="Ich baue dir ein Marketing-System: CRM, Automationen und Follow-ups — fertig eingerichtet. Zertifizierter GoHighLevel Admin für Coaches & Berater."
     />
     <meta name="twitter:image" content="https://gaetanoficarra.de/og-image.png" />
+    <meta name="twitter:image:alt" content="Marketing Automation Berater für Coaches — Gaetano Ficarra" />
   </head>
   <body>
     <div id="root"></div>
@@ -79,3 +83,23 @@
     </script>
   </body>
 </html>
+``` --- **Punkt 2 + 11 + 3 + 4** — Lovable-Prompts: **Blog.tsx Fake-Datum:** ``` Bitte ändere in src/pages/Blog.tsx die
+fetchPosts-Funktion. Entferne die Fake-Datumsberechnung und behalte nur die Titel-Bereinigung: Ersetze diesen Block:
+const today = new Date(); today.setHours(12, 0, 0, 0); const cleaned = (data || []).map((p, index) => { const
+displayDate = new Date(today); displayDate.setDate(today.getDate() - index * 2); return { ...p, published_at:
+displayDate.toISOString(), title: p.title.replace(/\s*[:\u2013\u2014–—]\s*/g, ". ").replace(/\.\s*\./g, "."), }; });
+Mit: const cleaned = (data || []).map((p) => ({ ...p, title: p.title.replace(/\s*[:\u2013\u2014–—]\s*/g, ".
+").replace(/\.\s*\./g, "."), })); Sonst nichts ändern. ``` --- **Hero.tsx H1:** ``` Bitte ändere in
+src/components/Hero.tsx den H1-Inhalt von: "Du willst dein Coaching Business skalieren – ohne mehr Zeit zu investieren?"
+zu: "Marketing Automation für Coaches: " gefolgt von einem span mit der Klasse "text-gradient-primary" der enthält:
+"Dein Business skalieren ohne mehr Zeit zu investieren." Der H1 soll danach so aussehen:
+<motion.h1 ...>
+  Marketing Automation für Coaches:{" "}
+  <span className="text-gradient-primary"> Dein Business skalieren ohne mehr Zeit zu investieren. </span>
+</motion.h1>
+
+Sonst nichts ändern. ``` --- **HighLevelVsFunnelmate.tsx + Index.tsx Kommentar:** ``` Bitte ändere in zwei Dateien
+jeweils einen kleinen Text: 1. In src/pages/HighLevelVsFunnelmate.tsx den Text: "Als zertifizierter GoHighLevel Admin
+und Funnelmate Experte zeige ich dir" zu: "Als zertifizierter GoHighLevel Admin und Funnelmate-Partner zeige ich dir" 2.
+In src/pages/Index.tsx den Kommentar: {/* 5. Lösung - Funnelmate funktional erklären */} zu: {/* 5. Lösung - System und
+Nutzen erklären */} Sonst nichts ändern.
