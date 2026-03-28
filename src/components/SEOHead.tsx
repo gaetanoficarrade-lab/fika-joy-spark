@@ -144,7 +144,7 @@ const SEOHead = ({
       "@type": "ProfessionalService",
       name: "Gaetano Ficarra",
       description:
-        "Marketing Automation Berater für Selbstständige, Coaches und Dienstleister im DACH-Raum. Zertifizierter GoHighLevel Admin aus Bielefeld.",
+        "Done-for-you Business Systeme für selbstständige Coaches, Berater und Dienstleister. Funnel aufbauen lassen, CRM einrichten und Prozesse automatisieren – in 2 Wochen.",
       url: BASE_URL,
       image: `${BASE_URL}/og-image.png`,
       telephone: "+49-152-23856537",
@@ -173,14 +173,14 @@ const SEOHead = ({
       priceRange: "€€",
       hasMap: "https://maps.google.com/?q=Elverdisser+Str.+51,+33729+Bielefeld",
       knowsAbout: [
-        "GoHighLevel",
-        "Funnelmate",
-        "Marketing Automation",
-        "CRM",
-        "Funnel Building",
-        "Marketing Automation Beratung",
-        "CRM Setup",
         "Business Systeme",
+        "Funnel aufbauen lassen",
+        "CRM einrichten",
+        "Prozesse automatisieren",
+        "GoHighLevel",
+        "Coaching Business skalieren",
+        "Done-for-you Setup",
+        "Marketing Automation",
       ],
     });
     scriptIds.push("seo-professional-service-ld");
