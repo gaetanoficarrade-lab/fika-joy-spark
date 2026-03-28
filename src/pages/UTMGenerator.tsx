@@ -303,7 +303,7 @@ const UTMGenerator = () => {
             <ul className="font-body text-muted-foreground space-y-3">
               <li className="flex items-start gap-2">
                 <span className="text-primary">✓</span>
-                <span><strong className="text-foreground">Immer Kleinbuchstaben verwenden</strong> – UTM-Parameter sind case-sensitive. „Facebook" und „facebook" werden als unterschiedliche Quellen gezählt.</span>
+                <span><strong className="text-foreground">Immer Kleinbuchstaben verwenden</strong>. UTM-Parameter sind case-sensitive. „Facebook" und „facebook" werden als unterschiedliche Quellen gezählt.</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary">✓</span>
