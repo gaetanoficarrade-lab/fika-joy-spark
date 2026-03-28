@@ -15,7 +15,7 @@ const NotFound = () => {
   return (
     <>
       <SEOHead
-        title="404 – Seite nicht gefunden | Gaetano Ficarra"
+        title="404. Seite nicht gefunden | Gaetano Ficarra"
         description="Diese Seite existiert leider nicht. Kehre zur Startseite zurück."
         noIndex={true}
         canonical="https://gaetanoficarra.de/404"
