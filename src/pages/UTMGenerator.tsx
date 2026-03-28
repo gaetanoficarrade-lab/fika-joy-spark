@@ -263,7 +263,7 @@ const UTMGenerator = () => {
             <ul className="font-body text-muted-foreground space-y-3 mb-8">
               <li className="flex items-start gap-2">
                 <span className="text-primary font-semibold shrink-0">utm_source</span>
-                <span>– Woher kommt der Traffic? Z.B. Google, Facebook, Newsletter. Pflichtfeld für sinnvolles Tracking.</span>
+                <span>Woher kommt der Traffic? Z.B. Google, Facebook, Newsletter. Pflichtfeld für sinnvolles Tracking.</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary font-semibold shrink-0">utm_medium</span>
