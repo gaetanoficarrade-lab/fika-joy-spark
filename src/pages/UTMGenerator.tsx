@@ -73,7 +73,7 @@ const UTMGenerator = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Kostenloser UTM-Generator — Marketing Links erstellen"
+        title="Kostenloser UTM-Generator. Marketing Links erstellen"
         description="Kostenloser UTM-Generator: Erstelle UTM-Parameter für Google Analytics & GoHighLevel in Sekunden. Kampagnen-URLs tracken leicht gemacht."
         breadcrumbs={[
           { name: "Startseite", url: "https://gaetanoficarra.de/" },
