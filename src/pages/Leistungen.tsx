@@ -88,11 +88,11 @@ const Leistungen = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Leistungen & Pakete: Funnel aufbauen lassen & CRM einrichten | Gaetano Ficarra"
-        description="Funnel aufbauen lassen, CRM einrichten und Prozesse automatisieren – done for you, in 2 Wochen. Drei Pakete für Coaches und Berater die ihr Business skalieren wollen."
+        title="Funnel aufbauen lassen & CRM einrichten | Gaetano Ficarra"
+        description="Funnel aufbauen lassen, CRM einrichten, Prozesse automatisieren – done for you in 2 Wochen. Starter, Growth oder Full System – für Coaches & Berater."
         canonical="https://gaetanoficarra.de/leistungen"
-        ogTitle="Leistungen & Pakete: Funnel aufbauen lassen & CRM einrichten | Gaetano Ficarra"
-        ogDescription="Funnel aufbauen lassen, CRM einrichten und Prozesse automatisieren – done for you, in 2 Wochen. Drei Pakete für Coaches und Berater die ihr Business skalieren wollen."
+        ogTitle="Funnel aufbauen lassen & CRM einrichten | Gaetano Ficarra"
+        ogDescription="Funnel aufbauen lassen, CRM einrichten, Prozesse automatisieren – done for you in 2 Wochen. Starter, Growth oder Full System – für Coaches & Berater."
         breadcrumbs={[
           { name: "Startseite", url: "https://gaetanoficarra.de/" },
           { name: "Leistungen", url: "https://gaetanoficarra.de/leistungen" },
@@ -165,7 +165,7 @@ const Leistungen = () => {
             >
               <span className="text-primary text-sm tracking-widest uppercase font-body">Leistungen</span>
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground mt-4 mb-6">
-                Drei Wege wie wir <span className="text-gradient-primary">zusammenarbeiten können.</span>
+                Funnel aufbauen, CRM einrichten und Prozesse automatisieren – <span className="text-gradient-primary">done for you.</span>
               </h1>
               <p className="text-muted-foreground text-lg font-body">
                 Ob du alles abgeben oder gemeinsam aufbauen willst – hier findest du die Option die zu deiner Situation
