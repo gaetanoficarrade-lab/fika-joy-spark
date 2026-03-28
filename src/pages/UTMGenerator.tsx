@@ -1,8 +1,7 @@
 import { useState } from "react";
 import SEOHead from "@/components/SEOHead";
 import { motion } from "framer-motion";
-import { Copy, Check, Link as LinkIcon, Plus, Trash2, ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Copy, Check, Link as LinkIcon, Trash2 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -412,6 +411,10 @@ const UTMGenerator = () => {
           </motion.div>
 
           {/* Cross-Links */}
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center text-sm font-body">
+            <a href="/wa-generator" className="text-primary hover:underline">→ WhatsApp Link Generator</a>
+            <a href="/leistungen" className="text-primary hover:underline">→ Marketing System aufbauen lassen</a>
+          </div>
         </div>
       </main>
       <Footer />
