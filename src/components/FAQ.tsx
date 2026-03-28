@@ -63,7 +63,7 @@ const FAQ = () => {
               Deine <span className="text-gradient-primary">Fragen</span>, meine Antworten
             </h2>
             <p className="text-muted-foreground text-lg">
-              Hier findest du Antworten auf die häufigsten Fragen zu meiner Arbeit und Funnelmate.
+              Hier findest du Antworten auf die häufigsten Fragen zu meiner Arbeit und dem Systemaufbau mit GoHighLevel.
             </p>
           </div>
 
