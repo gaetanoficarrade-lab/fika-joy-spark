@@ -275,7 +275,7 @@ const UTMGenerator = () => {
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary font-semibold shrink-0">utm_term</span>
-                <span>– Welches Keyword wurde beworben? Besonders relevant für Google Ads und bezahlte Suchanzeigen.</span>
+                <span>Welches Keyword wurde beworben? Besonders relevant für Google Ads und bezahlte Suchanzeigen.</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary font-semibold shrink-0">utm_content</span>
