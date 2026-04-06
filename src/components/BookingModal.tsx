@@ -37,6 +37,8 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [anliegen, setAnliegen] = useState("");
+  const [newsletter, setNewsletter] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -49,6 +51,8 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
         setName("");
         setEmail("");
         setPhone("");
+        setAnliegen("");
+        setNewsletter(false);
         setErrorMsg("");
       }, 300);
     }
@@ -117,6 +121,8 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
           phone: phone.trim(),
           selectedSlot,
           timezone,
+          anliegen: anliegen.trim(),
+          newsletter,
         }),
       });
       if (!res.ok) {
@@ -395,6 +401,28 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
                         className="w-full h-10 rounded-md border border-input bg-background px-3 text-sm font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 ring-offset-background"
                       />
                     </div>
+                    <div>
+                      <label className="block text-sm font-body text-foreground mb-1.5">Beschreibe kurz dein Anliegen</label>
+                      <textarea
+                        value={anliegen}
+                        onChange={(e) => setAnliegen(e.target.value)}
+                        placeholder="Worum geht es bei deinem Anliegen?"
+                        rows={3}
+                        className="w-full min-h-[80px] rounded-md border border-input bg-background px-3 py-2 text-sm font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 ring-offset-background resize-none"
+                      />
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <input
+                        type="checkbox"
+                        id="newsletter"
+                        checked={newsletter}
+                        onChange={(e) => setNewsletter(e.target.checked)}
+                        className="mt-1 h-4 w-4 shrink-0 rounded-sm border border-primary accent-primary cursor-pointer"
+                      />
+                      <label htmlFor="newsletter" className="text-sm font-body text-foreground cursor-pointer">
+                        Ja, ich möchte auch zukünftig spannende Inhalte erhalten
+                      </label>
+                    </div>
                   </div>
 
                   {errorMsg && (
@@ -417,6 +445,17 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
                       "Termin bestätigen"
                     )}
                   </button>
+
+                  <div className="mt-6 pt-4 border-t border-border">
+                    <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground font-body mb-2">
+                      <a href="/impressum" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors underline">Impressum</a>
+                      <span>|</span>
+                      <a href="/datenschutz" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors underline">Datenschutz</a>
+                    </div>
+                    <p className="text-xs text-muted-foreground font-body text-center leading-relaxed">
+                      Keine Sorge, deine Daten sind sicher und du kannst dich jederzeit mit einem Klick wieder abmelden. Vorausgesetzt du willst etwas verpassen 😉
+                    </p>
+                  </div>
                 </div>
               )}
 
