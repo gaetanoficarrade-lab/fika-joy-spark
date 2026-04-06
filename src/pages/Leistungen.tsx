@@ -110,17 +110,7 @@ const Leistungen = () => {
               { "@type": "Country", name: "Schweiz" },
             ],
             serviceType: "CRM & Automation Setup",
-            offers: {
-              "@type": "Offer",
-              price: "3000",
-              priceCurrency: "EUR",
-              priceSpecification: {
-                "@type": "UnitPriceSpecification",
-                price: "3000",
-                priceCurrency: "EUR",
-                description: "Einmaliges Projekt, kein Abo"
-              }
-            },
+            serviceOutput: "Einmaliges Projekt, kein Abo",
           },
           {
             "@type": "Service",
