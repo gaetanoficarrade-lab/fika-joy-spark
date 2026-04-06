@@ -76,6 +76,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <QuizModalProvider>
+          <BookingModalProvider>
           <ScrollToTop />
           <ScrollToTopButton />
           <CookieBanner />
