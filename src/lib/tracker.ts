@@ -167,6 +167,7 @@ export function trackPageView(path: string) {
 export function trackClick(e: MouseEvent) {
   const path = window.location.pathname;
   if (path.startsWith("/admin")) return;
+  if (!shouldTrack()) return;
 
   const target = e.target as HTMLElement;
   const selector = target.tagName.toLowerCase() +
