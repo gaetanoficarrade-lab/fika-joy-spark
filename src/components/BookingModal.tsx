@@ -37,6 +37,8 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [anliegen, setAnliegen] = useState("");
+  const [newsletter, setNewsletter] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
 
