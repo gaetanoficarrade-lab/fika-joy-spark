@@ -348,6 +348,66 @@ const OverviewTab = () => {
           </CardContent>
         </Card>
       </div>
+
+      {/* Geo-Daten */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <Card>
+          <CardContent className="p-4">
+            <h3 className="font-display text-lg font-semibold mb-1">🌍 Länder</h3>
+            <p className="text-xs text-muted-foreground font-body mb-4">Herkunftsland deiner Besucher.</p>
+            <div className="space-y-2">
+              {countryBreakdown.length === 0 && (
+                <p className="text-sm text-muted-foreground font-body">Keine Geo-Daten vorhanden.</p>
+              )}
+              {countryBreakdown.map(([country, count]) => (
+                <div key={country} className="flex items-center justify-between">
+                  <span className="text-sm font-body truncate max-w-[70%]">{country}</span>
+                  <div className="flex items-center gap-2">
+                    <div className="w-20 h-2 bg-muted rounded-full overflow-hidden">
+                      <div
+                        className="h-full rounded-full"
+                        style={{
+                          width: `${(count / stats.totalViews) * 100}%`,
+                          background: "var(--gradient-primary)",
+                        }}
+                      />
+                    </div>
+                    <span className="text-sm font-body font-medium w-8 text-right">{count}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent className="p-4">
+            <h3 className="font-display text-lg font-semibold mb-1">📍 Regionen / Bundesländer</h3>
+            <p className="text-xs text-muted-foreground font-body mb-4">Detaillierte regionale Aufschlüsselung.</p>
+            <div className="space-y-2">
+              {regionBreakdown.length === 0 && (
+                <p className="text-sm text-muted-foreground font-body">Keine regionalen Daten vorhanden.</p>
+              )}
+              {regionBreakdown.map(([region, count]) => (
+                <div key={region} className="flex items-center justify-between">
+                  <span className="text-sm font-body truncate max-w-[70%]">{region}</span>
+                  <div className="flex items-center gap-2">
+                    <div className="w-20 h-2 bg-muted rounded-full overflow-hidden">
+                      <div
+                        className="h-full rounded-full"
+                        style={{
+                          width: `${(count / stats.totalViews) * 100}%`,
+                          background: "var(--gradient-primary)",
+                        }}
+                      />
+                    </div>
+                    <span className="text-sm font-body font-medium w-8 text-right">{count}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 };
