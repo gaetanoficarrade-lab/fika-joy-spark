@@ -5,6 +5,7 @@ import { format, startOfMonth, endOfMonth, addMonths, subMonths, isSameDay, pars
 import { de } from "date-fns/locale";
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || "https://supabase.gaetanoficarra.de";
+const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || "";
 
 type Step = "date" | "time" | "form" | "confirmed" | "error";
 
