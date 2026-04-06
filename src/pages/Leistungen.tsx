@@ -20,7 +20,7 @@ const mainServices = [
       "Einweisung und Übergabe du verstehst was läuft und warum",
       "30 Tage Support nach Go-Live",
     ],
-    price: "ab 3.000 €",
+    price: "Preis auf Anfrage",
     popular: false,
     icon: Zap,
   },
@@ -38,7 +38,7 @@ const mainServices = [
       "Migration deiner bestehenden Kontakte und Daten",
       "30 Tage Support nach Go-Live",
     ],
-    price: "ab 4.500 €",
+    price: "Preis auf Anfrage",
     popular: true,
     icon: Rocket,
   },
@@ -55,7 +55,7 @@ const mainServices = [
       "Mitgliederbereich falls du Kurse oder Inhalte anbietest",
       "60 Tage Support nach Go-Live",
     ],
-    price: "ab 6.000 €",
+    price: "Preis auf Anfrage",
     popular: false,
     icon: Crown,
   },
@@ -110,17 +110,7 @@ const Leistungen = () => {
               { "@type": "Country", name: "Schweiz" },
             ],
             serviceType: "CRM & Automation Setup",
-            offers: {
-              "@type": "Offer",
-              price: "3000",
-              priceCurrency: "EUR",
-              priceSpecification: {
-                "@type": "UnitPriceSpecification",
-                price: "3000",
-                priceCurrency: "EUR",
-                description: "Einmaliges Projekt, kein Abo"
-              }
-            },
+            serviceOutput: "Einmaliges Projekt, kein Abo",
           },
           {
             "@type": "Service",
@@ -134,17 +124,7 @@ const Leistungen = () => {
               { "@type": "Country", name: "Schweiz" },
             ],
             serviceType: "Marketing Automation Setup",
-            offers: {
-              "@type": "Offer",
-              price: "4500",
-              priceCurrency: "EUR",
-              priceSpecification: {
-                "@type": "UnitPriceSpecification",
-                price: "4500",
-                priceCurrency: "EUR",
-                description: "Einmaliges Projekt, kein Abo"
-              }
-            },
+            serviceOutput: "Einmaliges Projekt, kein Abo",
           },
           {
             "@type": "Service",
@@ -158,17 +138,7 @@ const Leistungen = () => {
               { "@type": "Country", name: "Schweiz" },
             ],
             serviceType: "Full Business System Setup",
-            offers: {
-              "@type": "Offer",
-              price: "6000",
-              priceCurrency: "EUR",
-              priceSpecification: {
-                "@type": "UnitPriceSpecification",
-                price: "6000",
-                priceCurrency: "EUR",
-                description: "Einmaliges Projekt, kein Abo"
-              }
-            },
+            serviceOutput: "Einmaliges Projekt, kein Abo",
           },
           {
             "@type": "Service",
