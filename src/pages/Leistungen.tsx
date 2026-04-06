@@ -53,7 +53,6 @@ const mainServices = [
       "Mitgliederbereich falls du Kurse oder Inhalte anbietest",
       "60 Tage Support nach Go-Live",
     ],
-    price: "Preis auf Anfrage",
     popular: false,
     icon: Crown,
   },
