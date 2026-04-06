@@ -1,4 +1,6 @@
 import { lazy, Suspense, Component, ReactNode } from "react";
+import TrackingProvider from "./components/analytics/TrackingProvider";
+import DynamicScripts from "./components/analytics/DynamicScripts";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
