@@ -17,6 +17,7 @@ interface PageView {
   browser: string | null;
   os: string | null;
   country: string | null;
+  region: string | null;
   created_at: string;
 }
 
