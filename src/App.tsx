@@ -1,4 +1,6 @@
 import { lazy, Suspense, Component, ReactNode } from "react";
+import TrackingProvider from "./components/analytics/TrackingProvider";
+import DynamicScripts from "./components/analytics/DynamicScripts";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -27,8 +29,10 @@ const Absage = lazy(() => import("./pages/Absage"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogArticle = lazy(() => import("./pages/BlogArticle"));
 const AdminBlog = lazy(() => import("./pages/AdminBlog"));
+const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
 const Sitemap = lazy(() => import("./pages/Sitemap"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+const RedirectHandler = lazy(() => import("./components/RedirectHandler"));
 
 const queryClient = new QueryClient();
 
@@ -78,6 +82,8 @@ const App = () => (
         <QuizModalProvider>
           <BookingModalProvider>
           <ScrollToTop />
+          <TrackingProvider />
+          <DynamicScripts />
           <ScrollToTopButton />
           <CookieBanner />
           
@@ -97,7 +103,9 @@ const App = () => (
                 <Route path="/blog" element={<Blog />} />
                 <Route path="/blog/:slug" element={<BlogArticle />} />
                 <Route path="/admin/blog" element={<AdminBlog />} />
+                <Route path="/admin/dashboard" element={<AdminDashboard />} />
                 <Route path="/sitemap" element={<Sitemap />} />
+                <Route path="/r/:slug" element={<RedirectHandler />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>
