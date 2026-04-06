@@ -20,7 +20,6 @@ const mainServices = [
       "Einweisung und Übergabe du verstehst was läuft und warum",
       "30 Tage Support nach Go-Live",
     ],
-    price: "Preis auf Anfrage",
     popular: false,
     icon: Zap,
   },
