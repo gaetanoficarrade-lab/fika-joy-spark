@@ -17,6 +17,7 @@ interface PageView {
   browser: string | null;
   os: string | null;
   country: string | null;
+  region: string | null;
   created_at: string;
 }
 
@@ -122,6 +123,30 @@ const OverviewTab = () => {
       counts[type] = (counts[type] || 0) + 1;
     });
     return Object.entries(counts).map(([name, value]) => ({ name, value }));
+  }, [views]);
+
+  const countryBreakdown = useMemo(() => {
+    const counts: Record<string, number> = {};
+    views.forEach((v) => {
+      const c = v.country || "Unbekannt";
+      counts[c] = (counts[c] || 0) + 1;
+    });
+    return Object.entries(counts)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 10);
+  }, [views]);
+
+  const regionBreakdown = useMemo(() => {
+    const counts: Record<string, number> = {};
+    views.forEach((v) => {
+      if (v.region) {
+        const label = v.country === "Germany" ? v.region : `${v.region} (${v.country || "?"})`;
+        counts[label] = (counts[label] || 0) + 1;
+      }
+    });
+    return Object.entries(counts)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 10);
   }, [views]);
 
   const formatDate = (dateStr: string) => {
@@ -317,6 +342,66 @@ const OverviewTab = () => {
                 <div key={campaign} className="flex items-center justify-between">
                   <span className="text-sm font-body truncate max-w-[70%]">{campaign}</span>
                   <span className="text-sm font-body font-medium">{count}</span>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
+      {/* Geo-Daten */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <Card>
+          <CardContent className="p-4">
+            <h3 className="font-display text-lg font-semibold mb-1">🌍 Länder</h3>
+            <p className="text-xs text-muted-foreground font-body mb-4">Herkunftsland deiner Besucher.</p>
+            <div className="space-y-2">
+              {countryBreakdown.length === 0 && (
+                <p className="text-sm text-muted-foreground font-body">Keine Geo-Daten vorhanden.</p>
+              )}
+              {countryBreakdown.map(([country, count]) => (
+                <div key={country} className="flex items-center justify-between">
+                  <span className="text-sm font-body truncate max-w-[70%]">{country}</span>
+                  <div className="flex items-center gap-2">
+                    <div className="w-20 h-2 bg-muted rounded-full overflow-hidden">
+                      <div
+                        className="h-full rounded-full"
+                        style={{
+                          width: `${(count / stats.totalViews) * 100}%`,
+                          background: "var(--gradient-primary)",
+                        }}
+                      />
+                    </div>
+                    <span className="text-sm font-body font-medium w-8 text-right">{count}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent className="p-4">
+            <h3 className="font-display text-lg font-semibold mb-1">📍 Regionen / Bundesländer</h3>
+            <p className="text-xs text-muted-foreground font-body mb-4">Detaillierte regionale Aufschlüsselung.</p>
+            <div className="space-y-2">
+              {regionBreakdown.length === 0 && (
+                <p className="text-sm text-muted-foreground font-body">Keine regionalen Daten vorhanden.</p>
+              )}
+              {regionBreakdown.map(([region, count]) => (
+                <div key={region} className="flex items-center justify-between">
+                  <span className="text-sm font-body truncate max-w-[70%]">{region}</span>
+                  <div className="flex items-center gap-2">
+                    <div className="w-20 h-2 bg-muted rounded-full overflow-hidden">
+                      <div
+                        className="h-full rounded-full"
+                        style={{
+                          width: `${(count / stats.totalViews) * 100}%`,
+                          background: "var(--gradient-primary)",
+                        }}
+                      />
+                    </div>
+                    <span className="text-sm font-body font-medium w-8 text-right">{count}</span>
+                  </div>
                 </div>
               ))}
             </div>

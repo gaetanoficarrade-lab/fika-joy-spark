@@ -71,6 +71,22 @@ function getOS(): string {
 }
 
 let tracked = false;
+let geoCache: { country: string | null; region: string | null } | null = null;
+
+async function fetchGeo(): Promise<{ country: string | null; region: string | null }> {
+  if (geoCache) return geoCache;
+  try {
+    const res = await fetch("https://get.geojs.io/v1/ip/geo.json");
+    const data = await res.json();
+    geoCache = {
+      country: data.country || null,
+      region: data.region || null,
+    };
+  } catch {
+    geoCache = { country: null, region: null };
+  }
+  return geoCache;
+}
 
 export function trackPageView(path: string) {
   // Avoid double-tracking on strict mode re-renders
@@ -84,18 +100,22 @@ export function trackPageView(path: string) {
   const sessionId = getSessionId();
   const utm = getUTMParams();
 
-  supabase.from("page_views").insert({
-    visitor_id: visitorId,
-    session_id: sessionId,
-    path,
-    referrer: document.referrer || null,
-    ...utm,
-    device_type: getDeviceType(),
-    browser: getBrowser(),
-    os: getOS(),
-    screen_width: window.screen.width,
-    screen_height: window.screen.height,
-  }).then(() => {});
+  fetchGeo().then((geo) => {
+    supabase.from("page_views").insert({
+      visitor_id: visitorId,
+      session_id: sessionId,
+      path,
+      referrer: document.referrer || null,
+      ...utm,
+      device_type: getDeviceType(),
+      browser: getBrowser(),
+      os: getOS(),
+      country: geo.country,
+      region: geo.region,
+      screen_width: window.screen.width,
+      screen_height: window.screen.height,
+    }).then(() => {});
+  });
 }
 
 export function trackClick(e: MouseEvent) {
