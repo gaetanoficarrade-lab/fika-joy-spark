@@ -51,6 +51,8 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
         setName("");
         setEmail("");
         setPhone("");
+        setAnliegen("");
+        setNewsletter(false);
         setErrorMsg("");
       }, 300);
     }
