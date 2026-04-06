@@ -1,8 +1,9 @@
 import { useState, useEffect, useMemo, useCallback } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { X, ChevronLeft, ChevronRight, Loader2, CheckCircle, AlertCircle } from "lucide-react";
-import { format, startOfMonth, endOfMonth, addMonths, subMonths, isSameDay, parseISO } from "date-fns";
+import { format, startOfMonth, endOfMonth, addMonths, subMonths, isSameDay } from "date-fns";
 import { de } from "date-fns/locale";
+import { supabase } from "@/lib/supabase";
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || "https://supabase.gaetanoficarra.de";
 const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || "";
