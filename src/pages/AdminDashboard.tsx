@@ -4,7 +4,8 @@ import { supabase } from "@/lib/supabase";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { LogOut, BarChart3, MousePointerClick, ArrowRightLeft, Code } from "lucide-react";
+import { LogOut, BarChart3, MousePointerClick, ArrowRightLeft, Code, EyeOff, Eye } from "lucide-react";
+import { isTrackingExcluded, setTrackingExcluded } from "@/lib/tracker";
 import { toast } from "@/hooks/use-toast";
 import OverviewTab from "@/components/admin/OverviewTab";
 import HeatmapTab from "@/components/admin/HeatmapTab";
@@ -106,9 +107,29 @@ const AdminDashboard = () => {
                 Zentrale Verwaltung und globale Statistiken auf einen Blick.
               </p>
             </div>
-            <Button variant="outline" onClick={handleLogout} className="gap-2">
-              <LogOut size={16} /> Abmelden
-            </Button>
+            <div className="flex items-center gap-2">
+              <Button
+                variant={isTrackingExcluded() ? "default" : "outline"}
+                size="sm"
+                onClick={() => {
+                  const newVal = !isTrackingExcluded();
+                  setTrackingExcluded(newVal);
+                  toast({
+                    title: newVal ? "Eigene Besuche ausgeschlossen" : "Eigene Besuche werden gezählt",
+                    description: newVal
+                      ? "Deine Besuche werden ab jetzt nicht mehr getrackt."
+                      : "Deine Besuche werden wieder mitgezählt.",
+                  });
+                }}
+                className="gap-2"
+              >
+                {isTrackingExcluded() ? <EyeOff size={16} /> : <Eye size={16} />}
+                {isTrackingExcluded() ? "Tracking aus" : "Tracking an"}
+              </Button>
+              <Button variant="outline" onClick={handleLogout} className="gap-2">
+                <LogOut size={16} /> Abmelden
+              </Button>
+            </div>
           </div>
 
           {/* Tabs */}

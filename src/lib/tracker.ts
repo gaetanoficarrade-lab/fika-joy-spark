@@ -2,7 +2,54 @@ import { supabase } from "./supabase";
 
 const VISITOR_KEY = "gf_visitor_id";
 const SESSION_KEY = "gf_session_id";
+const EXCLUDE_KEY = "gf_exclude_tracking";
 const SESSION_TIMEOUT = 30 * 60 * 1000; // 30 min
+
+const BOT_PATTERNS = [
+  /bot/i, /crawl/i, /spider/i, /slurp/i, /mediapartners/i,
+  /lighthouse/i, /pagespeed/i, /headless/i, /phantom/i,
+  /puppeteer/i, /prerender/i, /wget/i, /curl/i,
+  /facebookexternalhit/i, /twitterbot/i, /linkedinbot/i,
+  /whatsapp/i, /telegrambot/i, /discordbot/i,
+  /bingpreview/i, /yandex/i, /baidu/i, /duckduckbot/i,
+  /semrush/i, /ahrefs/i, /mj12bot/i, /dotbot/i,
+  /rogerbot/i, /screaming/i, /uptimerobot/i,
+];
+
+function isBot(): boolean {
+  const ua = navigator.userAgent;
+  return BOT_PATTERNS.some((p) => p.test(ua));
+}
+
+function isPreviewOrLocalhost(): boolean {
+  const host = window.location.hostname;
+  return (
+    host === "localhost" ||
+    host === "127.0.0.1" ||
+    host.includes("preview") ||
+    host.includes("lovable.app") ||
+    host.includes("webcontainer")
+  );
+}
+
+export function isTrackingExcluded(): boolean {
+  return localStorage.getItem(EXCLUDE_KEY) === "true";
+}
+
+export function setTrackingExcluded(excluded: boolean) {
+  if (excluded) {
+    localStorage.setItem(EXCLUDE_KEY, "true");
+  } else {
+    localStorage.removeItem(EXCLUDE_KEY);
+  }
+}
+
+function shouldTrack(): boolean {
+  if (isBot()) return false;
+  if (isPreviewOrLocalhost()) return false;
+  if (isTrackingExcluded()) return false;
+  return true;
+}
 
 function generateId(): string {
   return crypto.randomUUID?.() || Math.random().toString(36).slice(2) + Date.now().toString(36);
@@ -89,12 +136,11 @@ async function fetchGeo(): Promise<{ country: string | null; region: string | nu
 }
 
 export function trackPageView(path: string) {
-  // Avoid double-tracking on strict mode re-renders
   if (tracked && path === window.location.pathname) return;
   tracked = true;
   
-  // Don't track admin pages
   if (path.startsWith("/admin")) return;
+  if (!shouldTrack()) return;
 
   const visitorId = getVisitorId();
   const sessionId = getSessionId();
@@ -121,6 +167,7 @@ export function trackPageView(path: string) {
 export function trackClick(e: MouseEvent) {
   const path = window.location.pathname;
   if (path.startsWith("/admin")) return;
+  if (!shouldTrack()) return;
 
   const target = e.target as HTMLElement;
   const selector = target.tagName.toLowerCase() +
